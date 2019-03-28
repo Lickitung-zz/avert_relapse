@@ -1,6 +1,4 @@
 class Contact < ApplicationRecord
-  def index
-    @contacts = Contact.all
-    render "index.json.jbuilder"
-  end
+  belongs_to :account
+  has_many :messages
 end

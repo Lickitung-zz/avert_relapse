@@ -8,5 +8,11 @@ Rails.application.routes.draw do
   # end
   namespace :api do
     get "/users" => "users#index"
+
+    get "/accounts" => "accounts#index"
+
+    get "/contacts" => "contacts#index"
+
+    get "/messages" => "messages#index"
   end
 end
