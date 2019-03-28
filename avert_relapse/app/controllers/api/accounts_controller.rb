@@ -1,7 +1,15 @@
 class Api::AccountsController < ApplicationController
+  before_action :authenticate_user
+
   def index
     @accounts = Account.all
-    render "index.json.jbuilder"
+
+    if current_user
+      @accounts = current_user.accounts
+      render "index.json.jbuilder"
+    else
+      render json: []
+    end
   end
 
   def create
@@ -10,7 +18,6 @@ class Api::AccountsController < ApplicationController
       phone_number: params[:phone_number],
       user_id: params[:user_id]
     )
-
     render "show.json.jbuilder"
   end
 
