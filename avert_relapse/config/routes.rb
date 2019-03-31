@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   # namespace :api do
   #   get "/photos" => "photos#index"
   # end
+
+  post 'twilio/voice' => 'twilio#voice'
+  post 'twilio/sms' => 'twilio#sms'
+
   namespace :api do
     get "/users" => "users#index"
     post "/users" => "users#create"
