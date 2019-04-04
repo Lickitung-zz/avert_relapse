@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
 
-  post 'twilio/voice' => 'twilio#voice'
-  post 'twilio/sms' => 'twilio#sms'
+  post "/sms" => "bandwidth#sms"
 
   namespace :api do
     get "/users" => "users#index"
