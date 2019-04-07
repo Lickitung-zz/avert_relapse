@@ -9,12 +9,12 @@ class Api::TwilioController < ApplicationController
     client = Twilio::REST::Client.new(account_sid, auth_token)
 
     from = '+17372042480' # Your Twilio number
-    to = '+15123739146' # Your mobile phone number
+    to = '+1' + current_user.accounts[0].contacts[0].phone_number # Your mobile phone number
 
     client.messages.create(
     from: from,
     to: to,
-    body: "what it do boo"
+    body: "Hello! This is " + current_user.accounts[0].name + ". I'm using an app called Avert Relapse and have pressed the 'HELP' button which means I need help! Please text me back at my phone number which is:" + current_user.accounts[0].phone_number + " // THIS IS A TEST //"
     )
   end
 end
