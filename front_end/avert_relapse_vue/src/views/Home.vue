@@ -8,8 +8,13 @@
 </template>
 
 <style>
+.index {
+  background-image: "aver_relapse_vue/images/download.png"
+}
+#app .home {
+  background-image: url("/images/download.png")
+}
 </style>
-
 <script>
 import axios from "axios";
 
