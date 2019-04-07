@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
 
-  post "/sms" => "bandwidth#sms"
-
   namespace :api do
     get "/users" => "users#index"
     post "/users" => "users#create"
@@ -27,5 +25,7 @@ Rails.application.routes.draw do
     post "/messages" => "messages#create"
 
     post "/sessions" => "sessions#create"
+
+    post "/twilio/sms" => "twilio#sms"
   end
 end
