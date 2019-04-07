@@ -4,12 +4,13 @@ class Api::TwilioController < ApplicationController
   require 'twilio-ruby'
 
   def sms
-    account_sid = 'ACc80df19422020041afc1f74c3695ebd1'
-    auth_token = '00e98f747d8b465f9f4fb2e5eb732361'
+    # account_sid = 'ACc80df19422020041afc1f74c3695ebd1'
+    account_sid = ENV["NEW_API_KEY"]
+    auth_token = ENV["NEW_AUTH_TOKEN"]
     client = Twilio::REST::Client.new(account_sid, auth_token)
 
-    from = '+17372042480' # Your Twilio number
-    to = '+1' + current_user.accounts[0].contacts[0].phone_number # Your mobile phone number
+    from = '+17372042024' # My Twilio number
+    to = '+1' + current_user.account.contacts[1].phone_number # My mobile phone number, sends to my phone number for test
 
     client.messages.create(
     from: from,
