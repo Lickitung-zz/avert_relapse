@@ -17,13 +17,26 @@ export default {
   data: function() {
     return {
       message: "Welcome to Avert.relapse!",
-      contacts: []
+      contacts: [],
+      loginEmail: "",
+      loginPassword: ""
     };
   },
   created: function() {
-    axios.get("/api/contacts").then(response => { this.contacts = response.data;
+    axios.get("/api/contacts").then(response => {this.contacts = response.data;
     });
   },
-  methods: {}
+  methods: {
+    login: function() {
+      var params = {
+        email: this.loginEmail,
+        password: this.loginPassword
+      };
+      console.log('logging in...');
+      axios.post('/api/sessions', params).then(response => {
+        console.log(response);
+      });
+    }
+  }
 };
 </script>
