@@ -1,4 +1,6 @@
 class Api::TwilioController < ApplicationController
+  before_action :authenticate_user
+
   require 'twilio-ruby'
 
   def sms
