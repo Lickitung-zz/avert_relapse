@@ -4,7 +4,6 @@ class Api::TwilioController < ApplicationController
   require 'twilio-ruby'
 
   def sms
-    # account_sid = 'ACc80df19422020041afc1f74c3695ebd1'
     account_sid = ENV["NEW_API_KEY"]
     auth_token = ENV["NEW_AUTH_TOKEN"]
     client = Twilio::REST::Client.new(account_sid, auth_token)
