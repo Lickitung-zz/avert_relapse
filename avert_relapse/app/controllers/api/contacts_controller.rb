@@ -5,7 +5,7 @@ class Api::ContactsController < ApplicationController
     @contacts = Contact.all
     
     if current_user
-      @contacts = current_user.accounts[0].contacts
+      @contacts = current_user.account.contacts
       render "index.json.jbuilder"
     else
       render json: []

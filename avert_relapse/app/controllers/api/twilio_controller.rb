@@ -14,7 +14,7 @@ class Api::TwilioController < ApplicationController
     client.messages.create(
     from: from,
     to: to,
-    body: "Hello! This is " + current_user.account.name + ". I'm using an app called Avert Relapse and have pressed the 'HELP' button which means I need help! Please text me back at my phone number which is:" + current_user.accounts[0].phone_number + " // THIS IS A TEST //"
+    body: "Hello! This is " + current_user.account.name + ". I'm using an app called Avert Relapse and have pressed the 'HELP' button which means I need help! Please text me back at my phone number which is:" + current_user.account.phone_number + " // THIS IS A TEST //"
     )
   end
 end
