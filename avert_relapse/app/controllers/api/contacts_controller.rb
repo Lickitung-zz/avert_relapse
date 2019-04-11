@@ -17,7 +17,7 @@ class Api::ContactsController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       phone_number: params[:phone_number],
-      account_id: params[:account_id]
+      account_id: current_user.account.id
     )
     render "show.json.jbuilder"
   end

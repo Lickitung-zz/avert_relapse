@@ -4,11 +4,29 @@
       <router-link to="/logout">Logout</router-link>
     </div>
     <h1>This is the page that loads when logged in</h1>
+    <hr>
+    <p><h3>Contacts: </h3></p>
     <div v-for="contact in contacts">
+      <hr>
       <p>Name: {{ contact.first_name}} {{ contact.last_name }}</p>
+      <p>Phone Number: {{ contact.phone_number }}</p>
+      <p>Email: {{ contact.email }}</p>
+      <p>ID: {{ contact.id }}</p>
+      <p><button v-on:click="deleteContact(contact)">Delete contact</button></p>
+      <hr>
     </div>
     <hr>
-    
+    <h2>Help button: </h2>
+    <button v-on:click="sendHelp()">Help</button>
+    <hr>
+    <h2>Add contact: </h2>
+    <form>
+      <p>First Name <input type=text v-model="newContactFirstName"></p>
+      <p>Last Name <input type=text v-model="newContactLastName"></p>
+      <p>Phone Number <input type=text v-model="newContactPhoneNumber"></p>
+      <p>Email <input type=text v-model="newContactEmail"></p>
+      <button v-on:click="createContact()">Add Contact</button>
+    </form>
   </div>
 </template>
 <script>
@@ -20,7 +38,14 @@ export default {
       message: "Welcome to Avert.relapse!",
       contacts: [],
       loginEmail: "",
-      loginPassword: ""
+      loginPassword: "",
+      help: "",
+      newContactFirstName: "",
+      newContactLastName: "",
+      newContactPhoneNumber: "",
+      newContactEmail: "",
+      // newContactAccountId: User.account.id,
+      errors: []
     };
   },
   created: function() {
@@ -36,6 +61,39 @@ export default {
       console.log('logging in...');
       axios.post('/api/sessions', params).then(response => {
         console.log(response);
+      });
+    },
+    sendHelp: function() {
+      console.log("testing");
+      axios.post("http://55c823cb.ngrok.io/api/twilio/sms").then(response => {
+        console.log(response);
+        console.log("sent text to all contacts");
+      });
+    },
+    createContact: function() {
+      var params = {
+        first_name: this.newContactFirstName,
+        last_name: this.newContactLastName,
+        phone_number: this.newContactPhoneNumber,
+        email: this.newContactEmail
+      };
+      console.log('adding contact...');
+      axios.post("/api/contacts", params).then(
+        response => {
+          console.log(response);
+          this.$router.push("/index");
+        }).catch(error => {
+        console.log("this isn't working.");
+        console.log(error.response.data.errors);
+        this.error = error.response.data.errors;
+      });
+    },
+    deleteContact: function(contact) {
+      console.log("deleting contact...");
+      axios.delete("/api/contacts/" + contact.id).then(response => {
+        var index = this.contacts.indexOf(
+          contact);
+        this.contacts.splice(index, 1);
       });
     }
   }

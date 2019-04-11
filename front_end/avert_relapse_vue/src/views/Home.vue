@@ -26,7 +26,7 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/contacts").then(response => {this.contacts = response.data;
+    axios.get("/").then(response => {this.contacts = response.data;
     });
   },
   methods: {
