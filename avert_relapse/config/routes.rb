@@ -18,8 +18,10 @@ Rails.application.routes.draw do
     delete "/accounts/:id" => "accounts#delete"
 
     get "/contacts" => "contacts#index"
+    get "/contacts/:id" => "contacts#show"
     post "/contacts" => "contacts#create"
     delete "/contacts/:id" => "contacts#delete"
+    patch "/contacts/:id" => "contacts#update"
 
     get "/messages" => "messages#index"
     post "/messages" => "messages#create"

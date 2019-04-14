@@ -12,7 +12,17 @@
       <p>Phone Number: {{ contact.phone_number }}</p>
       <p>Email: {{ contact.email }}</p>
       <p>ID: {{ contact.id }}</p>
+      <!-- delete contact begin -->
       <p><button v-on:click="deleteContact(contact)">Delete contact</button></p>
+     <!--  delete contact end -->
+     <!-- edit contact begin -->
+      <div>
+        First Name: <input type="text" v-model="contact.first_name">
+        Last Name: <input type="text" v-model="contact.last_name">
+        Phone Number: <input type="text" v-model="contact.phone_number">
+        Email: <input type="text" v-model="contact.email">
+        <button v-on:click="editContact(contact)">Update Contact</button>
+      </div>
       <hr>
     </div>
     <hr>
@@ -95,7 +105,18 @@ export default {
           contact);
         this.contacts.splice(index, 1);
       });
-    }
+    },
+    editContact: function(contact) {
+      var params = {
+        first_name: contact.first_name,
+        last_name: contact.last_name,
+        phone_number: contact.phone_number,
+        email: contact.email
+      };
+      axios.patch("/api/contacts/" + contact.id, params).then(response => {
+        this.currentContact = {};
+      });
+    },
   }
 };
 </script>
