@@ -25,10 +25,13 @@
       </div>
       <hr>
     </div>
+    <!-- help button begin -->
     <hr>
-    <h2>Help button: </h2>
+    <h2>Help button</h2>
+    <form>Message: <input type="text" name=""></form>
     <button v-on:click="sendHelp()">Help</button>
     <hr>
+    <!-- help button end -->
     <h2>Add contact: </h2>
     <form>
       <p>First Name <input type=text v-model="newContactFirstName"></p>
@@ -47,6 +50,7 @@ export default {
     return {
       message: "Welcome to Avert.relapse!",
       contacts: [],
+      texts: [],
       loginEmail: "",
       loginPassword: "",
       help: "",
@@ -61,6 +65,8 @@ export default {
   created: function() {
     axios.get("/api/contacts").then(response => {this.contacts = response.data;
     });
+    // axios.get("http://55c823cb.ngrok.io/api/twilio/sms").then(response => {this.texts = response.data;
+    // });
   },
   methods: {
     login: function() {

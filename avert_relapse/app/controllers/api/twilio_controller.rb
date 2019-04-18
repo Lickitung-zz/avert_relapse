@@ -3,6 +3,14 @@ class Api::TwilioController < ApplicationController
 
   require 'twilio-ruby'
 
+
+  def text_body
+    @text_message = "Hello! This is " + current_user.account.name + ". Testing new copy. Please text me back at my phone number which is:" + current_user.account.phone_number + " // THIS IS still a TEST //"
+
+    # render json: {message: @text_message}
+    render "show.json.jbuilder"
+  end
+
   def sms
     account_sid = ENV["NEW_API_KEY"]
     auth_token = ENV["NEW_AUTH_TOKEN"]
@@ -19,7 +27,7 @@ class Api::TwilioController < ApplicationController
         client.messages.create(
         from: from,
         to: to,
-        body: "Hello! This is " + current_user.account.name + ". I'm using an app called Avert Relapse and have pressed the 'HELP' button which means I need help! Please text me back at my phone number which is:" + current_user.account.phone_number + " // THIS IS A TEST //")
+        body: current_user.account.messages)
       end
     end
   end

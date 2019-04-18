@@ -29,5 +29,6 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
 
     post "/twilio/sms" => "twilio#sms"
+    # get "/twilio/sms" => "twilio#text_body"
   end
 end
