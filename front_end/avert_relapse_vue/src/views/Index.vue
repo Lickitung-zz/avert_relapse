@@ -28,7 +28,9 @@
     <!-- help button begin -->
     <hr>
     <h2>Help button</h2>
-    <form v-on:submit.prevent="updateMessage()">Message: <input type="text" name=""></form>
+    <form v-on:submit.prevent="updateMessage()">Message: <input type="text" v-model="messages.messages">
+      <input type="submit" value="Update message">
+    </form>
     <button v-on:click="sendHelp()">Help</button>
     <hr>
     <!-- help button end -->
@@ -50,7 +52,7 @@ export default {
     return {
       message: "Welcome to Avert.relapse!",
       contacts: [],
-      messages: [],
+      messages: "",
       loginEmail: "",
       loginPassword: "",
       help: "",
@@ -66,8 +68,8 @@ export default {
     axios.get("/api/contacts").then(response => {this.contacts = response.data;
     });
     axios.get("http://55c823cb.ngrok.io/api/twilio/sms").then(response => {
-      this.texts = response.data;
-    })
+      this.messages = response.data;
+    });    
     // axios.get("http://55c823cb.ngrok.io/api/twilio/sms").then(response => {this.texts = response.data;
     // });
   },
@@ -129,11 +131,13 @@ export default {
     updateMessage: function() {
       console.log('updating the message...');
       var params = {
-        message: this.messages
+        messages: this.messages
       };
       console.log(params);
 
-      axios.post("/api/")
+      axios.post("http://55c823cb.ngrok.io/api/twilio/sms_update", params).then(response => {
+        console.log(response);
+      });
     }
   }
 };
