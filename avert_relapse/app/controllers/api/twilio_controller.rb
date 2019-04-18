@@ -9,6 +9,23 @@ class Api::TwilioController < ApplicationController
     render json: {message: @text_message}
   end
 
+  def update_text_body
+    # @text_message = current_user.account.messages
+    # # @text_message = params[:messages] || @text_message
+    # # current_user.account.messages.save
+    # current_user.account.messages = params[:messages]
+    # p "current_user.account.messages"
+    # p current_user.account.save
+    # p "params[:messages]"
+    # p params[:messages]
+    # render json: {message: @text_message}
+
+    account = current_user.account
+    account.messages = params[:messages]
+    account.save
+    render json: {message: current_user.account.messages}
+  end
+
   def sms
     account_sid = ENV["NEW_API_KEY"]
     auth_token = ENV["NEW_AUTH_TOKEN"]

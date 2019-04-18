@@ -30,5 +30,6 @@ Rails.application.routes.draw do
 
     post "/twilio/sms" => "twilio#sms"
     get "/twilio/sms" => "twilio#text_body"
+    post "/twilio/sms_update" => "twilio#update_text_body"
   end
 end

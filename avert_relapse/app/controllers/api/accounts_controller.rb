@@ -11,9 +11,10 @@ class Api::AccountsController < ApplicationController
       @account = Account.create(
       name: params[:name],
       phone_number: params[:phone_number],
+      messages: params[:messages],
       user_id: params[:user_id]
     )
-    render "show.json.jbuilder"
+      render "show.json.jbuilder"
     else
       render json: {message: "Login to create account."}
     end
