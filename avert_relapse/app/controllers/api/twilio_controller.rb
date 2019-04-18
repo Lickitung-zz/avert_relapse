@@ -5,10 +5,8 @@ class Api::TwilioController < ApplicationController
 
 
   def text_body
-    @text_message = "Hello! This is " + current_user.account.name + ". Testing new copy. Please text me back at my phone number which is:" + current_user.account.phone_number + " // THIS IS still a TEST //"
-
-    # render json: {message: @text_message}
-    render "show.json.jbuilder"
+    @text_message = current_user.account.messages
+    render json: {message: @text_message}
   end
 
   def sms
