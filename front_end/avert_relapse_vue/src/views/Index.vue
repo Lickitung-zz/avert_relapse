@@ -28,11 +28,12 @@
     <!-- help button begin -->
     <hr>
     <h2>Help button</h2>
-    <form v-on:submit.prevent="updateMessage()">Message: <input type="text" v-model="messages.messages">
-      <input type="submit" value="Update message">
-    </form>
-    <button v-on:click="sendHelp()">Help</button>
-    <hr>
+    <div v-for="message in messages">
+      <p>Message: {{ messages.help_message }}</p><input type="text" v-model="messages.help_message">
+        <button v-on:click="updateMessage()">Update Message</button>
+      <button v-on:click="sendHelp()">Help</button>
+      <hr>
+    </div>
     <!-- help button end -->
     <h2>Add contact: </h2>
     <form>
@@ -60,6 +61,7 @@ export default {
       newContactLastName: "",
       newContactPhoneNumber: "",
       newContactEmail: "",
+      newMessage: "",
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -67,10 +69,10 @@ export default {
   created: function() {
     axios.get("/api/contacts").then(response => {this.contacts = response.data;
     });
-    axios.get("http://55c823cb.ngrok.io/api/twilio/sms").then(response => {
+    axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
     });    
-    // axios.get("http://55c823cb.ngrok.io/api/twilio/sms").then(response => {this.texts = response.data;
+    // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });
   },
   methods: {
@@ -85,8 +87,8 @@ export default {
       });
     },
     sendHelp: function() {
-      console.log("testing");
-      axios.post("http://55c823cb.ngrok.io/api/twilio/sms").then(response => {
+      console.log("sending help to all contacts...");
+      axios.post("http://localhost:3000/api/twilio/sms").then(response => {
         console.log(response);
         console.log("sent text to all contacts");
       });
@@ -125,18 +127,17 @@ export default {
         email: contact.email
       };
       axios.patch("/api/contacts/" + contact.id, params).then(response => {
-        this.currentContact = {};
+        console.log(response);
       });
     },
     updateMessage: function() {
-      console.log('updating the message...');
       var params = {
-        messages: this.messages
+        messages: this.messages.help_message
       };
-      console.log(params);
+      console.log('updating the message...');
 
-      axios.post("http://55c823cb.ngrok.io/api/twilio/sms_update", params).then(response => {
-        console.log(response);
+      axios.post("/api/twilio/sms_update", params).then(response => {
+          console.log(response);
       });
     }
   }

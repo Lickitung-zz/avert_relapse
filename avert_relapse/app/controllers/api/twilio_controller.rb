@@ -6,7 +6,7 @@ class Api::TwilioController < ApplicationController
 
   def text_body
     @text_message = current_user.account.messages
-    render json: {message: @text_message}
+    render json: {help_message: @text_message}
   end
 
   def update_text_body
@@ -27,8 +27,8 @@ class Api::TwilioController < ApplicationController
   end
 
   def sms
-    account_sid = ENV["NEW_API_KEY"]
-    auth_token = ENV["NEW_AUTH_TOKEN"]
+    account_sid = ENV["Account_SID"]
+    auth_token = ENV["Auth_Token"]
     client = Twilio::REST::Client.new(account_sid, auth_token)
 
     from = '+17372042024' # My Twilio number
