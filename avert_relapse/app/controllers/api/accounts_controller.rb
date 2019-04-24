@@ -1,5 +1,5 @@
 class Api::AccountsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :delete]
+  before_action :authenticate_user, except: [:index, :delete, :create]
 
   def index
     @accounts = Account.all
@@ -7,17 +7,17 @@ class Api::AccountsController < ApplicationController
   end
 
   def create
-    if current_user
-      @account = Account.create(
+    # if current_user
+      @account = Account.create!(
       name: params[:name],
       phone_number: params[:phone_number],
       messages: params[:messages],
       user_id: params[:user_id]
     )
       render "show.json.jbuilder"
-    else
-      render json: {message: "Login to create account."}
-    end
+    # else
+    #   render json: {message: "Login to create account."}
+    # end
   end
 
   def delete

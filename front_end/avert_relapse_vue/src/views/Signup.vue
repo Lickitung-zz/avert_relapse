@@ -26,6 +26,10 @@
           <label>Password confirmation: </label>
           <input type="password" class="form-control" v-model="passwordConfirmation">
         </div>
+        <div class="form-group">
+          <label>User ID: </label>
+          <input type="user_id" class="form-control" v-model="user_id">
+        </div>
         <input type="submit" class="btn btn-primary" value="Submit">
       </form>
     </div>
@@ -43,12 +47,14 @@ export default {
       password: "",
       passwordConfirmation: "",
       phoneNumber: "",
+      user_id: "",
       errors: []
     };
   },
   methods: {
     submit: function() {
       var params = {
+        user_id: this.user_id,
         name: this.name,
         email: this.email,
         password: this.password,
@@ -58,10 +64,15 @@ export default {
       axios
         .post("/api/users", params)
         .then(response => {
-          this.$router.push("/login");
+          console.log(response);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
+        });
+      axios
+        .post('/api/accounts', params)
+        .then(response => {
+          this.$router.push("/login");
         });
     }
   }
