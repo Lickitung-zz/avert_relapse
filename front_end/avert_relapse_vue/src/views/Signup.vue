@@ -42,6 +42,7 @@ export default {
       email: "",
       password: "",
       passwordConfirmation: "",
+      phoneNumber: "",
       errors: []
     };
   },
@@ -51,6 +52,7 @@ export default {
         name: this.name,
         email: this.email,
         password: this.password,
+        phone_number: this.phone_number,
         password_confirmation: this.passwordConfirmation
       };
       axios
