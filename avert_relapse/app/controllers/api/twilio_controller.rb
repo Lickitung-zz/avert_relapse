@@ -27,8 +27,8 @@ class Api::TwilioController < ApplicationController
   end
 
   def sms
-    account_sid = 'ACad6987847150150e3c975ecd8f7460b0'
-    auth_token = 'e507f73f071f69d73c4e868279471c04'
+    account_sid = ENV["account_sid"]
+    auth_token = ENV["auth_token"]
     client = Twilio::REST::Client.new(account_sid, auth_token)
 
     from = '+17372042024' # My Twilio number
