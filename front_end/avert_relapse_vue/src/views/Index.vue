@@ -5,26 +5,6 @@
     </div>
     <h1>This is the page that loads when logged in</h1>
     <hr>
-    <p><h3>Contacts: </h3></p>
-    <div v-for="contact in contacts">
-      <hr>
-      <p>Name: {{ contact.first_name}} {{ contact.last_name }}</p>
-      <p>Phone Number: {{ contact.phone_number }}</p>
-      <p>Email: {{ contact.email }}</p>
-      <p>ID: {{ contact.id }}</p>
-      <!-- delete contact begin -->
-      <p><button v-on:click="deleteContact(contact)">Delete contact</button></p>
-     <!--  delete contact end -->
-     <!-- edit contact begin -->
-      <div>
-        First Name: <input type="text" v-model="contact.first_name">
-        Last Name: <input type="text" v-model="contact.last_name">
-        Phone Number: <input type="text" v-model="contact.phone_number">
-        Email: <input type="text" v-model="contact.email">
-        <button v-on:click="editContact(contact)">Update Contact</button>
-      </div>
-      <hr>
-    </div>
     <!-- help button begin -->
     <hr>
     <h2>Help button</h2>
@@ -35,15 +15,19 @@
       <hr>
     </div>
     <!-- help button end -->
-    <h2>Add contact: </h2>
+
+    <!-- add contact begin -->
+
+<!--     <h2>Add contact: </h2>
     <form>
       <p>First Name <input type=text v-model="newContactFirstName"></p>
       <p>Last Name <input type=text v-model="newContactLastName"></p>
       <p>Phone Number <input type=text v-model="newContactPhoneNumber"></p>
       <p>Email <input type=text v-model="newContactEmail"></p>
       <button v-on:click="createContact()">Add Contact</button>
-    </form>
+    </form> -->
 
+    <!-- add contact end -->
 
     <!-- begin new template here -->
 
@@ -60,7 +44,6 @@
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.html">My Newsfeed</a></div></li>
-              <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.html">People Nearby</a></div></li>
               <li><i class="icon ion-ios-people-outline"></i><div><a href="/friends">Friends</a></div></li>
               <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.html">Messages</a></div></li>
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
