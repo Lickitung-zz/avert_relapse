@@ -31,29 +31,79 @@
                   <p class="text-muted">The only app that allows addicts to connect with other addicts.</p>
                   
                   <!--Register Form-->
-                  <form name="registration_form" id='registration_form' class="form-inline">
+
+                  <!-- <div class="signup">
+                    <div class="container">
+                      <form v-on:submit.prevent="submit()">
+                        <h1>Signup</h1>
+                        <ul>
+                          <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                        </ul>
+                        <div class="form-group">
+                          <label>Account Name: </label> 
+                          <input type="text" class="form-control" v-model="name">
+                        </div>
+                        <div class="form-group">
+                          <label>Email: </label>
+                          <input type="email" class="form-control" v-model="email">
+                        </div>
+                        <div class="form-group">
+                          <label>Phone Number: </label> 
+                          <input type="text" class="form-control" v-model="phoneNumber">
+                        </div>
+                        <div class="form-group">
+                          <label>Password: </label>
+                          <input type="password" class="form-control" v-model="password">
+                        </div>
+                        <div class="form-group">
+                          <label>Password confirmation: </label>
+                          <input type="password" class="form-control" v-model="passwordConfirmation">
+                        </div>
+                        <div class="form-group">
+                          <label>User ID: </label>
+                          <input type="user_id" class="form-control" v-model="user_id">
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                      </form>
+                    </div>
+                  </div> -->
+
+                  <div class="signup">
+                  <form  v-on:submit.prevent="submit()">
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="name" class="sr-only">Name</label>
-                        <input id="name" class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="Name"/>
+                        <input class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="Name" v-model="name"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="email" class="sr-only">Email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email"/>
+                        <input class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email" v-model="email"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="phoneNumber" class="sr-only">Phone Number</label>
+                        <input class="form-control input-group-lg" type="text" name="Phone Number" title="Enter Phone Number" placeholder="Your Phone Number" v-model="phoneNumber"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="password" class="sr-only">Password</label>
-                        <input id="password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
+                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" v-model="password"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="password" class="sr-only">Password Confirmation</label>
-                        <input id="password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password Confirmation"/>
+                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password Confirmation" v-model="passwordConfirmation"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="userId" class="sr-only">User ID</label>
+                        <input class="form-control input-group-lg" type="userId" name="userId" title="Enter User ID" placeholder="User ID" v-model="user_id"/>
                       </div>
                     </div>
                     <!-- <div class="row">
@@ -401,9 +451,11 @@
                         </select>
                       </div>
                     </div> -->
+                    <p><a href="#">Already have an account?</a></p>
+                  <button class="btn btn-primary" type="submit" value="Submit">Register Now</button>
                   </form><!--Register Now Form Ends-->
-                  <p><a href="#">Already have an account?</a></p>
-                  <button class="btn btn-primary">Register Now</button>
+                  </div>
+                  
                 </div><!--Registration Form Contents Ends-->
 
                 <!--Login-->
@@ -472,25 +524,42 @@ export default {
   data: function() {
     return {
       message: "Welcome to Avert.relapse!",
-      contacts: [],
-      loginEmail: "",
-      loginPassword: ""
+      name: "",
+      email: "",
+      password: "",
+      passwordConfirmation: "",
+      phoneNumber: "",
+      user_id: "",
+      errors: []
     };
   },
-  created: function() {
-    axios.get("/").then(response => {this.contacts = response.data;
-    });
-  },
+  // created: function() {
+  //   axios.get("/").then(response => {this.contacts = response.data;
+  //   });
+  // },
   methods: {
-    login: function() {
+    submit: function() {
       var params = {
-        email: this.loginEmail,
-        password: this.loginPassword
+        user_id: this.user_id,
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        phone_number: this.phone_number,
+        password_confirmation: this.passwordConfirmation
       };
-      console.log('logging in...');
-      axios.post('/api/sessions', params).then(response => {
-        console.log(response);
-      });
+      axios
+        .post("/api/users", params)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          this.errors = error.response.data.errors;
+        });
+      axios
+        .post('/api/accounts', params)
+        .then(response => {
+          this.$router.push("/login");
+        });
     }
   }
 };
