@@ -66,7 +66,7 @@
             <!-- Friend List
             ================================================= -->
             <div class="friend-list">
-            	<p><h3>Contacts: </h3></p>
+            	<p><h3>Friends: </h3></p>
 			    <div v-for="contact in contacts">
 			      <hr>
 			      <p>Name: {{ contact.first_name}} {{ contact.last_name }}</p>
@@ -85,7 +85,7 @@
 			        <button v-on:click="editContact(contact)">Update Contact</button>
 			      </div>
 			      <hr>
-			    </div>
+			    
             	<div class="row">
             		<div class="col-md-6 col-sm-6">
                   <div class="friend-card">
@@ -94,115 +94,14 @@
                       <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Sophia Lee</a></h5>
-                      	<p>Student at Harvard</p>
+                      	<h5><a href="timeline.html" class="profile-link">{{ contact.first_name}} {{ contact.last_name }}</a></h5>
+                      	<p>{{ contact.email }}</p>
                       </div>
                     </div>
                   </div>
                 </div>
-            		<div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">John Doe</a></h5>
-                      	<p>Traveler</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="timeline.html" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="#" class="profile-link">Julia Cox</a></h5>
-                      	<p>Art Designer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timelime.html" class="profile-link">Robert Cook</a></h5>
-                      	<p>Photographer at Photography</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Richard Bell</a></h5>
-                      	<p>Graphic Designer at Envato</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Linda Lohan</a></h5>
-                      	<p>Software Engineer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Anna Young</a></h5>
-                      	<p>Musician</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">James Carter</a></h5>
-                      	<p>CEO at IT Farm</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
-                      <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
-                      	<h5><a href="timeline.html" class="profile-link">Alexis Clark</a></h5>
-                      	<p>Traveler</p>
-                      </div>
-                    </div>
-                  </div>
+                <!-- div right above is end div for v-for:contacts -->
                 </div>
             	</div>
             </div>
@@ -255,3 +154,102 @@
     </div>
   	</div>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data: function() {
+    return {
+      message: "Welcome to Avert.relapse!",
+      contacts: [],
+      messages: "",
+      loginEmail: "",
+      loginPassword: "",
+      help: "",
+      newContactFirstName: "",
+      newContactLastName: "",
+      newContactPhoneNumber: "",
+      newContactEmail: "",
+      newMessage: "",
+      // newContactAccountId: User.account.id,
+      errors: []
+    };
+  },
+  created: function() {
+    axios.get("/api/contacts").then(response => {this.contacts = response.data;
+    });
+    axios.get("/api/twilio/sms").then(response => {
+      this.messages = response.data;
+    });    
+    // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
+    // });
+  },
+  methods: {
+    login: function() {
+      var params = {
+        email: this.loginEmail,
+        password: this.loginPassword
+      };
+      console.log('logging in...');
+      axios.post('/api/sessions', params).then(response => {
+        console.log(response);
+      });
+    },
+    sendHelp: function() {
+      console.log("sending help to all contacts...");
+      axios.post("http://localhost:3000/api/twilio/sms").then(response => {
+        console.log(response);
+        console.log("sent text to all contacts");
+      });
+    },
+    createContact: function() {
+      var params = {
+        first_name: this.newContactFirstName,
+        last_name: this.newContactLastName,
+        phone_number: this.newContactPhoneNumber,
+        email: this.newContactEmail
+      };
+      console.log('adding contact...');
+      axios.post("/api/contacts", params).then(
+        response => {
+          console.log(response);
+          this.$router.push("/index");
+        }).catch(error => {
+        console.log("this isn't working.");
+        console.log(error.response.data.errors);
+        this.error = error.response.data.errors;
+      });
+    },
+    deleteContact: function(contact) {
+      console.log("deleting contact...");
+      axios.delete("/api/contacts/" + contact.id).then(response => {
+        var index = this.contacts.indexOf(
+          contact);
+        this.contacts.splice(index, 1);
+      });
+    },
+    editContact: function(contact) {
+      var params = {
+        first_name: contact.first_name,
+        last_name: contact.last_name,
+        phone_number: contact.phone_number,
+        email: contact.email
+      };
+      axios.patch("/api/contacts/" + contact.id, params).then(response => {
+        console.log(response);
+      });
+    },
+    updateMessage: function() {
+      var params = {
+        messages: this.messages.help_message
+      };
+      console.log('updating the message...');
+
+      axios.post("/api/twilio/sms_update", params).then(response => {
+          console.log(response);
+      });
+    }
+  }
+};
+</script>
