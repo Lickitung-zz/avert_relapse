@@ -10,7 +10,7 @@
             <div class="intro-texts">
               <h1 class="text-white">Welcome to Avert Relapse</h1>
               <p>Built by an addict, for addicts.</p>
-              <button class="btn btn-primary">Learn More</button>
+              <a href="/about"><button class="btn btn-primary">Learn More</button></a>
             </div>
           </div>
           <div class="col-sm-6 col-sm-offset-1">
@@ -461,25 +461,26 @@
                 <!--Login-->
                 <div class="tab-pane" id="login">
                   <h3>Login</h3>
-                  <p class="text-muted">Log into your account</p>
+                  <p class="text-muted">Login to your account</p>
                   
                   <!--Login Form-->
-                  <form name="Login_form" id='Login_form'>
+                  <form v-on:submit.prevent="submit()" name="Login_form" id='Login_form'>
                      <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="my-email" class="sr-only">Email</label>
-                        <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email"/>
+                        <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email" v-model="email"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="my-password" class="sr-only">Password</label>
-                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
+                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" v-model="password"/>
                       </div>
+                      <input type="submit" class="btn btn-primary" value="Login">
                     </div>
                   </form><!--Login Form Ends--> 
                   <p><a href="#">Forgot Password?</a></p>
-                  <button class="btn btn-primary">Login Now</button>
+                  
                 </div>
               </div>
             </div>
@@ -559,6 +560,19 @@ export default {
         .post('/api/accounts', params)
         .then(response => {
           this.$router.push("/login");
+        });
+      axios
+        .post("/api/sessions", params)
+        .then(response => {
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          this.$router.push("/index");
+        })
+        .catch(error => {
+          this.errors = ["Invalid email or password."];
+          this.email = "";
+          this.password = "";
         });
     }
   }
