@@ -27,19 +27,15 @@
               <!--Registration Form Contents-->
               <div class="tab-content">
                 <div class="tab-pane active" id="register">
-                  <h3>Register Now !!!</h3>
-                  <p class="text-muted">Be cool and join today. Meet millions</p>
+                  <h3>Register to Avert Relapse</h3>
+                  <p class="text-muted">The only app that allows addicts to connect with other addicts.</p>
                   
                   <!--Register Form-->
                   <form name="registration_form" id='registration_form' class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="firstname" class="sr-only">First Name</label>
-                        <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name"/>
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="lastname" class="sr-only">Last Name</label>
-                        <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name"/>
+                        <label for="name" class="sr-only">Name</label>
+                        <input id="name" class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="Name"/>
                       </div>
                     </div>
                     <div class="row">
@@ -55,6 +51,12 @@
                       </div>
                     </div>
                     <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="password" class="sr-only">Password Confirmation</label>
+                        <input id="password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password Confirmation"/>
+                      </div>
+                    </div>
+                    <!-- <div class="row">
                       <p class="birth"><strong>Date of Birth</strong></p>
                       <div class="form-group col-sm-3 col-xs-6">
                         <label for="month" class="sr-only"></label>
@@ -398,7 +400,7 @@
                           <option value="ZWE">Zimbabwe</option>
                         </select>
                       </div>
-                    </div>
+                    </div> -->
                   </form><!--Register Now Form Ends-->
                   <p><a href="#">Already have an account?</a></p>
                   <button class="btn btn-primary">Register Now</button>
