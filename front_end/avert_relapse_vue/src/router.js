@@ -4,6 +4,7 @@ import Home from './views/Home.vue';
 import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
+import Friends from "./views/Friends.vue"
 
 Vue.use(Router);
 
@@ -39,12 +40,18 @@ export default new Router({
       name: 'index',
       component: () => import('./views/Index.vue')
     },
-    { 
-      path: "/signup", name: "signup", component: Signup 
+    // {
+    //   path: '/friends',
+    //   name: 'friends',
+    //   component: () => import('./views/Friends.vue')
+    // },
+    { path: "/signup", name: "signup", component: Signup 
     },
     { path: "/login", name: "login", component: Login 
     },
     { path: "/logout", name: "logout", component: Logout 
+    },
+    { path: "/friends", name: "friends", component: Friends 
     }
   ]
 });
