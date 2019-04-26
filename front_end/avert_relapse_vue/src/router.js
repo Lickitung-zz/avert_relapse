@@ -10,6 +10,7 @@ import Help from "./views/Help.vue";
 import Settings from "./views/Settings.vue";
 import SettingsHelp from "./views/SettingsHelp.vue";
 import AddFriend from "./views/AddFriend.vue";
+import TimelineAbout from "./views/TimelineAbout.vue";
 
 Vue.use(Router);
 
@@ -54,6 +55,11 @@ export default new Router({
       path: '/friends-new',
       name: 'newFriend',
       component: () => import('./views/AddFriend.vue')
+    },
+    {
+      path: '/timeline-about',
+      name: 'timelineAbout',
+      component: () => import('./views/TimelineAbout.vue')
     },
     // {
     //   path: '/friends',

@@ -14,7 +14,7 @@
             <div class="profile-card">
               <div v-for="account in accounts">
                 <img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
-                <h5><a href="timeline.html" class="text-white">{{ accounts.name }}</a></h5>
+                <h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
               </div>
             </div><!--profile card ends-->
