@@ -100,12 +100,12 @@
                         <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password Confirmation" v-model="passwordConfirmation"/>
                       </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="userId" class="sr-only">User ID</label>
                         <input class="form-control input-group-lg" type="userId" name="userId" title="Enter User ID" placeholder="User ID" v-model="user_id"/>
                       </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="row">
                       <p class="birth"><strong>Date of Birth</strong></p>
                       <div class="form-group col-sm-3 col-xs-6">

@@ -13,11 +13,11 @@ class Api::AccountsController < ApplicationController
 
   def create
     # if current_user
-      @account = Account.create!(
+      @account = Account.create(
       name: params[:name],
       phone_number: params[:phone_number],
       messages: params[:messages],
-      user_id: params[:user_id]
+      user_id: current_user.id
     )
       render "show.json.jbuilder"
     # else
