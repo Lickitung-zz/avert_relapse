@@ -9,6 +9,7 @@ import Update from "./views/Update.vue";
 import Help from "./views/Help.vue";
 import Settings from "./views/Settings.vue";
 import SettingsHelp from "./views/SettingsHelp.vue";
+import AddFriend from "./views/AddFriend.vue";
 
 Vue.use(Router);
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/index',
       name: 'index',
       component: () => import('./views/Index.vue')
+    },
+    {
+      path: '/friends-new',
+      name: 'newFriend',
+      component: () => import('./views/AddFriend.vue')
     },
     // {
     //   path: '/friends',

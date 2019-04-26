@@ -45,16 +45,7 @@
             <div class="create-post">
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
-                  <div class="form-group">
-                    <h4>Add friend</h4>
-                      <form>
-                        <p>First Name <input type=text v-model="newContactFirstName"></p>
-                        <p>Last Name <input type=text v-model="newContactLastName"></p>
-                        <p>Phone Number <input type=text v-model="newContactPhoneNumber"></p>
-                        <p>Email <input type=text v-model="newContactEmail"></p>
-                        <button v-on:click="createContact()">Add Friend</button>
-                      </form>
-                  </div>
+                  <a href="/friends-new">Add New Friend?</a>
                 </div>
             	</div>
             </div><!-- Post Create Box End -->
