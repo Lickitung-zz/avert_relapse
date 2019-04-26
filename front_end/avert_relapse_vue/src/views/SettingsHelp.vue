@@ -17,7 +17,9 @@
               <div class="col-md-3">
                 <div class="profile-info">
                   <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-                  <h3>Sarah Cruiz</h3>
+                  	<div v-for="account in accounts">
+                  		<h3>{{ accounts.name }}</h3>
+              		</div>
                   <p class="text-muted">Creative Director</p>
                 </div>
               </div>
@@ -40,7 +42,9 @@
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
+              	<div v-for="account in accounts">
+                 <h3>{{ accounts.name }}</h3>
+              	</div>
               <p class="text-muted">Creative Director</p>
             </div>
             <div class="mobile-menu">
@@ -61,8 +65,7 @@
               
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li class="icon ion-ios-information-outline"><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Basic Information</a></li>
-              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.html">Education and Work</a></li>
+              	<li class="icon ion-ios-information-outline"></i><a href="/settings">Basic Information</a></li>
               	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-basic.html">Customize Help Message</a></li>
                 <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Account Settings</a></li>
               	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Change Password</a></li>
@@ -240,26 +243,3 @@ export default {
   }
 };
 </script>
-
-<!-- Post Create Box
-            ================================================= -->
-            <div class="create-post">
-              <div class="row">
-                <div class="col-md-7 col-sm-7">
-                  <div class="form-group">
-                    <h3>Customize help message:</h3>
-                    <div v-for="message in messages">
-			
-				      
-				      <hr>
-				    </div>
-                    <textarea v-model="messages.help_message" name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
-                  </div>
-                </div>
-                <div class="col-md-5 col-sm-5">
-                  <div class="tools">
-                    <button  class="btn btn-primary pull-right">Save help message</button>
-                  </div>
-                </div>
-              </div>
-            </div><!-- Post Create Box End-->
