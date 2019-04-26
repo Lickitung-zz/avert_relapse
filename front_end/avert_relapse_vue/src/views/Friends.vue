@@ -53,17 +53,7 @@
             <!-- Friend List
             ================================================= -->
             <div class="friend-list">
-            	<p><h3>Friends: </h3></p>
 			    <div v-for="contact in contacts">
-			      <hr>
-			      <p>Name: {{ contact.first_name}} {{ contact.last_name }}</p>
-			      <p>Phone Number: {{ contact.phone_number }}</p>
-			      <p>Email: {{ contact.email }}</p>
-			      <p>ID: {{ contact.id }}</p>
-			      <!-- delete contact begin -->
-			      <p><button v-on:click="deleteContact(contact)">Delete contact</button></p>
-			     <!--  delete contact end -->
-			     <!-- edit contact begin -->
 			      <div>
 			        First Name: <input type="text" v-model="contact.first_name">
 			        Last Name: <input type="text" v-model="contact.last_name">
