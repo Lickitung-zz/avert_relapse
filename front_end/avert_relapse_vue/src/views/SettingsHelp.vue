@@ -1,57 +1,140 @@
 <template>
-  <div class="settings">
-    <h1>This is the settings page</h1>
+  <div class="settingsHelp">
+    <h1>This is the customize help message page</h1>
     <br>
     <br>
     <br>
 <div class="container">
-        <div class="row">
 
-          <!-- Newsfeed Common Side Bar Left
-          ================================================= -->
-          <div class="col-md-3 static">
-            <div class="profile-card">
-              <div v-for="account in accounts">
-                <img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
-                <h5><a href="timeline.html" class="text-white">{{ accounts.name }}</a></h5>
-                <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+      <!-- Timeline
+      ================================================= -->
+      <div class="timeline">
+        <div class="timeline-cover">
+
+          <!--Timeline Menu for Large Screens-->
+          <div class="timeline-nav-bar hidden-sm hidden-xs">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="profile-info">
+                  <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
+                  <h3>Sarah Cruiz</h3>
+                  <p class="text-muted">Creative Director</p>
+                </div>
               </div>
-            </div><!--profile card ends-->
-            <ul class="nav-news-feed">
-              <li><i class="icon ion-ios-people-outline"></i><div><a href="/friends">Account Info</a></div></li>
-              <li><i class="icon ion-chatboxes"></i><div><a href="/settings/help">Help Message config</a></div></li>
-              <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
-              <li></i><div><a href="newsfeed-videos.html">Delete Account</a></div></li>
-            </ul><!--news-feed links ends-->
+              <div class="col-md-9">
+                <ul class="list-inline profile-menu">
+                  <li><a href="timeline.html">Timeline</a></li>
+                  <li><a href="timeline-about.html" class="active">About</a></li>
+                  <li><a href="timeline-album.html">Album</a></li>
+                  <li><a href="timeline-friends.html">Friends</a></li>
+                </ul>
+                <ul class="follow-me list-inline">
+                  <li>1,299 people following her</li>
+                  <li><button class="btn-primary">Add Friend</button></li>
+                </ul>
+              </div>
+            </div>
+          </div><!--Timeline Menu for Large Screens End-->
+
+          <!--Timeline Menu for Small Screens-->
+          <div class="navbar-mobile hidden-lg hidden-md">
+            <div class="profile-info">
+              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
+              <h4>Sarah Cruiz</h4>
+              <p class="text-muted">Creative Director</p>
+            </div>
+            <div class="mobile-menu">
+              <ul class="list-inline">
+                <li><a href="timline.html">Timeline</a></li>
+                <li><a href="timeline-about.html" class="active">About</a></li>
+                <li><a href="timeline-album.html">Album</a></li>
+                <li><a href="timeline-friends.html">Friends</a></li>
+              </ul>
+              <button class="btn-primary">Add Friend</button>
+            </div>
+          </div><!--Timeline Menu for Small Screens End-->
+
+        </div>
+        <div id="page-contents">
+          <div class="row">
+            <div class="col-md-3">
+              
+              <!--Edit Profile Menu-->
+              <ul class="edit-menu">
+              	<li class="icon ion-ios-information-outline"><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Basic Information</a></li>
+              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.html">Education and Work</a></li>
+              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-basic.html">Customize Help Message</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Account Settings</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Change Password</a></li>
+              </ul>
+            </div>
+            <div class="col-md-7">
+
+              <!-- Basic Information
+              ================================================= -->
+              <div class="edit-profile-container">
+                <div class="block-title">
+                  <h4 class="grey"><i class="icon ion-android-checkmark-circle"></i>Customize Help Message</h4>
+                  <div class="line"></div>
+                  <p>You can customize the "Help!" message here, so that when the "Help!" button is pressed, your customized message will be sent to all of your friends.</p>
+                  <div class="line"></div>
+                </div>
+                <div class="edit-block">
+                  <form name="basic-info" id="basic-info" class="form-inline">
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <p><label for="email">Help Message</label></p>
+                        <p><div class="form-group">
+		                    <div v-for="message in messages">
+					
+						      
+						      
+						    </div>
+		                    <textarea v-model="messages.help_message" name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
+                  		</div></p>
+                      
+                      </div>
+                    </div>
+                    <button v-on:click="updateMessage()" class="btn btn-primary">Save Changes</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 static">
+              
+              <!--Sticky Timeline Activity Sidebar-->
+              <div id="sticky-sidebar">
+                <h4 class="grey">Sarah's activity</h4>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
+                    <p class="text-muted">5 mins ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
+                    <p class="text-muted">an hour ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
+                    <p class="text-muted">4 hours ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
+                    <p class="text-muted">a day ago</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          <!-- Post Create Box
-            ================================================= -->
-            <div class="create-post">
-              <div class="row">
-                <div class="col-md-7 col-sm-7">
-                  <div class="form-group">
-                    <h3>Customize help message:</h3>
-                    <div v-for="message in messages">
-			
-				      
-				      <hr>
-				    </div>
-                    <textarea v-model="messages.help_message" name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
-                  </div>
-                </div>
-                <div class="col-md-5 col-sm-5">
-                  <div class="tools">
-                    <button v-on:click="updateMessage()" class="btn btn-primary pull-right">Save help message</button>
-                  </div>
-                </div>
-              </div>
-            </div><!-- Post Create Box End-->
-
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -157,3 +240,26 @@ export default {
   }
 };
 </script>
+
+<!-- Post Create Box
+            ================================================= -->
+            <div class="create-post">
+              <div class="row">
+                <div class="col-md-7 col-sm-7">
+                  <div class="form-group">
+                    <h3>Customize help message:</h3>
+                    <div v-for="message in messages">
+			
+				      
+				      <hr>
+				    </div>
+                    <textarea v-model="messages.help_message" name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-5 col-sm-5">
+                  <div class="tools">
+                    <button  class="btn btn-primary pull-right">Save help message</button>
+                  </div>
+                </div>
+              </div>
+            </div><!-- Post Create Box End-->
