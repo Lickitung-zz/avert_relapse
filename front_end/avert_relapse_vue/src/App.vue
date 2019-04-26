@@ -26,11 +26,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="HTML/images/down-arrow.png" alt="" /></span></a>
-                <ul class="dropdown-menu newsfeed-home">
-                  <li><a href="index.html">Landing Page 1</a></li>
-                  <li><a href="index-register.html">Landing Page 2</a></li>
-                </ul>
+                <a href="/index" role="button" aria-haspopup="true" aria-expanded="false">Home <span></span></a>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="HTML/images/down-arrow.png" alt="" /></span></a>
@@ -58,7 +54,10 @@
                 </ul>
               </li>
               <!-- if logged in navbar begin -->
-              <li class="dropdown"><a v-if="is_logged_in === true">
+              <li class="dropdown"><a style="color:red" v-if="is_logged_in === true">
+                <router-link to="/help">Help</router-link>
+              </a></li>
+              <li class="dropdown"><a style="color:red" v-if="is_logged_in === true">
                 <router-link to="/logout">Logout</router-link>
               </a></li>
               <!-- if logged in navbar end -->
