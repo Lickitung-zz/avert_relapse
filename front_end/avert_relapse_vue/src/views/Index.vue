@@ -1,23 +1,10 @@
 <template>
   <div class="index">
-    <div id="nav">
-      <router-link to="/logout">Logout</router-link>
-      <li class="dropdown"><a href="contact.html">Logout</a></li>
-    </div>
-    <!-- help button begin -->
-    <hr>
-    <h2>Help button</h2>
-    <div v-for="message in messages">
-      <p>Message: {{ messages.help_message }}</p><input type="text" v-model="messages.help_message">
-        <button v-on:click="updateMessage()">Update Message</button>
-      <button v-on:click="sendHelp()">Help</button>
-      <hr>
-    </div>
-    <!-- help button end -->
-    
-
     <!-- begin new template here -->
-
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="container">
         <div class="row">
 
