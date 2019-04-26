@@ -6,6 +6,11 @@ class Api::AccountsController < ApplicationController
     render "index.json.jbuilder"
   end
 
+  def show_current_account
+    @account = Account.all
+    render json: {name: current_user.account.name}
+  end
+
   def create
     # if current_user
       @account = Account.create!(

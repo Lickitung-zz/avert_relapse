@@ -16,19 +16,6 @@
     </div>
     <!-- help button end -->
 
-    <!-- add contact begin -->
-
-<!--     <h2>Add contact: </h2>
-    <form>
-      <p>First Name <input type=text v-model="newContactFirstName"></p>
-      <p>Last Name <input type=text v-model="newContactLastName"></p>
-      <p>Phone Number <input type=text v-model="newContactPhoneNumber"></p>
-      <p>Email <input type=text v-model="newContactEmail"></p>
-      <button v-on:click="createContact()">Add Contact</button>
-    </form> -->
-
-    <!-- add contact end -->
-
     <!-- begin new template here -->
 
     <div class="container">
@@ -38,9 +25,11 @@
           ================================================= -->
           <div class="col-md-3 static">
             <div class="profile-card">
-              <img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
-              <h5><a href="timeline.html" class="text-white">Sarah Cruiz</a></h5>
-              <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+              <div v-for="account in accounts">
+                <img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
+                <h5><a href="timeline.html" class="text-white">{{ accounts.name }}</a></h5>
+                <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+              </div>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.html">My Newsfeed</a></div></li>
@@ -359,6 +348,7 @@ export default {
       message: "Welcome to Avert.relapse!",
       contacts: [],
       messages: "",
+      accounts: [],
       loginEmail: "",
       loginPassword: "",
       help: "",
@@ -376,7 +366,10 @@ export default {
     });
     axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
-    });    
+    });
+    axios.get("/api/accounts/show").then(response => {
+      this.accounts = response.data;
+    });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });
   },

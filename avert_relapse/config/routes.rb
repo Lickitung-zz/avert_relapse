@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     put "/users/:id" => "users#update"
 
     get "/accounts" => "accounts#index"
+    get "/accounts/show" => "accounts#show_current_account"
     post "/accounts" => "accounts#create"
     delete "/accounts/:id" => "accounts#delete"
 

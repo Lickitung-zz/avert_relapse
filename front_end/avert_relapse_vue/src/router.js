@@ -4,7 +4,8 @@ import Home from './views/Home.vue';
 import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
-import Friends from "./views/Friends.vue"
+import Friends from "./views/Friends.vue";
+// import Update from "./views/Update.vue"
 
 Vue.use(Router);
 
@@ -53,5 +54,7 @@ export default new Router({
     },
     { path: "/friends", name: "friends", component: Friends 
     }
+    // { path: "/update/:id", name: "update", component: Update 
+    // }
   ]
 });

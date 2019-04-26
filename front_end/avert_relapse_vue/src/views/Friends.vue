@@ -1,7 +1,7 @@
 <template>
 	<div class="friends">
-    	<h1>This is the friends page</h1>
-    	<div id="page-contents">
+    <h1>This is the friends page</h1>
+      <div id="page-contents">
     	<div class="container">
     		<div class="row">
 
@@ -9,9 +9,11 @@
           ================================================= -->
     			<div class="col-md-3 static">
             <div class="profile-card">
-            	<img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
-            	<h5><a href="timeline.html" class="text-white">Sarah Cruiz</a></h5>
-            	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+              <div v-for="account in accounts">
+              	<img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
+              	<h5><a href="timeline.html" class="text-white">{{ accounts.name }}</a></h5>
+              	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+              </div>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div><a href="/index">My Newsfeed</a></div></li>
@@ -44,19 +46,14 @@
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-md" />
-                    <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
-                  </div>
-                </div>
-            		<div class="col-md-5 col-sm-5">
-                  <div class="tools">
-                    <ul class="publishing-tools list-inline">
-                      <li><a href="#"><i class="ion-compose"></i></a></li>
-                      <li><a href="#"><i class="ion-images"></i></a></li>
-                      <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
-                      <li><a href="#"><i class="ion-map"></i></a></li>
-                    </ul>
-                    <button class="btn btn-primary pull-right">Publish</button>
+                    <h4>Add friend</h4>
+                      <form>
+                        <p>First Name <input type=text v-model="newContactFirstName"></p>
+                        <p>Last Name <input type=text v-model="newContactLastName"></p>
+                        <p>Phone Number <input type=text v-model="newContactPhoneNumber"></p>
+                        <p>Email <input type=text v-model="newContactEmail"></p>
+                        <button v-on:click="createContact()">Add Friend</button>
+                      </form>
                   </div>
                 </div>
             	</div>
@@ -92,7 +89,8 @@
                   	<div class="card-info">
                       <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
-                        <a href="#" class="pull-right text-green">My Friend</a>
+                        <button v-on:click="deleteContact(contact)"><a href="#" class="pull-right text-green">Remove Friend</a></button>
+                        <a href="/update/:id" class="pull-right text-green">Update info</a>
                       	<h5><a href="timeline.html" class="profile-link">{{ contact.first_name}} {{ contact.last_name }}</a></h5>
                       	<p>{{ contact.email }}</p>
                       </div>
@@ -163,6 +161,7 @@ export default {
       message: "Welcome to Avert.relapse!",
       contacts: [],
       messages: "",
+      accounts: [],
       loginEmail: "",
       loginPassword: "",
       help: "",
@@ -176,11 +175,15 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/contacts").then(response => {this.contacts = response.data;
+    axios.get("/api/contacts").then(response => {
+      this.contacts = response.data;
     });
     axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
-    });    
+    });
+    axios.get("/api/accounts/show").then(response => {
+      this.accounts = response.data;
+    });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });
   },
