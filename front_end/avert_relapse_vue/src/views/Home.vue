@@ -452,7 +452,7 @@
                       </div>
                     </div> -->
                     <p><a href="#">Already have an account?</a></p>
-                  <button class="btn btn-primary" type="submit" value="Submit">Register Now</button>
+                  <a href="/login"><button class="btn btn-primary" type="submit" value="Submit">Register Now</button></a>
                   </form><!--Register Now Form Ends-->
                   </div>
                   
@@ -464,7 +464,7 @@
                   <p class="text-muted">Login to your account</p>
                   
                   <!--Login Form-->
-                  <form v-on:submit.prevent="submit()" name="Login_form" id='Login_form'>
+                  <form v-on:submit.prevent="login()" name="Login_form" id='Login_form'>
                      <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="my-email" class="sr-only">Email</label>
@@ -539,11 +539,31 @@ export default {
   //   });
   // },
   methods: {
+    login: function() {
+      var params = {
+        email: this.email,
+        password: this.password
+      };
+      axios
+        .post("/api/sessions", params)
+        .then(response => {
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          this.$router.push("/index");
+        })
+        .catch(error => {
+          this.errors = ["Invalid email or password."];
+          this.email = "";
+          this.password = "";
+        });
+      },
     submit: function() {
       var params = {
         user_id: this.user_id,
         name: this.name,
         email: this.email,
+        user_id: this.user_id,
         password: this.password,
         phone_number: this.phone_number,
         password_confirmation: this.passwordConfirmation

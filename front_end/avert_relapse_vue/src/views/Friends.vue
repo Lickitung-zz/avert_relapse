@@ -90,7 +90,7 @@
                       <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <button v-on:click="deleteContact(contact)"><a href="#" class="pull-right text-green">Remove Friend</a></button>
-                        <a href="/update/:id" class="pull-right text-green">Update info</a>
+                        <a v-on:click="getContact()" class="pull-right text-green">Update info</a>
                       	<h5><a href="timeline.html" class="profile-link">{{ contact.first_name}} {{ contact.last_name }}</a></h5>
                       	<p>{{ contact.email }}</p>
                       </div>
@@ -229,6 +229,17 @@ export default {
         var index = this.contacts.indexOf(
           contact);
         this.contacts.splice(index, 1);
+      });
+    },
+    getContact: function() {
+      var params = {
+        first_name: contact.first_name,
+        last_name: contact.last_name,
+        phone_number: contact.phone_number,
+        email: contact.email
+      };
+      axios.get("api/contacts/" + contact.id, params).then(response => {
+        console.log(response)
       });
     },
     editContact: function(contact) {

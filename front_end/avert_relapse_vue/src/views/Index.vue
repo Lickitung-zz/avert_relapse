@@ -2,9 +2,8 @@
   <div class="index">
     <div id="nav">
       <router-link to="/logout">Logout</router-link>
+      <li class="dropdown"><a href="contact.html">Logout</a></li>
     </div>
-    <h1>This is the page that loads when logged in</h1>
-    <hr>
     <!-- help button begin -->
     <hr>
     <h2>Help button</h2>
@@ -15,6 +14,7 @@
       <hr>
     </div>
     <!-- help button end -->
+    
 
     <!-- begin new template here -->
 
@@ -385,10 +385,10 @@ export default {
       });
     },
     sendHelp: function() {
-      console.log("sending help to all contacts...");
+      console.log("sending help to all friends...");
       axios.post("http://localhost:3000/api/twilio/sms").then(response => {
         console.log(response);
-        console.log("sent text to all contacts");
+        console.log("sent text to all friends");
       });
     },
     createContact: function() {

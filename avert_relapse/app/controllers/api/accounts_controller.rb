@@ -1,9 +1,19 @@
 class Api::AccountsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :delete, :create]
+  before_action :authenticate_user, except: [:index, :delete, :create, :is_logged_in]
 
   def index
     @accounts = Account.all
     render "index.json.jbuilder"
+  end
+
+  def is_logged_in
+    if current_user
+      render json: true
+      return true
+    else
+      render json: false
+      return false
+    end
   end
 
   def show_current_account

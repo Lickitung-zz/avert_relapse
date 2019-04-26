@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get "/accounts/show" => "accounts#show_current_account"
     post "/accounts" => "accounts#create"
     delete "/accounts/:id" => "accounts#delete"
+    get "/accounts/is_logged_in/" => "accounts#is_logged_in"
 
     get "/contacts" => "contacts#index"
     get "/contacts/:id" => "contacts#show"
