@@ -7,6 +7,7 @@ import Logout from "./views/Logout.vue";
 import Friends from "./views/Friends.vue";
 import Update from "./views/Update.vue";
 import Help from "./views/Help.vue";
+import Settings from "./views/Settings.vue";
 
 Vue.use(Router);
 

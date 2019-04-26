@@ -54,10 +54,13 @@
                 </ul>
               </li>
               <!-- if logged in navbar begin -->
-              <li class="dropdown"><a style="color:red" v-if="is_logged_in === true">
+              <li class="dropdown"><a v-if="is_logged_in === true">
                 <router-link to="/help">Help</router-link>
               </a></li>
-              <li class="dropdown"><a style="color:red" v-if="is_logged_in === true">
+              <li class="dropdown"><a v-if="is_logged_in === true">
+                <router-link to="/settings">Settings</router-link>
+              </a></li>
+              <li class="dropdown"><a v-if="is_logged_in === true">
                 <router-link to="/logout">Logout</router-link>
               </a></li>
               <!-- if logged in navbar end -->
