@@ -19,13 +19,34 @@
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-people-outline"></i><div><a href="/friends">Account Info</a></div></li>
-              <li><i class="icon ion-chatboxes"></i><div><a href="/set-help">Help Message config</a></div></li>
+              <li><i class="icon ion-chatboxes"></i><div><a href="/settings/help">Help Message config</a></div></li>
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
               <li></i><div><a href="newsfeed-videos.html">Delete Account</a></div></li>
             </ul><!--news-feed links ends-->
           </div>
           
-          <div class="col-md-7">
+          <!-- Post Create Box
+            ================================================= -->
+            <div class="create-post">
+              <div class="row">
+                <div class="col-md-7 col-sm-7">
+                  <div class="form-group">
+                    <h3>Customize help message:</h3>
+                    <div v-for="message in messages">
+			
+				      
+				      <hr>
+				    </div>
+                    <textarea v-model="messages.help_message" name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-5 col-sm-5">
+                  <div class="tools">
+                    <button v-on:click="updateMessage()" class="btn btn-primary pull-right">Save help message</button>
+                  </div>
+                </div>
+              </div>
+            </div><!-- Post Create Box End-->
 
         </div>
       </div>

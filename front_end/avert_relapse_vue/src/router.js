@@ -8,6 +8,7 @@ import Friends from "./views/Friends.vue";
 import Update from "./views/Update.vue";
 import Help from "./views/Help.vue";
 import Settings from "./views/Settings.vue";
+import SettingsHelp from "./views/SettingsHelp.vue";
 
 Vue.use(Router);
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/settings',
       name: 'settings',
       component: () => import(/* webpackChunkName: "settings" */ './views/Settings.vue')
+    },
+    {
+      path: '/set-help',
+      name: 'settingsHelp',
+      component: () => import(/* webpackChunkName: "settings" */ './views/SettingsHelp.vue')
     },
     {
       path: '/new_user',

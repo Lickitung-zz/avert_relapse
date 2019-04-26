@@ -5,10 +5,7 @@
     <hr>
     <h2>Help button</h2>
     <div v-for="message in messages">
-      <p>Message: {{ messages.help_message }}</p><input type="text" v-model="messages.help_message">
-        <button v-on:click="updateMessage()">Update Message</button>
       <button v-on:click="sendHelp()">Help</button>
-      <hr>
     </div>
     	<!-- help button end -->
   </div>
