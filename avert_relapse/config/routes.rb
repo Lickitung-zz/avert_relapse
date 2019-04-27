@@ -14,7 +14,8 @@ Rails.application.routes.draw do
     put "/users/:id" => "users#update"
 
     get "/accounts" => "accounts#index"
-    get "/accounts/show" => "accounts#show_current_account"
+    get "/accounts/show_name" => "accounts#show_current_account_name"
+    get "/accounts/show_profile_pic" => "accounts#show_current_account_profile_pic"
     post "/accounts" => "accounts#create"
     delete "/accounts/:id" => "accounts#delete"
     get "/accounts/is_logged_in/" => "accounts#is_logged_in"

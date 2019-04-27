@@ -16,9 +16,22 @@ class Api::AccountsController < ApplicationController
     end
   end
 
-  def show_current_account
-    @account = Account.all
-    render json: {name: current_user.account.name}
+  def show_current_account_name
+    if current_user
+      @account = current_user.account
+      render json: {name: @account.name}
+    else
+      render json: {message: "not logged in"}
+    end
+  end
+
+  def show_current_account_profile_pic
+    if current_user
+      @account = current_user.account
+      render json: {profile_pic: @account.profile_pic}
+    else
+      render json: {message: "not logged in"}
+    end
   end
 
   def create

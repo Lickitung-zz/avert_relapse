@@ -13,7 +13,9 @@
           <div class="col-md-3 static">
             <div class="profile-card">
               <div v-for="account in accounts">
-                <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/50210511_1529042447237669_2501465549637156864_o.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=9e66a6fb0573251b3e15b5f995921a12&oe=5D725507" alt="user" class="profile-photo" />
+                <div v-for="profile_pic in profile_pics">
+                  <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
+                </div>
                 <h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
               </div>
@@ -49,7 +51,9 @@
               <div class="row">
                 <div class="col-md-7 col-sm-7">
                   <div class="form-group">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-md" />
+                    <div v-for="profile_pic in profile_pics">
+                      <img :src="profile_pics.profile_pic" alt="" class="profile-photo-md" />
+                    </div>
                     <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                   </div>
                 </div>
@@ -336,6 +340,7 @@ export default {
       contacts: [],
       messages: "",
       accounts: [],
+      profile_pics: [],
       loginEmail: "",
       loginPassword: "",
       help: "",
@@ -354,8 +359,11 @@ export default {
     axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
     });
-    axios.get("/api/accounts/show").then(response => {
+    axios.get("/api/accounts/show_name").then(response => {
       this.accounts = response.data;
+    });
+    axios.get("/api/accounts/show_profile_pic").then(response => {
+      this.profile_pics = response.data;
     });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });

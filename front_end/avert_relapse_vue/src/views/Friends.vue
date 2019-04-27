@@ -166,7 +166,7 @@ export default {
     axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
     });
-    axios.get("/api/accounts/show").then(response => {
+    axios.get("/api/accounts/show_name").then(response => {
       this.accounts = response.data;
     });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;

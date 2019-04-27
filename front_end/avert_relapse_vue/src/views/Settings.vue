@@ -16,7 +16,9 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
+                  <div v-for="profile_pic in profile_pics">
+                    <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
+                  </div>
                  	<div v-for="account in accounts">
                   		<h3>{{ accounts.name }}</h3>
               		</div>
@@ -161,6 +163,7 @@ export default {
       contacts: [],
       messages: "",
       accounts: [],
+      profile_pics: [],
       loginEmail: "",
       loginPassword: "",
       help: "",
@@ -179,8 +182,11 @@ export default {
     axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
     });
-    axios.get("/api/accounts/show").then(response => {
+    axios.get("/api/accounts/show_name").then(response => {
       this.accounts = response.data;
+    });
+    axios.get("/api/accounts/show_profile_pic").then(response => {
+      this.profile_pics = response.data;
     });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });
