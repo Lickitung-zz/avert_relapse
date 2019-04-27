@@ -1,12 +1,13 @@
 <template>
   <div class="TimelineAbout">
     <div class="container">
-
+      <br>
+      <br>
+      <br>
       <!-- Timeline
       ================================================= -->
       <div class="timeline">
         <div class="timeline-cover">
-
           <!--Timeline Menu for Large Screens-->
           <div class="timeline-nav-bar hidden-sm hidden-xs">
             <div class="row">
@@ -40,7 +41,9 @@
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <div v-for="account in accounts">
-                <img src="https://i.imgur.com/uVeVsOj.jpg" alt="" class="img-responsive profile-photo" />
+                <div v-for="profile_pic in profile_pics">
+                      <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
+                    </div>
                 <h4>{{ accounts.name }}</h4>
                 <p class="text-muted">Creative Director</p>
               </div>
@@ -55,7 +58,6 @@
               <button class="btn-primary">Add Friend</button>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
-
         </div>
         <div id="page-contents">
           <div class="row">
@@ -262,6 +264,7 @@ export default {
       messages: "",
       accounts: [],
       profile_pics: [],
+      cover_photos: [],
       loginEmail: "",
       loginPassword: "",
       help: "",
@@ -285,6 +288,9 @@ export default {
     });
     axios.get("/api/accounts/show_profile_pic").then(response => {
       this.profile_pics = response.data;
+    });
+    axios.get("/api/accounts/show_cover_photo").then(response => {
+      this.cover_photos = response.data;
     });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });

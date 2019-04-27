@@ -34,6 +34,15 @@ class Api::AccountsController < ApplicationController
     end
   end
 
+  def show_current_account_cover_photo
+    if current_user
+      @account = current_user.account
+      render json: {cover_photo: @account.cover_photo}
+    else
+      render json: {message: "not logged in"}
+    end
+  end
+
   def create
     # if current_user
       @account = Account.create(

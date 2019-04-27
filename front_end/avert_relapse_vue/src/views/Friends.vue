@@ -10,7 +10,9 @@
     			<div class="col-md-3 static">
             <div class="profile-card">
               <div v-for="account in accounts">
-              	<img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
+                <div v-for="profile_pic in profile_pics">
+                  <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
+                </div>
               	<h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
               	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
               </div>
@@ -144,6 +146,7 @@ export default {
       contacts: [],
       messages: "",
       accounts: [],
+      profile_pics: [],
       loginEmail: "",
       loginPassword: "",
       help: "",
@@ -157,17 +160,16 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/contacts").then(response => {
-      this.contacts = response.data;
-    });
-    axios.get("/api/contacts/:id").then(response => {
-      this.contact = response.data;
+    axios.get("/api/contacts").then(response => {this.contacts = response.data;
     });
     axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
     });
     axios.get("/api/accounts/show_name").then(response => {
       this.accounts = response.data;
+    });
+    axios.get("/api/accounts/show_profile_pic").then(response => {
+      this.profile_pics = response.data;
     });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });
@@ -184,10 +186,10 @@ export default {
       });
     },
     sendHelp: function() {
-      console.log("sending help to all contacts...");
+      console.log("sending help to all friends...");
       axios.post("http://localhost:3000/api/twilio/sms").then(response => {
         console.log(response);
-        console.log("sent text to all contacts");
+        console.log("sent text to all friends");
       });
     },
     createContact: function() {
@@ -216,17 +218,6 @@ export default {
         this.contacts.splice(index, 1);
       });
     },
-    getContact: function() {
-      var params = {
-        first_name: contact.first_name,
-        last_name: contact.last_name,
-        phone_number: contact.phone_number,
-        email: contact.email
-      };
-      axios.get("api/contacts/" + contact.id, params).then(response => {
-        console.log(response)
-      });
-    },
     editContact: function(contact) {
       var params = {
         first_name: contact.first_name,
@@ -235,9 +226,7 @@ export default {
         email: contact.email
       };
       axios.patch("/api/contacts/" + contact.id, params).then(response => {
-        console.log(response).then(response => {
-          this.$router.push("/friends");
-        });
+        console.log(response);
       });
     },
     updateMessage: function() {
