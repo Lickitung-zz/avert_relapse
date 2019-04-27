@@ -376,7 +376,6 @@
         <p>Avert Relapse © 2019. All rights reserved</p>
       </div>
     </footer>
-      
     </div>
   </div>
 </template>

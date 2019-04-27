@@ -99,7 +99,7 @@
                   <p class="text-grey">Sometimes ago</p>
                 </div><!--Post Date End-->
 
-                <img src="http://placehold.it/1920x1280" alt="post-image" class="img-responsive post-image" />
+                <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/55618360_1586693024805944_7352365548346277888_o.jpg?_nc_cat=110&_nc_ht=scontent-atl3-1.xx&oh=6751ce530e7167091df4113ba050ce6f&oe=5D7117BD" alt="post-image" class="img-responsive post-image" />
                 <div class="post-container">
                   <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
