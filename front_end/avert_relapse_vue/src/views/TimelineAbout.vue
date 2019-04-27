@@ -12,9 +12,11 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-                  <h3>Sarah Cruiz</h3>
-                  <p class="text-muted">Creative Director</p>
+                  <div v-for="account in accounts">
+                    <img src="https://i.imgur.com/uVeVsOj.jpg" alt="" class="img-responsive profile-photo" />
+                    <h3>{{ accounts.name }}</h3>
+                    <p class="text-muted">Creative Director</p>
+                  </div>
                 </div>
               </div>
               <div class="col-md-9">
@@ -35,9 +37,11 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
-              <p class="text-muted">Creative Director</p>
+              <div v-for="account in accounts">
+                <img src="https://i.imgur.com/uVeVsOj.jpg" alt="" class="img-responsive profile-photo" />
+                <h4>{{ accounts.name }}</h4>
+                <p class="text-muted">Creative Director</p>
+              </div>
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
