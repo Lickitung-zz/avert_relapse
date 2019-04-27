@@ -1,8 +1,5 @@
 <template>
   <div class="TimelineAbout">
-    <h1>This is a timeline page</h1>
-    
-
     <div class="container">
 
       <!-- Timeline
@@ -15,17 +12,15 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="/../../profilepic.jpg" />
-                  <div v-for="account in accounts">
-                    <h3>{{ accounts.name }}</h3>
-                  </div>
+                  <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
+                  <h3>Sarah Cruiz</h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html" class="active">About</a></li>
+                  <li><a href="timeline.html" class="active">Timeline</a></li>
+                  <li><a href="timeline-about.html">About</a></li>
                   <li><a href="timeline-album.html">Album</a></li>
                   <li><a href="timeline-friends.html">Friends</a></li>
                 </ul>
@@ -40,16 +35,14 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <div v-for="account in accounts">
-                <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/50210511_1529042447237669_2501465549637156864_o.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=9e66a6fb0573251b3e15b5f995921a12&oe=5D725507" />
-                <h4>{{ accounts.name }}</h4>
-                <p class="text-muted">Creative Director</p>
-              </div>
+              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
+              <h4>Sarah Cruiz</h4>
+              <p class="text-muted">Creative Director</p>
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.html" class="active">About</a></li>
+                <li><a href="timline.html" class="active">Timeline</a></li>
+                <li><a href="timeline-about.html">About</a></li>
                 <li><a href="timeline-album.html">Album</a></li>
                 <li><a href="timeline-friends.html">Friends</a></li>
               </ul>
@@ -63,62 +56,158 @@
             <div class="col-md-3"></div>
             <div class="col-md-7">
 
-              <!-- About
+              <!-- Post Create Box
               ================================================= -->
-              <div class="about-profile">
-                <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-information-outline icon-in-title"></i>Personal Information</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur</p>
-                </div>
-                <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-briefcase-outline icon-in-title"></i>Work Experiences</h4>
-                  <div class="organization">
-                    <img src="images/envato.png" alt="" class="pull-left img-org" />
-                    <div class="work-info">
-                      <h5>Envato</h5>
-                      <p>Seller - <span class="text-grey">1 February 2013 to present</span></p>
+              <div class="create-post">
+                <div class="row">
+                  <div class="col-md-7 col-sm-7">
+                    <div class="form-group">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-md" />
+                      <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                     </div>
                   </div>
-                  <div class="organization">
-                    <img src="images/envato.png" alt="" class="pull-left img-org" />
-                    <div class="work-info">
-                      <h5>Envato</h5>
-                      <p>Seller - <span class="text-grey">1 February 2013 to present</span></p>
-                    </div>
-                  </div>
-                  <div class="organization">
-                    <img src="images/envato.png" alt="" class="pull-left img-org" />
-                    <div class="work-info">
-                      <h5>Envato</h5>
-                      <p>Seller - <span class="text-grey">1 February 2013 to present</span></p>
+                  <div class="col-md-5 col-sm-5">
+                    <div class="tools">
+                      <ul class="publishing-tools list-inline">
+                        <li><a href="#"><i class="ion-compose"></i></a></li>
+                        <li><a href="#"><i class="ion-images"></i></a></li>
+                        <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
+                        <li><a href="#"><i class="ion-map"></i></a></li>
+                      </ul>
+                      <button class="btn btn-primary pull-right">Publish</button>
                     </div>
                   </div>
                 </div>
-                <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-location-outline icon-in-title"></i>Location</h4>
-                  <p>228 Park Eve, New York</p>
-                  <div class="google-maps">
-                    <div id="map" class="map"></div>
+              </div><!-- Post Create Box End-->
+
+              <!-- Post Content
+              ================================================= -->
+              <div class="post-content">
+
+                <!--Post Date-->
+                <div class="post-date hidden-xs hidden-sm">
+                  <h5>Sarah</h5>
+                  <p class="text-grey">Sometimes ago</p>
+                </div><!--Post Date End-->
+
+                <img src="http://placehold.it/1920x1280" alt="post-image" class="img-responsive post-image" />
+                <div class="post-container">
+                  <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
+                  <div class="post-detail">
+                    <div class="user-info">
+                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <p class="text-muted">Published a photo about 15 mins ago</p>
+                    </div>
+                    <div class="reaction">
+                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
+                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    </div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    </div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <input type="text" class="form-control" placeholder="Post a comment">
+                    </div>
                   </div>
-                </div>
-                <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-heart-outline icon-in-title"></i>Interests</h4>
-                  <ul class="interests list-inline">
-                    <li><span class="int-icons" title="Bycycle riding"><i class="icon ion-android-bicycle"></i></span></li>
-                    <li><span class="int-icons" title="Photography"><i class="icon ion-ios-camera"></i></span></li>
-                    <li><span class="int-icons" title="Shopping"><i class="icon ion-android-cart"></i></span></li>
-                    <li><span class="int-icons" title="Traveling"><i class="icon ion-android-plane"></i></span></li>
-                    <li><span class="int-icons" title="Eating"><i class="icon ion-android-restaurant"></i></span></li>
-                  </ul>
-                </div>
-                <div class="about-content-block">
-                  <h4 class="grey"><i class="ion-ios-chatbubble-outline icon-in-title"></i>Language</h4>
-                    <ul>
-                      <li><a href="">Russian</a></li>
-                      <li><a href="">English</a></li>
-                    </ul>
                 </div>
               </div>
+
+              <!-- Post Content
+              ================================================= -->
+              <div class="post-content">
+
+                <!--Post Date-->
+                <div class="post-date hidden-xs hidden-sm">
+                  <h5>Sarah</h5>
+                  <p class="text-grey">10/22/2016</p>
+                </div><!--Post Date End-->
+
+                <img src="http://placehold.it/1920x1280" alt="post-image" class="img-responsive post-image" />
+                <div class="post-container">
+                  <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
+                  <div class="post-detail">
+                    <div class="user-info">
+                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <p class="text-muted">Yesterday</p>
+                    </div>
+                    <div class="reaction">
+                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 49</a>
+                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    </div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    </div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <input type="text" class="form-control" placeholder="Post a comment">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Post Content
+              ================================================= -->
+              <div class="post-content">
+
+                <!--Post Date-->
+                <div class="post-date hidden-xs hidden-sm">
+                  <h5>Sarah</h5>
+                  <p class="text-grey">10/21/2016</p>
+                </div><!--Post Date End-->
+
+                <div class="post-container">
+                  <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
+                  <div class="post-detail">
+                    <div class="user-info">
+                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <p class="text-muted">2 days ago</p>
+                    </div>
+                    <div class="reaction">
+                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 49</a>
+                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-text">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    </div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    </div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <input type="text" class="form-control" placeholder="Post a comment">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
             <div class="col-md-2 static">
               <div id="sticky-sidebar">
