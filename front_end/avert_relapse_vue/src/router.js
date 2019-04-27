@@ -5,6 +5,7 @@ import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import Contacts from "./views/Contacts.vue";
+import Friends from "./views/Friends.vue";
 import Update from "./views/Update.vue";
 import Help from "./views/Help.vue";
 import Settings from "./views/Settings.vue";
@@ -79,6 +80,8 @@ export default new Router({
     { path: "/logout", name: "logout", component: Logout 
     },
     { path: "/contacts", name: "contacts", component: Contacts 
+    },
+    { path: "/friends", name: "friends", component: Friends 
     },
     { path: "/contacts/:id", name: "update", component: Update 
     },

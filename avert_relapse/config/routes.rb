@@ -28,6 +28,12 @@ Rails.application.routes.draw do
     delete "/contacts/:id" => "contacts#delete"
     patch "/contacts/:id" => "contacts#update"
 
+    get "/friends" => "friends#index"
+    get "/friends/:id" => "friends#show"
+    post "/friends" => "friends#create"
+    delete "/friends/:id" => "friends#delete"
+    patch "/friends/:id" => "friends#update"
+
     get "/messages" => "messages#index"
     post "/messages" => "messages#create"
 
