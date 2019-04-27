@@ -1,9 +1,5 @@
 <template>
   <div class="settings">
-    <h1>This is the settings page</h1>
-    <br>
-    <br>
-    <br>
 <div class="container">
 
       <!-- Timeline
@@ -149,6 +145,56 @@
           </div>
         </div>
       </div>
+              <!-- Footer
+    ================================================= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-wrapper">
+            <div class="col-md-3 col-sm-3">
+              <a href=""><img src="images/logo-black.png" alt="" class="footer-logo" /></a>
+              <ul class="list-inline social-icons">
+                <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
+                <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
+                <li><a href="#"><i class="icon ion-social-googleplus"></i></a></li>
+                <li><a href="#"><i class="icon ion-social-pinterest"></i></a></li>
+                <li><a href="#"><i class="icon ion-social-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <h5>For individuals</h5>
+              <ul class="footer-links">
+                <li><a href="">Signup</a></li>
+                <li><a href="">Explore</a></li>
+                <li><a href="">Features</a></li>
+                <li><a href="">Language settings</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <h5>About</h5>
+              <ul class="footer-links">
+                <li><a href="">About us</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms</a></li>
+                <li><a href="">Help Guide</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-3">
+              <h5>Contact Us</h5>
+              <ul class="contact">
+                <li><i class="icon ion-ios-telephone-outline"></i>+1 (737) 204-2024</li>
+                <li><i class="icon ion-ios-email-outline"></i>brandon_n_evans@live.com</li>
+                <li><i class="icon ion-ios-location-outline"></i>300 w 6th St, Austin, TX</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Avert Relapse © 2019. All rights reserved</p>
+      </div>
+    </footer>
     </div>
   </div>
 </template>
