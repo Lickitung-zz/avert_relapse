@@ -4,14 +4,14 @@ import Home from './views/Home.vue';
 import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
-import Friends from "./views/Friends.vue";
+import Contacts from "./views/Contacts.vue";
 import Update from "./views/Update.vue";
 import Help from "./views/Help.vue";
 import Settings from "./views/Settings.vue";
 import SettingsHelp from "./views/SettingsHelp.vue";
-import AddFriend from "./views/AddFriend.vue";
+import AddContact from "./views/AddContact.vue";
 import TimelineAbout from "./views/TimelineAbout.vue";
-import UpdateFriend from "./views/UpdateFriend.vue";
+import UpdateContact from "./views/UpdateContact.vue";
 
 Vue.use(Router);
 
@@ -53,9 +53,9 @@ export default new Router({
       component: () => import('./views/Index.vue')
     },
     {
-      path: '/friends-new',
-      name: 'newFriend',
-      component: () => import('./views/AddFriend.vue')
+      path: '/contacts-new',
+      name: 'newContact',
+      component: () => import('./views/AddContact.vue')
     },
     {
       path: '/timeline-about',
@@ -63,9 +63,9 @@ export default new Router({
       component: () => import('./views/TimelineAbout.vue')
     },
     {
-      path: '/friends-update',
-      name: 'friendsUpdate',
-      component: () => import('./views/UpdateFriend.vue')
+      path: '/contacts-update',
+      name: 'contactsUpdate',
+      component: () => import('./views/UpdateContact.vue')
     },
     // {
     //   path: '/friends',
@@ -78,7 +78,7 @@ export default new Router({
     },
     { path: "/logout", name: "logout", component: Logout 
     },
-    { path: "/friends", name: "friends", component: Friends 
+    { path: "/contacts", name: "contacts", component: Contacts 
     },
     { path: "/contacts/:id", name: "update", component: Update 
     },

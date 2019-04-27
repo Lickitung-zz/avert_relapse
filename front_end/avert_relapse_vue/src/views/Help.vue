@@ -107,10 +107,10 @@ export default {
       });
     },
     sendHelp: function() {
-      console.log("sending help to all friends...");
+      console.log("sending help to all contacts...");
       axios.post("http://localhost:3000/api/twilio/sms").then(response => {
         console.log(response);
-        console.log("sent text to all friends");
+        console.log("sent text to all contacts");
       });
     },
     createContact: function() {

@@ -1,16 +1,16 @@
 <template>
-	<div class="newFriend">
+	<div class="newContact">
 	    <h1>This is the add friends page</h1>
 	    <h1>This is the add friends page</h1>
 	    <div class="form-group">
-		<h4>Add friend</h4>
+		<h4>Add contact</h4>
 		  <form>
 		    <p>First Name <input type=text v-model="newContactFirstName"></p>
 		    <p>Last Name <input type=text v-model="newContactLastName"></p>
 		    <p>Phone Number <input type=text v-model="newContactPhoneNumber"></p>
 		    <p>Email <input type=text v-model="newContactEmail"></p>
 		  </form>
-      <a href="/friends"><button v-on:click="createContact()">Add Friend</button></a>
+      <a href="/contacts"><button v-on:click="createContact()">Add Contact</button></a>
 		</div>
 	</div>
 </template>

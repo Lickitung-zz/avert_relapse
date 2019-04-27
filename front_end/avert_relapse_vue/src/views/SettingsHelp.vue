@@ -77,7 +77,7 @@
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-android-checkmark-circle"></i>Customize Help Message</h4>
                   <div class="line"></div>
-                  <p>You can customize the "Help!" message here, so that when the "Help!" button is pressed, your customized message will be sent to all of your friends.</p>
+                  <p>You can customize the "Help!" message here, so that when the "Help!" button is pressed, your customized message will be sent to all of your contacts.</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">

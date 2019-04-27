@@ -52,6 +52,9 @@
                 <router-link to="/index">Home</router-link>
               </a></li>
               <li class="dropdown"><a v-if="is_logged_in === true">
+                <router-link to="/contacts">Contacts</router-link>
+              </a></li>
+              <li class="dropdown"><a v-if="is_logged_in === true">
                 <router-link to="/help">Help</router-link>
               </a></li>
               <li class="dropdown"><a v-if="is_logged_in === true">
