@@ -13,22 +13,25 @@
 <template>
   <div class="login">
     <div class="container">
-      <form v-on:login.prevent="login()">
-        <h1>Login</h1>
-        <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}</li>
-        </ul>
-        <div class="form-group">
-          <label>Email:</label>
-          <input type="email" class="form-control" v-model="email">
-        </div>
-        <div class="form-group">
-          <label>Password:</label>
-          <input type="password" class="form-control" v-model="password">
-        </div>
-        <a href="/index">New User? Click here.</a>
-        <input type="submit" class="btn btn-primary" value="Submit">
-      </form>
+      <hr>
+      <hr>
+      <!--Login Form-->
+        <form v-on:submit.prevent="login()" name="Login_form" id='Login_form'>
+           <div class="row">
+            <div class="form-group col-xs-12">
+              <label for="my-email" class="sr-only">Email</label>
+              <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email" v-model="email"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-xs-12">
+              <label for="my-password" class="sr-only">Password</label>
+              <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" v-model="password"/>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login">
+          </div>
+        </form>
+      <!--Login Form Ends--> 
     </div>
   </div>
 </template>
@@ -50,6 +53,25 @@ export default {
     });
   },
   methods: {
+    login: function() {
+      var params = {
+        email: this.email,
+        password: this.password
+      };
+      axios
+        .post("/api/sessions", params)
+        .then(response => {
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          this.$router.push("/index");
+        })
+        .catch(error => {
+          this.errors = ["Invalid email or password."];
+          this.email = "";
+          this.password = "";
+        });
+      },
     submit: function() {
       var params = {
         email: this.email,
@@ -69,25 +91,6 @@ export default {
           this.password = "";
         });
       }
-    },
-    submit: function() {
-      var params = {
-        email: this.email,
-        password: this.password
-      };
-      axios
-        .post("/api/sessions", params)
-        .then(response => {
-          axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.jwt;
-          localStorage.setItem("jwt", response.data.jwt);
-          this.$router.push("/index");
-        })
-        .catch(error => {
-          this.errors = ["Invalid email or password."];
-          this.email = "";
-          this.password = "";
-        });
   }
 };
 </script>

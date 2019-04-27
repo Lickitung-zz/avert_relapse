@@ -22,10 +22,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right main-menu">
-              <li class="dropdown">
-                <a href="/index" role="button" aria-haspopup="true" aria-expanded="false">Home <span></span></a>
-              </li>
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="HTML/images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu newsfeed-home">
                   <li><a href="newsfeed.html">Newsfeed</a></li>
@@ -35,8 +32,8 @@
                   <li><a href="newsfeed-images.html">Images</a></li>
                   <li><a href="newsfeed-videos.html">Videos</a></li>
                 </ul>
-              </li>
-              <li class="dropdown">
+              </li> -->
+              <<!-- li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="HTML/images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
                   <li><a href="timeline.html">Timeline</a></li>
@@ -49,38 +46,31 @@
                   <li><a href="edit-profile-settings.html">Account Settings</a></li>
                   <li><a href="edit-profile-password.html">Change Password</a></li>
                 </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Pages <span><img src="HTML/images/down-arrow.png" alt="" /></span></a>
-                <ul class="dropdown-menu page-list">
-                  <li><a href="index.html">Landing Page 1</a></li>
-                  <li><a href="index-register.html">Landing Page 2</a></li>
-                  <li><a href="newsfeed.html">Newsfeed</a></li>
-                  <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                  <li><a href="newsfeed-friends.html">My friends</a></li>
-                  <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                  <li><a href="newsfeed-images.html">Images</a></li>
-                  <li><a href="newsfeed-videos.html">Videos</a></li>
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.html">Timeline Album</a></li>
-                  <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                  <li><a href="edit-profile-basic.html">Edit Profile</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="faq.html">FAQ Page</a></li>
-                  <li><a href="404.html">404 Not Found</a></li>
-                </ul>
-              </li>
+              </li> -->
               <!-- if logged in navbar begin -->
+              <li class="dropdown"><a v-if="is_logged_in === true">
+                <router-link to="/index">Home</router-link>
+              </a></li>
               <li class="dropdown"><a v-if="is_logged_in === true">
                 <router-link to="/help">Help</router-link>
               </a></li>
               <li class="dropdown"><a v-if="is_logged_in === true">
-                <router-link to="/settings">Settings</router-link>
+                <router-link to="/messages">Messages</router-link>
               </a></li>
               <li class="dropdown"><a v-if="is_logged_in === true">
-                <router-link to="/logout">Logout</router-link>
+                <router-link to="/settings">Settings</router-link>
               </a></li>
+              <li class="dropdown">
+                <a href="/index" role="button" aria-haspopup="true" aria-expanded="false"> <span></span></a>
+              </li>
+              <li class="dropdown">
+                <a v-if="is_logged_in === true">
+                  <router-link to="/logout">Logout</router-link>
+                </a>
+                <a v-else="is_logged_in === false">
+                  <router-link to="/login">Login</router-link>
+                </a>
+              </li>
               <!-- if logged in navbar end -->
 
             </ul>

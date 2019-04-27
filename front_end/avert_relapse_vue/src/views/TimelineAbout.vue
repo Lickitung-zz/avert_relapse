@@ -39,8 +39,8 @@
             <div class="profile-info">
               <div v-for="account in accounts">
                 <div v-for="profile_pic in profile_pics">
-                      <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
-                    </div>
+                  <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
+                </div>
                 <h4>{{ accounts.name }}</h4>
                 <p class="text-muted">Creative Director</p>
               </div>
@@ -67,7 +67,9 @@
                 <div class="row">
                   <div class="col-md-7 col-sm-7">
                     <div class="form-group">
-                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-md" />
+                      <div v-for="profile_pic in profile_pics">
+                        <img :src="profile_pics.profile_pic" alt="" class="profile-photo-md" />
+                      </div>
                       <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                     </div>
                   </div>
