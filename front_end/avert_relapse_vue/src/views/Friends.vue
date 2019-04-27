@@ -17,7 +17,7 @@
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div><a href="/index">My Newsfeed</a></div></li>
-              <li><i class="icon ion-ios-people-outline"></i><div><a href="newsfeed-friends.html">Friends</a></div></li>
+              <li><i class="icon ion-ios-people-outline"></i><div><a href="/friends">Friends</a></div></li>
               <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.html">Messages</a></div></li>
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
               <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.html">Videos</a></div></li>
@@ -54,13 +54,13 @@
             ================================================= -->
             <div class="friend-list">
 			    <div v-for="contact in contacts">
-			      <div>
+			      <!-- <div>
 			        First Name: <input type="text" v-model="contact.first_name">
 			        Last Name: <input type="text" v-model="contact.last_name">
 			        Phone Number: <input type="text" v-model="contact.phone_number">
 			        Email: <input type="text" v-model="contact.email">
 			        <button v-on:click="editContact(contact)">Update Contact</button>
-			      </div>
+			      </div> -->
 			      <hr>
 			    
             	<div class="row">
@@ -160,6 +160,9 @@ export default {
     axios.get("/api/contacts").then(response => {
       this.contacts = response.data;
     });
+    axios.get("/api/contacts/:id").then(response => {
+      this.contact = response.data;
+    });
     axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
     });
@@ -232,7 +235,9 @@ export default {
         email: contact.email
       };
       axios.patch("/api/contacts/" + contact.id, params).then(response => {
-        console.log(response);
+        console.log(response).then(response => {
+          this.$router.push("/friends");
+        });
       });
     },
     updateMessage: function() {

@@ -64,7 +64,7 @@ export default new Router({
     },
     {
       path: '/friends-update',
-      name: 'friends-update',
+      name: 'friendsUpdate',
       component: () => import('./views/UpdateFriend.vue')
     },
     // {
