@@ -11,7 +11,7 @@
             <div class="profile-card">
               <div v-for="account in accounts">
               	<img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
-              	<h5><a href="timeline.html" class="text-white">{{ accounts.name }}</a></h5>
+              	<h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
               	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
               </div>
             </div><!--profile card ends-->
@@ -71,7 +71,8 @@
                       <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <button v-on:click="deleteContact(contact)"><a href="#" class="pull-right text-green">Remove Friend</a></button>
-                        <a v-on:click="getContact()" class="pull-right text-green">Update info</a>
+                        <a class="pull-right text-green" href="/friends-update">Update info</a>
+                        <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
                       	<h5><a href="timeline.html" class="profile-link">{{ contact.first_name}} {{ contact.last_name }}</a></h5>
                       	<p>{{ contact.email }}</p>
                       </div>

@@ -11,6 +11,7 @@ import Settings from "./views/Settings.vue";
 import SettingsHelp from "./views/SettingsHelp.vue";
 import AddFriend from "./views/AddFriend.vue";
 import TimelineAbout from "./views/TimelineAbout.vue";
+import UpdateFriend from "./views/UpdateFriend.vue";
 
 Vue.use(Router);
 
@@ -60,6 +61,11 @@ export default new Router({
       path: '/timeline-about',
       name: 'timelineAbout',
       component: () => import('./views/TimelineAbout.vue')
+    },
+    {
+      path: '/friends-update',
+      name: 'friends-update',
+      component: () => import('./views/UpdateFriend.vue')
     },
     // {
     //   path: '/friends',
