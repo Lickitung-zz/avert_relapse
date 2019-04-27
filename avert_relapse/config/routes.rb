@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/users" => "users#index"
+    get "/users/id" => "users#show_current_user_id"
     post "/users" => "users#create"
     delete "/users/:id" => "users#delete"
     put "/users/:id" => "users#update"

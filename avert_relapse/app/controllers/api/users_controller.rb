@@ -32,5 +32,14 @@ class Api::UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.destroy
     render json: {message: "User successfully deleted."}
-  end 
+  end
+
+  def show_current_user_id
+    if current_user
+      @user_id = current_user.id
+      render json: {user_id: @user_id}
+    else
+      render json: {message: "not logged in"}
+    end
+  end
 end

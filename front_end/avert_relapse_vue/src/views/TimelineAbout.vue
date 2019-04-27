@@ -94,7 +94,9 @@
 
                 <!--Post Date-->
                 <div class="post-date hidden-xs hidden-sm">
-                  <h5>Sarah</h5>
+                  <div v-for="account in accounts">
+                    <h5>{{ accounts.name }}</h5>
+                  </div>
                   <p class="text-grey">Sometimes ago</p>
                 </div><!--Post Date End-->
 
@@ -103,7 +105,11 @@
                   <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <div v-for="account in accounts">
+                        <h5><a href="timeline.html" class="profile-link">{{ accounts.name }}
+                        </a></a> 
+                        <span class="following">following</span></h5>
+                      </div>
                       <p class="text-muted">Published a photo about 15 mins ago</p>
                     </div>
                     <div class="reaction">
@@ -137,7 +143,9 @@
 
                 <!--Post Date-->
                 <div class="post-date hidden-xs hidden-sm">
-                  <h5>Sarah</h5>
+                  <div v-for="account in accounts">
+                    <h5>{{ accounts.name }}</h5>
+                  </div>
                   <p class="text-grey">10/22/2016</p>
                 </div><!--Post Date End-->
 
@@ -146,8 +154,10 @@
                   <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
-                      <p class="text-muted">Yesterday</p>
+                      <div v-for="account in accounts">
+                        <h5><a href="timeline.html" class="profile-link">{{ accounts.name }}</a> <span class="following">following</span></h5>
+                        <p class="text-muted">Yesterday</p>
+                      </div>
                     </div>
                     <div class="reaction">
                       <a class="btn text-green"><i class="icon ion-thumbsup"></i> 49</a>

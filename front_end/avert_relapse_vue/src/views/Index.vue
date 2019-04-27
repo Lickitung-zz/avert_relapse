@@ -74,7 +74,7 @@
             <!-- Post Content
             ================================================= -->
             <div class="post-content">
-              <img src="http://placehold.it/1920x1280" alt="post-image" class="img-responsive post-image" />
+              <img src="https://files.slack.com/files-pri/TFC06S074-FJ1NT3KM5/screen_shot_2019-04-17_at_7.08.19_pm.png" alt="post-image" class="img-responsive post-image" />
               <div class="post-container">
                 <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">

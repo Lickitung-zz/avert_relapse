@@ -13,7 +13,7 @@
 <template>
   <div class="login">
     <div class="container">
-      <form v-on:submit.prevent="submit()">
+      <form v-on:login.prevent="login()">
         <h1>Login</h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -26,7 +26,7 @@
           <label>Password:</label>
           <input type="password" class="form-control" v-model="password">
         </div>
-        <a href="/signup">New User? Click here.</a>
+        <a href="/index">New User? Click here.</a>
         <input type="submit" class="btn btn-primary" value="Submit">
       </form>
     </div>
@@ -43,6 +43,11 @@ export default {
       password: "",
       errors: []
     };
+  },
+  created: function() {
+    axios.get("/api/users/id").then(response => {
+      this.user_id = response.data;
+    });
   },
   methods: {
     submit: function() {

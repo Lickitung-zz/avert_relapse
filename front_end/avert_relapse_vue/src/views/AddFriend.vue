@@ -9,8 +9,8 @@
 		    <p>Last Name <input type=text v-model="newContactLastName"></p>
 		    <p>Phone Number <input type=text v-model="newContactPhoneNumber"></p>
 		    <p>Email <input type=text v-model="newContactEmail"></p>
-		    <button v-on:click="createContact()">Add Friend</button>
 		  </form>
+      <a href="/friends"><button v-on:click="createContact()">Add Friend</button></a>
 		</div>
 	</div>
 </template>
