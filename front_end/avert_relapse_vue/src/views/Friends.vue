@@ -74,8 +74,8 @@
                         <a class="pull-right text-green" href="/friends-update">Update info</a>
                         <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
                       	<h5><a href="timeline.html" class="profile-link">{{ contact.first_name}} {{ contact.last_name }}</a></h5>
-                      	<p>{{ contact.email }}</p>
-                      </div>
+                        <p>{{ contact.email }}</p>                      
+                        <p>{{ contact.phone_number }}</p>
                     </div>
                   </div>
                 </div>

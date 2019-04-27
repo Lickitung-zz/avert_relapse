@@ -13,7 +13,7 @@
           <div class="col-md-3 static">
             <div class="profile-card">
               <div v-for="account in accounts">
-                <img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
+                <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/50210511_1529042447237669_2501465549637156864_o.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=9e66a6fb0573251b3e15b5f995921a12&oe=5D725507" alt="user" class="profile-photo" />
                 <h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
               </div>

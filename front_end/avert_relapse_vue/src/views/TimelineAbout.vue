@@ -15,7 +15,7 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
+                  <img src="/../../profilepic.jpg" />
                   <div v-for="account in accounts">
                     <h3>{{ accounts.name }}</h3>
                   </div>
@@ -40,9 +40,11 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
-              <p class="text-muted">Creative Director</p>
+              <div v-for="account in accounts">
+                <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/50210511_1529042447237669_2501465549637156864_o.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=9e66a6fb0573251b3e15b5f995921a12&oe=5D725507" />
+                <h4>{{ accounts.name }}</h4>
+                <p class="text-muted">Creative Director</p>
+              </div>
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
