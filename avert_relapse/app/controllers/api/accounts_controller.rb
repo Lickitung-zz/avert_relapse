@@ -19,7 +19,9 @@ class Api::AccountsController < ApplicationController
   def show_current_account_name
     if current_user
       @account = current_user.account
-      render json: {name: @account.name}
+      render json: {
+        name: ( @account.first_name + ' ' + @account.last_name)
+      }
     else
       render json: {message: "not logged in"}
     end
@@ -57,7 +59,8 @@ class Api::AccountsController < ApplicationController
   def create
     # if current_user
       @account = Account.create(
-      name: params[:name],
+      first_name: params[:first_name],
+      last_name: params[:last_name],
       phone_number: params[:phone_number],
       messages: params[:messages],
       user_id: params[:user_id]

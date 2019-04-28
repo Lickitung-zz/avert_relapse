@@ -14,7 +14,7 @@
                 <div v-for="profile_pic in profile_pics">
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
                 </div>
-                <h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
+                <h5><a href="/timeline-about" class="text-white">{{ accounts.name }} </a></h5>
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
               </div>
             </div><!--profile card ends-->
