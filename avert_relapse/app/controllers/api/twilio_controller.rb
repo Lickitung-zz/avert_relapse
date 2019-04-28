@@ -21,10 +21,10 @@ class Api::TwilioController < ApplicationController
     auth_token = ENV["auth_token"]
     client = Twilio::REST::Client.new(account_sid, auth_token)
 
-    from = '+17372042024' # My Twilio number
+    from = '+18887898021' # My Twilio number
 
     if current_user
-      from = '+17372042024'
+      from = '+18887898021'
       i = 0
       current_user.account.contacts.length.times do
         to = '+1' + current_user.account.contacts[i].phone_number
