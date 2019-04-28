@@ -70,6 +70,9 @@
 
                   <div class="signup">
                   <form  v-on:submit.prevent="submit()">
+                    <ul>
+                      <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                    </ul>
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="name" class="sr-only">Name</label>
@@ -568,7 +571,7 @@ export default {
       },
     submit: function() {
       var params = {
-        user_id: 5,
+        user_id: this.user_id,
         name: this.name,
         email: this.email,
         password: this.password,
@@ -586,19 +589,19 @@ export default {
           console.log(response);
         });
           this.$router.push("/login");
-      axios
-        .post("/api/sessions", params)
-        .then(response => {
-          axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.jwt;
-          localStorage.setItem("jwt", response.data.jwt);
-          this.$router.push("/login");
-        })
-        .catch(error => {
-          this.errors = ["Invalid email or password."];
-          this.email = "";
-          this.password = "";
-        });
+      // axios
+      //   .post("/api/sessions", params)
+      //   .then(response => {
+      //     axios.defaults.headers.common["Authorization"] =
+      //       "Bearer " + response.data.jwt;
+      //     localStorage.setItem("jwt", response.data.jwt);
+      //     this.$router.push("/login");
+      //   })
+      //   .catch(error => {
+      //     this.errors = ["Invalid email or password."];
+      //     this.email = "";
+      //     this.password = "";
+      //   });
       //   .catch(error => {
       //     this.errors = error.response.data.errors;
       //   });
