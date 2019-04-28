@@ -15,7 +15,8 @@ class Api::UsersController < ApplicationController
       name: params[:name],
       phone_number: params[:phone_number],
       messages: params[:messages],
-      user_id: @user.id
+      user_id: @user.id,
+      profile_pic: "https://theawesomer.com/photos/2010/06/060410_Facebook_profile_pic_6.jpg"
     )
     if @user.save
       render json: {message: 'User created successfully'}, status: :created

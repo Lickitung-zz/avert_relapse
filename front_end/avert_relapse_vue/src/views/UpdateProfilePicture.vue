@@ -19,6 +19,53 @@
                     <h3>{{ accounts.name }}</h3>
                     <p class="text-muted">Creative Director</p>
                   </div>
+
+                  <div>
+                    <!-- slot for parent component to activate the file changer -->
+                    <div @click="launchFilePicker()">
+                      <slot name="activator"></slot>
+                    </div>
+                    <!-- image input: style is set to hidden and assigned a ref so that it can be triggered -->
+                    <input type="file"
+                       ref="file"
+                       :name="uploadFieldName"
+                       @change="onFileChange(
+                          $event.target.name, $event.target.files)"
+                       style="display:none">
+                    <!-- error dialog displays any potential errors -->
+                    <v-dialog v-model="errorDialog" max-width="300">
+                      <v-card>
+                        <v-card-text class="subheading">{{errorText}}</v-card-text>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn @click="errorDialog = false" flat>Got it!</v-btn>
+                        </v-card-actions>
+                      </v-card>
+                    </v-dialog>
+                  </div>
+
+                  <!-- slot for parent component to activate the file changer -->
+                  <div @click="launchFilePicker()">
+                    <slot name="activator"></slot>
+                  </div>
+                  <!-- image input: style is set to hidden and assigned a ref so that it can be triggered -->
+                  <input type="file"
+                     ref="file"
+                     :name="uploadFieldName"
+                     @change="onFileChange(
+                        $event.target.name, $event.target.files)"
+                     style="display:none">
+                  <!-- error dialog displays any potential error messages -->
+                  <v-dialog v-model="errorDialog" max-width="300">
+                    <v-card>
+                      <v-card-text class="subheading">{{errorText}}</v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn @click="errorDialog = false" flat>Got it!</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+
                 </div>
               </div>
               <div class="col-md-9">
@@ -316,28 +363,21 @@
 
 <script>
 import axios from "axios";
-
 export default {
-  data: function() {
-    return {
-      message: "Welcome to Avert.relapse!",
-      contacts: [],
-      messages: "",
+    name: 'image-input',
+    data: ()=> ({
+      errorDialog: null,
+      errorText: '',
+      uploadFieldName: 'file',
+      maxSize: 1024,
       accounts: [],
       profile_pics: [],
       cover_photos: [],
-      loginEmail: "",
-      loginPassword: "",
-      help: "",
-      newContactFirstName: "",
-      newContactLastName: "",
-      newContactPhoneNumber: "",
-      newContactEmail: "",
-      newMessage: "",
-      // newContactAccountId: User.account.id,
-      errors: []
-    };
-  },
+    }),
+    props: {
+    // Use "value" to enable using v-model
+      value: Object,
+    },
   created: function() {
     axios.get("/api/contacts").then(response => {this.contacts = response.data;
     });
@@ -357,6 +397,32 @@ export default {
     // });
   },
   methods: {
+    launchFilePicker() {
+      this.$refs.file.click();
+    },
+    onFileChange(fieldName, file) {
+        const { maxSize } = this
+        let imageFile = file[0]
+        if (file.length>0) {
+          let size = imageFile.size / maxSize / maxSize
+          if (!imageFile.type.match('image.*')) {
+            // check whether the upload is an image
+            this.errorDialog = true
+            this.errorText = 'Please choose an image file'
+          } else if (size>1) {
+            // check whether the size is greater than the size limit
+            this.errorDialog = true
+            this.errorText = 'Your file is too big! Please select an image under 1MB'
+          } else {
+            // Append file into FormData and turn file into image URL
+            let formData = new FormData()
+            let imageURL = URL.createObjectURL(imageFile)
+            formData.append(fieldName, imageFile)
+            // Emit the FormData and image URL to the parent component
+            this.$emit('input', { formData, imageURL })
+        }
+      }
+    },
     login: function() {
       var params = {
         email: this.loginEmail,

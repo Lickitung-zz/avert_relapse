@@ -180,6 +180,9 @@ export default {
       newContactPhoneNumber: "",
       newContactEmail: "",
       newMessage: "",
+      avatar: null,
+      saving: false,
+      saved: false,
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -197,7 +200,7 @@ export default {
       this.is_logged_in = response.data;
     });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
-    // });
+    // })
   },
   methods: {
     login: function() {
@@ -263,6 +266,14 @@ export default {
       axios.post("/api/twilio/sms_update", params).then(response => {
           console.log(response);
       });
+    },
+    uploadImage() {
+      this.saving = true
+      setTimeout(() => this.savedAvatar(), 1000)
+    },
+    savedAvatar() {
+      this.saving = false
+      this.saved = true
     }
   }
 };
