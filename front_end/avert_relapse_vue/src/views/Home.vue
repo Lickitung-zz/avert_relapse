@@ -619,32 +619,7 @@ export default {
       //     this.password = "";
       //   });
     },
-    logging: function() {
-      var params = {
-        user_id: this.user_id,
-        name: this.name,
-        email: this.email,
-        user_id: this.user_id,
-        password: this.password,
-        phone_number: this.phone_number,
-        password_confirmation: this.passwordConfirmation
-      };
-      axios
-        .post("/api/sessions", params)
-        .then(response => {
-          axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.jwt;
-          localStorage.setItem("jwt", response.data.jwt);
-          this.$router.push("/index");
-          console.log(response);
-          this.$router.push("/index");
-        })
-        .catch(error => {
-          this.errors = ["Invalid email or password."];
-          this.email = "";
-          this.password = "";
-        });
-      },
+    
   }
 };
 </script>

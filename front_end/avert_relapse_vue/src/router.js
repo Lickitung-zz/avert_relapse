@@ -12,7 +12,7 @@ import SettingsHelp from "./views/SettingsHelp.vue";
 import AddContact from "./views/AddContact.vue";
 import TimelineAbout from "./views/TimelineAbout.vue";
 import UpdateContact from "./views/UpdateContact.vue";
-
+import UpdateProfilePicture from "./views/UpdateProfilePicture.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -66,6 +66,11 @@ export default new Router({
       path: '/contacts-update',
       name: 'contactsUpdate',
       component: () => import('./views/UpdateContact.vue')
+    },
+    {
+      path: '/update-profile-picture',
+      name: 'profilePictureUpdate',
+      component: () => import('./views/UpdateProfilePicture.vue')
     },
     // {
     //   path: '/friends',
