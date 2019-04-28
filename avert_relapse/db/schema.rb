@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_27_232730) do
+ActiveRecord::Schema.define(version: 2019_04_28_221518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.string "name"
     t.string "phone_number"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -24,6 +23,8 @@ ActiveRecord::Schema.define(version: 2019_04_27_232730) do
     t.string "messages"
     t.string "profile_pic"
     t.string "cover_photo"
+    t.string "first_name"
+    t.string "last_name"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -37,10 +38,10 @@ ActiveRecord::Schema.define(version: 2019_04_27_232730) do
   end
 
   create_table "friends", force: :cascade do |t|
+    t.integer "account_id"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
