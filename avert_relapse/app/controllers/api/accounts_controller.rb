@@ -45,7 +45,7 @@ class Api::AccountsController < ApplicationController
 
   def create
     # if current_user
-      @account = Account.create(
+      @account = Account.create!(
       name: params[:name],
       phone_number: params[:phone_number],
       messages: params[:messages],

@@ -452,8 +452,9 @@
                       </div>
                     </div> -->
                     <p><a href="#">Already have an account?</a></p>
-                  <a href="/login"><button class="btn btn-primary" type="submit" value="Submit">Register Now</button></a>
+                    <a href="/login"><button class="btn btn-primary" type="submit" value="Submit">Register Now</button></a>
                   </form><!--Register Now Form Ends-->
+                  
                   <a href="/login"><button v-on:click="logging()">Login</button></a>
                   </div>
 
@@ -567,10 +568,9 @@ export default {
       },
     submit: function() {
       var params = {
-        user_id: this.user_id,
+        user_id: 5,
         name: this.name,
         email: this.email,
-        user_id: this.user_id,
         password: this.password,
         phone_number: this.phone_number,
         password_confirmation: this.passwordConfirmation
@@ -580,10 +580,29 @@ export default {
         .then(response => {
           console.log(response);
         });
-        // .catch(error => {
-        //   this.errors = error.response.data.errors;
-        // });
-      // axios
+      axios
+        .post("/api/accounts", params)
+        .then(response => {
+          console.log(response);
+        });
+          this.$router.push("/login");
+      axios
+        .post("/api/sessions", params)
+        .then(response => {
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          this.$router.push("/login");
+        })
+        .catch(error => {
+          this.errors = ["Invalid email or password."];
+          this.email = "";
+          this.password = "";
+        });
+      //   .catch(error => {
+      //     this.errors = error.response.data.errors;
+      //   });
+      // // axios
       //   .post("/api/sessions", params)
       //   .then(response => {
       //     axios.defaults.headers.common["Authorization"] =
@@ -613,6 +632,8 @@ export default {
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
+          this.$router.push("/index");
+          console.log(response);
           this.$router.push("/index");
         })
         .catch(error => {
