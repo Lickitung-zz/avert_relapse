@@ -13,8 +13,9 @@
                   <div v-for="account in accounts">
                     <div v-for="profile_pic in profile_pics">
                       <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
-                      <a href="/update-profile-picture">Update Profile Picture</a>
-                    </div>
+                      <input type="file" name="updateProfilePic">
+                      <button v-on:click="updateProfilePic()">Update</button>
+                    </div>                  
                     <h3>{{ accounts.name }}</h3>
                     <p class="text-muted">Creative Director</p>
                   </div>
@@ -373,32 +374,6 @@ export default {
         console.log("sent text to all friends");
       });
     },
-    createContact: function() {
-      var params = {
-        first_name: this.newContactFirstName,
-        last_name: this.newContactLastName,
-        phone_number: this.newContactPhoneNumber,
-        email: this.newContactEmail
-      };
-      console.log('adding contact...');
-      axios.post("/api/contacts", params).then(
-        response => {
-          console.log(response);
-          this.$router.push("/index");
-        }).catch(error => {
-        console.log("this isn't working.");
-        console.log(error.response.data.errors);
-        this.error = error.response.data.errors;
-      });
-    },
-    deleteContact: function(contact) {
-      console.log("deleting contact...");
-      axios.delete("/api/contacts/" + contact.id).then(response => {
-        var index = this.contacts.indexOf(
-          contact);
-        this.contacts.splice(index, 1);
-      });
-    },
     editContact: function(contact) {
       var params = {
         first_name: contact.first_name,
@@ -407,6 +382,15 @@ export default {
         email: contact.email
       };
       axios.patch("/api/contacts/" + contact.id, params).then(response => {
+        console.log(response);
+      });
+    },
+    updateProfilePic: function() {
+      var params = {
+        profile_pic: this.profile_pics.profile_pic,
+      };
+      axios.post("/api/accounts/update_profile_pic", params).then(response => {
+        this.$router.push("/timeline-about");
         console.log(response);
       });
     },

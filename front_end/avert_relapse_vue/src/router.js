@@ -10,6 +10,7 @@ import Help from "./views/Help.vue";
 import Settings from "./views/Settings.vue";
 import SettingsHelp from "./views/SettingsHelp.vue";
 import AddContact from "./views/AddContact.vue";
+import AddFriend from "./views/AddFriend.vue";
 import TimelineAbout from "./views/TimelineAbout.vue";
 import UpdateContact from "./views/UpdateContact.vue";
 import UpdateProfilePicture from "./views/UpdateProfilePicture.vue";
@@ -56,6 +57,11 @@ export default new Router({
       path: '/contacts-new',
       name: 'newContact',
       component: () => import('./views/AddContact.vue')
+    },
+    {
+      path: '/friends-new',
+      name: 'newFriend',
+      component: () => import('./views/AddFriend.vue')
     },
     {
       path: '/timeline-about',

@@ -34,6 +34,17 @@ class Api::AccountsController < ApplicationController
     end
   end
 
+  def update_account_profile_pic
+    if current_user
+      @account = current_user.account
+      @account.profile_pic = params[:profile_pic]
+      @account.save
+      render json: {profile_pic: @account.profile_pic}
+    else
+      render json: {message: "not logged in"}
+    end
+  end
+
   def show_current_account_cover_photo
     if current_user
       @account = current_user.account
