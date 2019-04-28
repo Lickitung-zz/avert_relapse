@@ -73,8 +73,7 @@
                     <div class="card-info">
                       <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
-                        <button v-on:click="deleteContact(contact)"><a href="#" class="pull-right text-green">Remove Contact</a></button>
-                        <a class="pull-right text-green" href="/friends-update">Update info</a>
+                        <button v-on:click="deleteFriend(friend)"><a href="#" class="pull-right text-green">Delete Friend</a></button>
                         <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
                         <h5><a href="timeline.html" class="profile-link">{{ friend.first_name}} {{ friend.last_name }}</a></h5>
                         <p>{{ friend.email }}</p>                      
@@ -202,10 +201,10 @@ export default {
       loginEmail: "",
       loginPassword: "",
       help: "",
-      newContactFirstName: "",
-      newContactLastName: "",
-      newContactPhoneNumber: "",
-      newContactEmail: "",
+      newFriendFirstName: "",
+      newFriendLastName: "",
+      newFriendPhoneNumber: "",
+      newFriendEmail: "",
       newMessage: "",
       // newContactAccountId: User.account.id,
       errors: []
@@ -244,12 +243,12 @@ export default {
         console.log("sent text to all friends");
       });
     },
-    createContact: function() {
+    createFriend: function() {
       var params = {
-        first_name: this.newContactFirstName,
-        last_name: this.newContactLastName,
-        phone_number: this.newContactPhoneNumber,
-        email: this.newContactEmail
+        first_name: this.newFriendFirstName,
+        last_name: this.newFriendLastName,
+        phone_number: this.newFriendPhoneNumber,
+        email: this.newFriendEmail
       };
       console.log('adding friend...');
       axios.post("/api/friends", params).then(
@@ -262,15 +261,15 @@ export default {
         this.error = error.response.data.errors;
       });
     },
-    deleteContact: function(contact) {
+    deleteFriend: function(friend) {
       console.log("deleting friend...");
       axios.delete("/api/friends/" + friend.id).then(response => {
         var index = this.friends.indexOf(
-          contact);
+          friend);
         this.friends.splice(index, 1);
       });
     },
-    editContact: function(contact) {
+    editFriend: function(friend) {
       var params = {
         first_name: friend.first_name,
         last_name: friend.last_name,

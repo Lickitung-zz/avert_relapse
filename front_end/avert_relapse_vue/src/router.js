@@ -83,8 +83,6 @@ export default new Router({
     },
     { path: "/friends", name: "friends", component: Friends 
     },
-    { path: "/contacts/:id", name: "update", component: Update 
-    },
     { path: "/help", name: "help", component: Help 
     }
   ]

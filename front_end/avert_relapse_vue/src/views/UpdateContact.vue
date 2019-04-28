@@ -42,16 +42,6 @@
           
           <div class="col-md-7">
 
-            <!-- Post Create Box
-            ================================================= -->
-            <div class="create-post">
-              <div class="row">
-                <div class="col-md-7 col-sm-7">
-                  <a href="/contacts-new">Add New Contact?</a>
-                </div>
-              </div>
-            </div><!-- Post Create Box End -->
-
             <!-- Friend List
             ================================================= -->
             <div class="friend-list">
@@ -73,7 +63,6 @@
                       <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <button v-on:click="deleteContact(contact)"><a href="#" class="pull-right text-green">Remove Contact</a></button>
-                        <a class="pull-right text-green" href="/contacts-update">Update info</a>
                         <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
                         <h5><a href="timeline.html" class="profile-link">{{ contact.first_name}} {{ contact.last_name }}</a></h5>
                         <p>{{ contact.email }}</p>
