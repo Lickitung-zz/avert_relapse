@@ -75,8 +75,12 @@
                     </ul>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="name" class="sr-only">Name</label>
-                        <input class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="Name" v-model="name"/>
+                        <label for="name" class="sr-only">First Name</label>
+                        <input class="form-control input-group-lg" type="text" name="name" title="Enter first name" placeholder="First Name" v-model="firstName"/>
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label for="name" class="sr-only">Last Name</label>
+                        <input class="form-control input-group-lg" type="text" name="name" title="Enter last name" placeholder="Last Name" v-model="lastName"/>
                       </div>
                     </div>
                     <div class="row">
@@ -87,8 +91,8 @@
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="phoneNumber" class="sr-only">Phone Number</label>
-                        <input class="form-control input-group-lg" type="text" name="Phone Number" title="Enter Phone Number" placeholder="Your Phone Number" v-model="phoneNumber"/>
+                        <label for="phoneNumber" class="sr-only">Phone Number (optional)</label>
+                        <input class="form-control input-group-lg" type="text" name="Phone Number" title="Enter Phone Number" placeholder="Your Phone Number (optional)" v-model="phoneNumber"/>
                       </div>
                     </div>
                     <div class="row">
@@ -454,11 +458,9 @@
                         </select>
                       </div>
                     </div> -->
-                    <p><a href="#">Already have an account?</a></p>
+                    <p><a href="/login">Already have an account?</a></p>
                     <a href="/login"><button class="btn btn-primary" type="submit" value="Submit">Register Now</button></a>
                   </form><!--Register Now Form Ends-->
-                  
-                  <a href="/login"><button v-on:click="logging()">Login</button></a>
                   </div>
 
                   
@@ -532,7 +534,8 @@ export default {
   data: function() {
     return {
       message: "Welcome to Avert.relapse!",
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
       passwordConfirmation: "",
@@ -572,10 +575,11 @@ export default {
     submit: function() {
       var params = {
         user_id: this.user_id,
-        name: this.name,
+        first_name: this.firstName,
+        last_name: this.lastName,
         email: this.email,
         password: this.password,
-        phone_number: this.phone_number,
+        phone_number: this.phoneNumber,
         password_confirmation: this.passwordConfirmation
       };
       axios

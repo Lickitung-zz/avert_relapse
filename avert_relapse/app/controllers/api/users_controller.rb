@@ -12,7 +12,8 @@ class Api::UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     @account = Account.create(
-      name: params[:name],
+      first_name: params[:first_name],
+      last_name: params[:last_name],
       phone_number: params[:phone_number],
       messages: params[:messages],
       user_id: @user.id,
