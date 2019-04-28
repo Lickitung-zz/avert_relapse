@@ -68,11 +68,6 @@ class Api::AccountsController < ApplicationController
     # end
   end
 
-  def current_account_timeline
-    @account = Account.find_by(name: params[:name])
-    render "show.json.jbuilder"
-  end
-
   def delete
     @account = Account.find_by(id: params[:id])
     @account.destroy
