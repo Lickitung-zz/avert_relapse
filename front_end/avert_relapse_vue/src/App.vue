@@ -58,7 +58,7 @@
                 <router-link to="/help">Help</router-link>
               </a></li>
               <li class="dropdown"><a v-if="is_logged_in === true">
-                <router-link to="/messages">Messages</router-link>
+                <router-link to="/messages-index">Messages</router-link>
               </a></li>
               <li class="dropdown"><a v-if="is_logged_in === true">
                 <router-link to="/settings">Settings</router-link>
