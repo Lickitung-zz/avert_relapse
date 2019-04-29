@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     delete "/accounts/:id" => "accounts#delete"
     get "/accounts/is_logged_in/" => "accounts#is_logged_in"
     patch "/accounts" => "accounts#update"
+    get "/accounts-search" => "accounts#search_index"
 
     get "/contacts" => "contacts#index"
     get "/contacts/:id" => "contacts#show"

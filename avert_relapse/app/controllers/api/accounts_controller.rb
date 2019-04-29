@@ -1,5 +1,5 @@
 class Api::AccountsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :delete, :create, :is_logged_in]
+  before_action :authenticate_user, except: [:index, :delete, :create, :is_logged_in, :search_index]
 
   def index
     @accounts = Account.all
@@ -79,6 +79,13 @@ class Api::AccountsController < ApplicationController
     # else
     #   render json: {message: "Login to create account."}
     # end
+  end
+
+  def search_index
+    hits =  Account.search("Admin Account")
+    p hits
+    p hits.raw_answer # to get the original JSON raw answer
+    render json: {results: hits}
   end
 
   def delete
