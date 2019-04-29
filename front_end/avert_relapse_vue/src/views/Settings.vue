@@ -98,12 +98,17 @@
                           
                       </div>
                     </div>
-                    <div class="row">
+
+                    <!-- edit phone number BEGIN (this is broke and needs to be fixed at some point) -->
+
+                    <!-- <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="phone_number">My phone number</label>
                         <input id="phone_number" class="form-control input-group-lg" type="text" name="PhoneNumber" title="Enter Phone Number" placeholder="My Phone Number" value="My Phone Number" v-model="phoneNumber"/>
                       </div>
-                    </div>
+                    </div> -->
+
+                    <!-- edit phone number END (this is broke and needs to be fixed at some point) -->
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="my-info">About me</label>
