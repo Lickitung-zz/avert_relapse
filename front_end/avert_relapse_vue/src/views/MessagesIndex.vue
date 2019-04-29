@@ -8,14 +8,17 @@
           ================================================= -->
           <div class="col-md-3 static">
             <div class="profile-card">
-              <img src="http://placehold.it/300x300" alt="user" class="profile-photo" />
-              <h5><a href="timeline.html" class="text-white">Sarah Cruiz</a></h5>
-              <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+              <div v-for="account in accounts">
+                <div v-for="profile_pic in profile_pics">
+                  <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
+                </div>
+                <h5><a href="/timeline-about" class="text-white">{{ accounts.name }} </a></h5>
+                <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+              </div>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.html">My Newsfeed</a></div></li>
-              <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.html">People Nearby</a></div></li>
-              <li><i class="icon ion-ios-people-outline"></i><div><a href="newsfeed-friends.html">Friends</a></div></li>
+              <li><i class="icon ion-ios-people-outline"></i><div><a href="/friends">Friends</a></div></li>
               <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.html">Messages</a></div></li>
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
               <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.html">Videos</a></div></li>
@@ -40,11 +43,13 @@
 
             <!-- Post Create Box
             ================================================= -->
-            <div class="create-post">
+            <!-- <div class="create-post">
               <div class="row">
                 <div class="col-md-7 col-sm-7">
                   <div class="form-group">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-md" />
+                    <div v-for="profile_pic in profile_pics">
+                      <img :src="profile_pics.profile_pic" alt="" class="profile-photo-md" />
+                    </div>
                     <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                   </div>
                 </div>
@@ -59,8 +64,8 @@
                     <button class="btn btn-primary pull-right">Publish</button>
                   </div>
                 </div>
-              </div>
-            </div><!-- Post Create Box End -->
+              </div> -->
+            <!-- </div> --><!-- Post Create Box End-->
 
             <!-- Chat Room
             ================================================= -->
@@ -474,3 +479,104 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data: function() {
+    return {
+      message: "Welcome to Avert.relapse!",
+      contacts: [],
+      messages: "",
+      accounts: [],
+      profile_pics: [],
+      loginEmail: "",
+      loginPassword: "",
+      help: "",
+      newContactFirstName: "",
+      newContactLastName: "",
+      newContactPhoneNumber: "",
+      newContactEmail: "",
+      newMessage: "",
+      // newContactAccountId: User.account.id,
+      errors: []
+    };
+  },
+
+  created: function() {
+    axios.get("/api/accounts/show_name").then(response => {
+      this.accounts = response.data;
+    });
+    axios.get("/api/accounts/show_profile_pic").then(response => {
+      this.profile_pics = response.data;
+    });
+  },
+  methods: {
+    login: function() {
+      var params = {
+        email: this.loginEmail,
+        password: this.loginPassword
+      };
+      console.log('logging in...');
+      axios.post('/api/sessions', params).then(response => {
+        console.log(response);
+      });
+    },
+    sendHelp: function() {
+      console.log("sending help to all friends...");
+      axios.post("http://localhost:3000/api/twilio/sms").then(response => {
+        console.log(response);
+        console.log("sent text to all friends");
+      });
+    },
+    createContact: function() {
+      var params = {
+        first_name: this.newContactFirstName,
+        last_name: this.newContactLastName,
+        phone_number: this.newContactPhoneNumber,
+        email: this.newContactEmail
+      };
+      console.log('adding contact...');
+      axios.post("/api/contacts", params).then(
+        response => {
+          console.log(response);
+          this.$router.push("/index");
+        }).catch(error => {
+        console.log("this isn't working.");
+        console.log(error.response.data.errors);
+        this.error = error.response.data.errors;
+      });
+    },
+    deleteContact: function(contact) {
+      console.log("deleting contact...");
+      axios.delete("/api/contacts/" + contact.id).then(response => {
+        var index = this.contacts.indexOf(
+          contact);
+        this.contacts.splice(index, 1);
+      });
+    },
+    editContact: function(contact) {
+      var params = {
+        first_name: contact.first_name,
+        last_name: contact.last_name,
+        phone_number: contact.phone_number,
+        email: contact.email
+      };
+      axios.patch("/api/contacts/" + contact.id, params).then(response => {
+        console.log(response);
+      });
+    },
+    updateMessage: function() {
+      var params = {
+        messages: this.messages.help_message
+      };
+      console.log('updating the message...');
+
+      axios.post("/api/twilio/sms_update", params).then(response => {
+          console.log(response);
+      });
+    }
+  }
+};
+</script>
