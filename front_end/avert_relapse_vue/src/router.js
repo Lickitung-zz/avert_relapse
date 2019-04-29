@@ -14,6 +14,7 @@ import AddFriend from "./views/AddFriend.vue";
 import TimelineAbout from "./views/TimelineAbout.vue";
 import UpdateContact from "./views/UpdateContact.vue";
 import UpdateProfilePicture from "./views/UpdateProfilePicture.vue";
+import MessagesIndex from "./views/MessagesIndex.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -52,6 +53,11 @@ export default new Router({
       path: '/index',
       name: 'index',
       component: () => import('./views/Index.vue')
+    },
+    {
+      path: '/messages-index',
+      name: 'messagesIndex',
+      component: () => import('./views/MessagesIndex.vue')
     },
     {
       path: '/contacts-new',
