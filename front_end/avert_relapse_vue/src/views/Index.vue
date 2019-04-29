@@ -24,7 +24,8 @@
               <li><i class="icon ion-chatboxes"></i><div><a href="/messages-index">Messages</a></div></li>
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
               <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.html">Videos</a></div></li>
-            </ul><!--news-feed links ends-->
+            </ul>
+            <!--news-feed links ends-->
             <div id="chat-block">
               <div class="title">Chat online</div>
               <ul class="online-users list-inline">
