@@ -6,6 +6,16 @@ class Api::AccountsController < ApplicationController
     render "index.json.jbuilder"
   end
 
+  def update
+    @account = current_user.account
+    @account.phone_number = params[:phone_number],
+    @account.first_name = params[:first_name],
+    @account.last_name = params[:last_name],
+    @account.phone_number = 1234
+    @account.save
+    render "show.json.jbuilder"
+  end
+
   def is_logged_in
     if current_user
       render json: true

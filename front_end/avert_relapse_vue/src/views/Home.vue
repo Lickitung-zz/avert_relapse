@@ -545,8 +545,6 @@ export default {
     };
   },
   created: function() {
-    axios.get("/").then(response => {this.contacts = response.data;
-    });
     axios.get("/api/users/id").then(response => {
       this.user_id = response.data;
     });

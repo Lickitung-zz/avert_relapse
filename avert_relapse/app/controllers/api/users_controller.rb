@@ -26,6 +26,10 @@ class Api::UsersController < ApplicationController
     end
   end 
 
+  def show_current_user_id
+    render json: {user_id: current_user.id}
+  end
+
   def update
     @user = User.find_by(id: params[:id])
     @user.email = params[:email]

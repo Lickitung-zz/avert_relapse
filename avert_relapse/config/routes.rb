@@ -22,12 +22,13 @@ Rails.application.routes.draw do
     post "/accounts" => "accounts#create"
     delete "/accounts/:id" => "accounts#delete"
     get "/accounts/is_logged_in/" => "accounts#is_logged_in"
+    patch "/accounts" => "accounts#update"
 
     get "/contacts" => "contacts#index"
     get "/contacts/:id" => "contacts#show"
     post "/contacts" => "contacts#create"
     delete "/contacts/:id" => "contacts#delete"
-    patch "/contacts/:id" => "contacts#update"
+    post "/contacts/:id" => "contacts#update"
 
     get "/friends" => "friends#index"
     get "/friends/:id" => "friends#show"

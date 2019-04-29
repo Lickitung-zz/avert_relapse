@@ -79,29 +79,29 @@
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="basic-info" id="basic-info" class="form-inline">
+                  <form v-on:submit.prevent="submit()" name="basic-info" id="basic-info" class="form-inline">
                     <div class="row">
-                      <div class="form-group col-xs-6">
-                        <label for="firstname">First Name</label>
-	                        <div v-for="account in accounts">
-	                        	<input id="firstname" class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="First Name" value= "Name"/>
-	                    	  
-                            <label for="lastname">Last Name</label>
-                            
-                            <input id="lastname" class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="Last Name" value= "Name"/>
-                          </div>
+                      <div class="form-group col-xs-12">
+                        <label for="first_name">First Name</label>
+                        <input id="first_name" class="form-control input-group-lg" type="text" name="PhoneNumber" title="Enter First Number" placeholder="First Name" value="First Name" v-model="firstName"/>
                       </div>
                     </div>
                     <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="email">My email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="My Email" value="Email" />
+                      <div class="form-group col-xs-6">
+                        <label for="lastname">Last Name</label>
+	                        
+	                        	<!-- <input class="form-control input-group-lg" type="text" name="name" title="Enter first name" placeholder="First Name"/> -->
+
+	                    	  
+                            <!-- <label for="lastname">Last Name</label> -->
+                            <input class="form-control input-group-lg" type="text" name="name" title="Enter last name" placeholder="Last Name" v-model="lastName"/>
+                          
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="phone_number">My phone number</label>
-                        <input id="phone_number" class="form-control input-group-lg" type="text" name="PhoneNumber" title="Enter Phone Number" placeholder="My Phone Number" value="My Phone Number" />
+                        <input id="phone_number" class="form-control input-group-lg" type="text" name="PhoneNumber" title="Enter Phone Number" placeholder="My Phone Number" value="My Phone Number" v-model="phoneNumber"/>
                       </div>
                     </div>
                     <div class="row">
@@ -110,7 +110,7 @@
                         <textarea id="my-info" name="information" class="form-control" placeholder="Some texts about me" rows="4" cols="400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur</textarea>
                       </div>
                     </div>
-                    <button class="btn btn-primary">Save Changes</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
                   </form>
                 </div>
               </div>
@@ -209,20 +209,13 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Welcome to Avert.relapse!",
-      contacts: [],
-      messages: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      user_id: "",
       accounts: [],
       profile_pics: [],
-      loginEmail: "",
-      loginPassword: "",
-      help: "",
-      newContactFirstName: "",
-      newContactLastName: "",
-      newContactPhoneNumber: "",
-      newContactEmail: "",
-      newMessage: "",
-      // newContactAccountId: User.account.id,
       errors: []
     };
   },
@@ -237,6 +230,9 @@ export default {
     });
     axios.get("/api/accounts/show_profile_pic").then(response => {
       this.profile_pics = response.data;
+    });
+    axios.get("/api/users/id").then(response => {
+      this.user_id = response.data;
     });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });
@@ -305,7 +301,21 @@ export default {
       axios.post("/api/twilio/sms_update", params).then(response => {
           console.log(response);
       });
-    }
+    },
+    submit: function() {
+      var params = {
+        user_id: this.user_id.user_id,
+        first_name: this.firstName,
+        last_name: this.lastName,
+        phone_number: this.phoneNumber
+      };
+      axios
+        .patch("/api/accounts", params)
+        .then(response => {
+          console.log(response);
+        });
+          this.$router.push("/settings");
+        }
   }
 };
 </script>
