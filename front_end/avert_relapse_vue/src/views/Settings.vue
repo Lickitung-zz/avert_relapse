@@ -82,10 +82,14 @@
                   <form name="basic-info" id="basic-info" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="firstname">Name</label>
+                        <label for="firstname">First Name</label>
 	                        <div v-for="account in accounts">
-	                        	<input id="firstname" class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="Name" value= "Name"/>
-	                    	</div>
+	                        	<input id="firstname" class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="First Name" value= "Name"/>
+	                    	  
+                            <label for="lastname">Last Name</label>
+                            
+                            <input id="lastname" class="form-control input-group-lg" type="text" name="name" title="Enter name" placeholder="Last Name" value= "Name"/>
+                          </div>
                       </div>
                     </div>
                     <div class="row">
