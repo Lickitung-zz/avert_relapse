@@ -15,6 +15,7 @@ import TimelineAbout from "./views/TimelineAbout.vue";
 import UpdateContact from "./views/UpdateContact.vue";
 import UpdateProfilePicture from "./views/UpdateProfilePicture.vue";
 import MessagesIndex from "./views/MessagesIndex.vue";
+import SearchResults from "./views/SearchResults.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -83,6 +84,11 @@ export default new Router({
       path: '/update-profile-picture',
       name: 'profilePictureUpdate',
       component: () => import('./views/UpdateProfilePicture.vue')
+    },
+    {
+      path: '/search-results',
+      name: 'SearchResults',
+      component: () => import('./views/SearchResults.vue')
     },
     // {
     //   path: '/friends',
