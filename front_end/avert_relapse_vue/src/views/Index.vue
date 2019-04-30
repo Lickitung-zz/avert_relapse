@@ -387,6 +387,7 @@ export default {
   data: function() {
     return {
       message: "Welcome to Avert.relapse!",
+      searchQuery: "",
       contacts: [],
       messages: "",
       accounts: [],

@@ -16,7 +16,7 @@
               <span class="icon-bar"></span>
             </button>
             <img src="HTML/images/logo.png" alt="logo" />
-            <a class="navbar-brand" href="/"></a>
+            <a class="navbar-brand" href="/index"></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,7 +33,7 @@
                   <li><a href="newsfeed-videos.html">Videos</a></li>
                 </ul>
               </li> -->
-              <<!-- li class="dropdown">
+              <!-- li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="HTML/images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
                   <li><a href="timeline.html">Timeline</a></li>
@@ -70,20 +70,30 @@
                 <a v-if="is_logged_in === true">
                   <router-link to="/logout">Logout</router-link>
                 </a>
-                <a v-else="is_logged_in === false">
+                <a v-else>
                   <router-link to="/login">Login</router-link>
                 </a>
               </li>
               <!-- if logged in navbar end -->
 
             </ul>
-            <form class="navbar-form navbar-right hidden-sm">
+            <form class="navbar-form navbar-right hidden-sm" v-on:enter.prevent="searching()">
 
+              <!-- div class="form-group">
+                <i class="icon ion-android-search"></i>
+                <input id="my-search" class="form-control input-group-lg" type="search" name="Searchsss" title="Search here" placeholder="Search for friends and accounts" v-model="searchQuery"/>
+              </div> -->
+            </form>
+
+            <form class="navbar-form" v-on:submit.prevent="searching()" name="search_form" id='search_form'>
+             <div class="row">
               <div class="form-group">
                 <i class="icon ion-android-search"></i>
-                <input type="text" class="form-control" placeholder="Search friends, photos, videos">
+                <input id="my-search" class="form-control input-group-lg" type="search" name="Searchsss" title="Search here" placeholder="Search for friends and accounts" v-model="searchQuery"/>
+                <!-- <input type="submit" name="searching"> -->
               </div>
-            </form>
+            </div>
+          </form><!--Login Form Ends--> 
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
       </nav>
@@ -169,6 +179,7 @@ export default {
   data: function() {
     return {
       message: "Welcome to Avert.relapse!",
+      searchQuery: "",
       contacts: [],
       messages: "",
       accounts: [],
@@ -200,10 +211,24 @@ export default {
     axios.get("/api/accounts/is_logged_in").then(response => {
       this.is_logged_in = response.data;
     });
+    axios.get("/api/users/id").then(response => {
+      this.user_id = response.data;
+    });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // })
   },
   methods: {
+    searching: function() {
+      var params = {
+        search: this.searchQuery
+      };
+      axios
+        .post("/api/accounts/search-results", params)
+        .then(response => {
+          this.$router.push("/search-results");
+          console.log(response);
+        });
+    },
     login: function() {
       var params = {
         email: this.loginEmail,

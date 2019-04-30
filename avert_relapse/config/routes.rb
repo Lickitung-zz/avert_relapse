@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get "/accounts/is_logged_in/" => "accounts#is_logged_in"
     patch "/accounts" => "accounts#update"
     get "/accounts-search" => "accounts#search_index"
+    post "/accounts/search-results" => "accounts#index_search"
 
     get "/contacts" => "contacts#index"
     get "/contacts/:id" => "contacts#show"

@@ -1,8 +1,25 @@
 class Api::AccountsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :delete, :create, :is_logged_in, :search_index]
+  before_action :authenticate_user, except: [:index, :delete, :create, :is_logged_in, :index_search]
 
   def index
     @accounts = Account.all
+    search_term = params[:search]
+    if search_term
+      @accounts = Account.where("first_name iLIKE ?", "%#{search_term}%")
+    else
+      @accounts = Account.all
+    end
+    render "index.json.jbuilder"
+  end
+
+  def index_search
+    @accounts = Account.all
+    search_term = params[:search]
+    if search_term
+      @accounts = Account.where("first_name iLIKE ?", "%#{search_term}%")
+    else
+      @accounts = Account.all
+    end
     render "index.json.jbuilder"
   end
 
@@ -79,13 +96,6 @@ class Api::AccountsController < ApplicationController
     # else
     #   render json: {message: "Login to create account."}
     # end
-  end
-
-  def search_index
-    hits =  Account.search(params[:first_name])
-    p hits
-    p hits.raw_answer # to get the original JSON raw answer
-    render json: {results: hits}
   end
 
   def delete
