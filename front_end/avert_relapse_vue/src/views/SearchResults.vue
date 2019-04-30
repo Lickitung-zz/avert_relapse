@@ -67,8 +67,6 @@
 
                       <img :src="result.profile_pic" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
-                        <button v-on:click="deleteContact(contact)"><a href="#" class="pull-right text-green">Remove Contact</a></button>
-                        <a class="pull-right text-green" href="/contacts-update">Update info</a>
                         <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
                       	<h5><a href="timeline.html" class="profile-link">{{ result.first_name}} {{ result.last_name }}</a></h5>
                         <!-- <p>{{ contact.email }}</p>                      
