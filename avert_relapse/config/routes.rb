@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     patch "/accounts" => "accounts#update"
     get "/accounts-search" => "accounts#search_index"
     post "/accounts/search-results" => "accounts#index_search"
-    get "/accounts/search-results" => "accounts#index_search"
+    get "/accounts/?search=:search" => "accounts#index_search"
 
     get "/contacts" => "contacts#index"
     get "/contacts/:id" => "contacts#show"

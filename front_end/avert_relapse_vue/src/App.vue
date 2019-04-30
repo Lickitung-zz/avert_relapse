@@ -218,14 +218,17 @@ export default {
     // })
   },
   methods: {
-    searching: function() {
-      var params = {
-        search: this.searchQuery
-      };
-      axios
-        .post("/api/accounts/search-results", params)
+    searching: function(searchQuery) {
+      // var params = {
+      //   search: this.searchQuery
+      // };
+      axios.get("/api/accounts/", {
+        params: {
+          search: this.searchQuery
+        }
+      })
         .then(response => {
-          this.$router.push("/search-results");
+          this.$router.push({path: 'api/accounts/?search=' + this.searchQuery});
           console.log(response);
         });
     },
