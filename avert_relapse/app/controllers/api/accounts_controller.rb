@@ -82,7 +82,7 @@ class Api::AccountsController < ApplicationController
   end
 
   def search_index
-    hits =  Account.search("Admin Account")
+    hits =  Account.search(params[:first_name])
     p hits
     p hits.raw_answer # to get the original JSON raw answer
     render json: {results: hits}

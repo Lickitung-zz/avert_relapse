@@ -1,8 +1,8 @@
-AlgoliaSearch.configuration = { application_id: '4Y7B8JUM6W', api_key: 'eb3d42d70067c9109b0359c846dd3b24' }
+AlgoliaSearch.configuration = { application_id: ENV["application_id"], api_key: ENV["api_key"] }
 
 AlgoliaSearch.configuration = {
-  application_id: '4Y7B8JUM6W',
-  api_key: 'eb3d42d70067c9109b0359c846dd3b24',
+  application_id: ENV["application_id"],
+  api_key: ENV["api_key"],
   connect_timeout: 2,
   receive_timeout: 30,
   send_timeout: 30,
