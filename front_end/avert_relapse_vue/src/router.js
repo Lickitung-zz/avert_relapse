@@ -86,7 +86,7 @@ export default new Router({
       component: () => import('./views/UpdateProfilePicture.vue')
     },
     {
-      path: '/api/accounts',
+      path: '/api/accounts/',
       name: 'SearchResults',
       component: () => import('./views/SearchResults.vue')
     },

@@ -180,6 +180,7 @@ export default {
     return {
       message: "Welcome to Avert.relapse!",
       searchQuery: "",
+      searchResults: [],
       contacts: [],
       messages: "",
       accounts: [],
@@ -219,28 +220,19 @@ export default {
   },
   methods: {
     searching: function(searchQuery) {
-      // var params = {
-      //   search: this.searchQuery
-      // };
+      var params = {
+        search: this.searchQuery
+      };
       axios.get("/api/accounts/", {
         params: {
           search: this.searchQuery
         }
       })
         .then(response => {
-          this.$router.push({path: 'api/accounts/?search=' + this.searchQuery});
-          console.log(response);
+          this.$router.push({path: '/api/accounts/?search=' + this.searchQuery});
+          // console.log(response);
+          this.searchResults = response.data;
         });
-    },
-    login: function() {
-      var params = {
-        email: this.loginEmail,
-        password: this.loginPassword
-      };
-      console.log('logging in...');
-      axios.post('/api/sessions', params).then(response => {
-        console.log(response);
-      });
     },
     sendHelp: function() {
       console.log("sending help to all friends...");

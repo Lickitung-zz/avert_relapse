@@ -17,14 +17,16 @@
               	<h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
               	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
               </div>
-            </div><!--profile card ends-->
+            </div>
+            <!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div><a href="/index">My Newsfeed</a></div></li>
               <li><i class="icon ion-ios-people-outline"></i><div><a href="/friends">Friends</a></div></li>
               <li><i class="icon ion-chatboxes"></i><div><a href="/messages-index">Messages</a></div></li>
               <li><i class="icon ion-images"></i><div><a href="newsfeed-images.html">Images</a></div></li>
               <li><i class="icon ion-ios-videocam"></i><div><a href="newsfeed-videos.html">Videos</a></div></li>
-            </ul><!--news-feed links ends-->
+            </ul>
+            <!--news-feed links ends-->
             <!-- <div id="chat-block">
               <div class="title">Chat online</div>
               <ul class="online-users list-inline">
