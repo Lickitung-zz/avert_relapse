@@ -47,5 +47,10 @@ Rails.application.routes.draw do
     post "/twilio/sms" => "twilio#sms"
     get "/twilio/sms" => "twilio#text_body"
     post "/twilio/sms_update" => "twilio#update_text_body"
+
+    get "/posts" => "posts#index"
+    post "/posts" => "posts#create"
+    post "/posts/:id" => "posts#update"
+    delete "/posts/:id" => "posts#delete"
   end
 end
