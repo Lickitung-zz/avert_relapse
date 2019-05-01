@@ -72,12 +72,12 @@
 
             <!-- Post Content
             ================================================= -->
-            <div class="post-content">
-
-              <div v-for="post in posts">
-                
+            <div v-for="post in posts">
+              <div class="post-content">
                 <div v-if="post.text">
-                  <img src="https://i.imgur.com/p722P9z.png" alt="post-image" class="img-responsive post-image" />
+                  <!-- <div v-if="post.image"> 
+                    <img :src="{{ post.image }}" />
+                  </div> -->
                   <div class="post-container">
                     <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
                     <div class="post-detail">
@@ -109,18 +109,20 @@
                     </div>
                   </div>
                 </div>
-                <div v-else>
-                  <h1>There aren't any posts to see here! Why not post something or find some friends?</h1>
-                  
-                  
+                  <div v-else>
+                    <h3>There aren't any posts to see here! Why not post something or find some friends?</h3>
+                  </div>
                 </div>
                 
               </div>
-            </div>
+              
+              
+            
 
 
             <!-- Post Content
             ================================================= -->
+
             <!-- <div class="post-content">
               <div class="post-container">
                 <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
@@ -253,7 +255,10 @@
             </div>
           </div> -->
 
-          <!-- Newsfeed Common Side Bar Right
+
+        </div>
+
+                  <!-- Newsfeed Common Side Bar Right
           ================================================= -->
           <div class="col-md-2 static">
             <div class="suggestions" id="sticky-sidebar">
@@ -295,7 +300,6 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
       
         <!-- Footer
