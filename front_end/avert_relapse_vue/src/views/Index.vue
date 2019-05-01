@@ -104,16 +104,18 @@
                         <p>{{  post.text }} <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
                       </div>
                       <div class="line-divider"></div>
-                      <div class="post-comment">
+                      <!-- <div class="post-comment">
                         <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
                         <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                       </div>
                       <div class="post-comment">
                         <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
                         <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                      </div>
+                      </div> -->
                       <div class="post-comment">
-                        <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                        <div v-for="info in loggedInAccount">
+                          <img :src="loggedInAccount.profile_pic" alt="" class="profile-photo-sm" />
+                        </div>
                         <input type="text" class="form-control" placeholder="Post a comment">
                       </div>
                     </div>
