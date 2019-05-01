@@ -12,6 +12,11 @@ class Api::AccountsController < ApplicationController
     render "index.json.jbuilder"
   end
 
+  def logged_in_index
+    @account = current_user.account
+    render "show.json.jbuilder"
+  end
+
   def index_search
     @accounts = Account.all
     search_term = params[:search]

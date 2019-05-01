@@ -79,7 +79,9 @@
                     <img :src="{{ post.image }}" />
                   </div> -->
                   <div class="post-container">
-                    <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
+                    <div v-for="account in accounts">
+                      <img :src="account.profile_pic" alt="user" class="profile-photo-md pull-left" />
+                    </div>
                     <div class="post-detail">
                       <div class="user-info">
                         <h5><a href="timeline.html" class="profile-link">{{ post.published_by }}</a> <span class="following">following</span></h5>
@@ -376,6 +378,7 @@ export default {
       newContactPhoneNumber: "",
       newContactEmail: "",
       newMessage: "",
+      loggedInAccount: "",
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -388,8 +391,11 @@ export default {
     axios.get("/api/accounts/show_profile_pic").then(response => {
       this.profile_pics = response.data;
     });
-    axios.get("/api//posts").then(response => {
+    axios.get("/api/posts").then(response => {
       this.posts = response.data;
+    });
+    axios.get("/api/accounts/logged_in").then(response => {
+      this.loggedInAccount = response.data;
     })
   },
   methods: {
