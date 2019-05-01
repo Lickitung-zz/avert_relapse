@@ -76,38 +76,45 @@
 
               <div v-for="post in posts">
                 
-              
-                <img src="https://i.imgur.com/p722P9z.png" alt="post-image" class="img-responsive post-image" />
-                <div class="post-container">
-                  <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
-                  <div class="post-detail">
-                    <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">{{ post.published_by }}</a> <span class="following">following</span></h5>
-                      <p class="text-muted">Published at {{ post.created_at }}</p>
-                    </div>
-                    <div class="reaction">
-                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
-                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                    </div>
-                    <div class="line-divider"></div>
-                    <div class="post-text">
-                      <p>{{  post.text }} <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
-                    </div>
-                    <div class="line-divider"></div>
-                    <div class="post-comment">
-                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="post-comment">
-                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="post-comment">
-                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                      <input type="text" class="form-control" placeholder="Post a comment">
+                <div v-if="post.text">
+                  <img src="https://i.imgur.com/p722P9z.png" alt="post-image" class="img-responsive post-image" />
+                  <div class="post-container">
+                    <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
+                    <div class="post-detail">
+                      <div class="user-info">
+                        <h5><a href="timeline.html" class="profile-link">{{ post.published_by }}</a> <span class="following">following</span></h5>
+                        <p class="text-muted">Published at {{ post.created_at }}</p>
+                      </div>
+                      <div class="reaction">
+                        <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
+                        <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+                      </div>
+                      <div class="line-divider"></div>
+                      <div class="post-text">
+                        <p>{{  post.text }} <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                      </div>
+                      <div class="line-divider"></div>
+                      <div class="post-comment">
+                        <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                        <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      </div>
+                      <div class="post-comment">
+                        <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                        <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      </div>
+                      <div class="post-comment">
+                        <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                        <input type="text" class="form-control" placeholder="Post a comment">
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div v-else>
+                  <h1>There aren't any posts to see here! Why not post something or find some friends?</h1>
+                  
+                  
+                </div>
+                
               </div>
             </div>
 

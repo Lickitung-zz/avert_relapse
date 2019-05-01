@@ -3,7 +3,12 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = current_user.account.posts
-    render "index.json.jbuilder"
+    # render "index.json.jbuilder"
+    if @posts == []
+      render json: {message: "you aint got no posts"}
+    else
+      render "index.json.jbuilder"
+    end
   end
 
   def create
