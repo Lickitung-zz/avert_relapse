@@ -10,6 +10,7 @@ class Api::PostsController < ApplicationController
     @post = Post.create(
       text: params[:text],
       published_date: params[:published_date],
+      published_by: current_user.account.first_name + ' ' + current_user.account.last_name,
       account_id: current_user.account.id
       )
     render "show.json.jbuilder"

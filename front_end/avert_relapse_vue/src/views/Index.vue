@@ -73,84 +73,48 @@
             <!-- Post Content
             ================================================= -->
             <div class="post-content">
-              <img src="https://i.imgur.com/p722P9z.png" alt="post-image" class="img-responsive post-image" />
-              <div class="post-container">
-                <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
-                <div class="post-detail">
-                  <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">Alexis Clark</a> <span class="following">following</span></h5>
-                    <p class="text-muted">Published a photo about 3 mins ago</p>
-                  </div>
-                  <div class="reaction">
-                    <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
-                    <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                  </div>
-                  <div class="line-divider"></div>
-                  <div class="post-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
-                  </div>
-                  <div class="line-divider"></div>
-                  <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                  </div>
-                  <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                  </div>
-                  <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
+
+              <div v-for="post in posts">
+                
+              
+                <img src="https://i.imgur.com/p722P9z.png" alt="post-image" class="img-responsive post-image" />
+                <div class="post-container">
+                  <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
+                  <div class="post-detail">
+                    <div class="user-info">
+                      <h5><a href="timeline.html" class="profile-link">{{ post.published_by }}</a> <span class="following">following</span></h5>
+                      <p class="text-muted">Published at {{ post.created_at }}</p>
+                    </div>
+                    <div class="reaction">
+                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
+                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-text">
+                      <p>{{  post.text }} <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    </div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    </div>
+                    <div class="post-comment">
+                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                      <input type="text" class="form-control" placeholder="Post a comment">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Post Content
-            ================================================= -->
-            <div class="post-content">
-              <div class="video-wrapper">
-                <video class="post-video" controls> <source src="videos/1.mp4" type="video/mp4"> </video>
-              </div>
-              <div class="post-container">
-                <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
-                <div class="post-detail">
-                  <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">Sophia Lee</a> <span class="following">following</span></h5>
-                    <p class="text-muted">Updated her status about 33 mins ago</p>
-                  </div>
-                  <div class="reaction">
-                    <a class="btn text-green"><i class="icon ion-thumbsup"></i> 75</a>
-                    <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 8</a>
-                  </div>
-                  <div class="line-divider"></div>
-                  <div class="post-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                  </div>
-                  <div class="line-divider"></div>
-                   <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Olivia </a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <i class="em em-anguished"></i> Ut enim ad minim veniam, quis nostrud </p>
-                  </div>
-                  <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Sarah</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                  </div>
-                  <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Linda</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  </div>
-                  <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <!-- Post Content
             ================================================= -->
-            <div class="post-content">
+            <!-- <div class="post-content">
               <div class="post-container">
                 <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">
@@ -177,11 +141,11 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- Post Content
             ================================================= -->
-            <div class="post-content">
+            <!-- <div class="post-content">
               <img src="http://placehold.it/2000x1300" alt="post-image" class="img-responsive post-image" />
               <div class="post-container">
                 <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
@@ -214,10 +178,10 @@
                 </div>
               </div>
             </div>
-
+ -->
             <!-- Post Content
             ================================================= -->
-            <div class="post-content">
+            <!-- <div class="post-content">
               <div class="google-maps">
                 <div id="map" class="map"></div>
               </div>
@@ -247,11 +211,11 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- Post Content
             ================================================= -->
-            <div class="post-content">
+            <!-- <div class="post-content">
               <img src="http://placehold.it/1920x1160" alt="" class="img-responsive post-image" />
               <div class="post-container">
                 <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
@@ -280,7 +244,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Newsfeed Common Side Bar Right
           ================================================= -->
@@ -389,6 +353,7 @@ export default {
       message: "Welcome to Avert.relapse!",
       searchQuery: "",
       contacts: [],
+      posts: [],
       messages: "",
       accounts: [],
       profile_pics: [],
@@ -412,6 +377,9 @@ export default {
     axios.get("/api/accounts/show_profile_pic").then(response => {
       this.profile_pics = response.data;
     });
+    axios.get("/api//posts").then(response => {
+      this.posts = response.data;
+    })
   },
   methods: {
     login: function() {
