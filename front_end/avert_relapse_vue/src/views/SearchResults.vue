@@ -49,8 +49,7 @@
           	<!-- Friend List
             ================================================= -->
             <div class="friend-list">
-              {{ searchResults }}
-			    <div v-for="result in searchQuery">
+			    <div v-for="result in searchResults">
 			      <!-- <div>
 			        First Name: <input type="text" v-model="contact.first_name">
 			        Last Name: <input type="text" v-model="contact.last_name">
