@@ -72,6 +72,7 @@
 
             <!-- Post Content
             ================================================= -->
+      
             <div v-for="post in posts">
               <div class="post-content">
                 <div v-if="post.text">
@@ -79,8 +80,8 @@
                     <img :src="{{ post.image }}" />
                   </div> -->
                   <div class="post-container">
-                    <div v-for="account in accounts">
-                      <img :src="account.profile_pic" alt="user" class="profile-photo-md pull-left" />
+                    <div v-for="info in loggedInAccount">
+                      <img :src="loggedInAccount.profile_pic" alt="user" class="profile-photo-md pull-left" />
                     </div>
                     <div class="post-detail">
                       <div class="user-info">
@@ -385,6 +386,9 @@ export default {
   },
 
   created: function() {
+    axios.get("/api/accounts/logged_in").then(response => {
+      this.loggedInAccount = response.data;
+    });
     axios.get("/api/accounts/show_name").then(response => {
       this.accounts = response.data;
     });
@@ -394,9 +398,6 @@ export default {
     axios.get("/api/posts").then(response => {
       this.posts = response.data;
     });
-    axios.get("/api/accounts/logged_in").then(response => {
-      this.loggedInAccount = response.data;
-    })
   },
   methods: {
     login: function() {

@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
     delete "/users/:id" => "users#delete"
     put "/users/:id" => "users#update"
-    
-    get "/accounts/logged_in" => "accounts#logged_in_index"
+
+    get "/accounts/logged_in" => "accounts#logged_in_profile_pic"
     get "/accounts" => "accounts#index"
     get "/accounts/show_name" => "accounts#show_current_account_name"
     get "/accounts/show_profile_pic" => "accounts#show_current_account_profile_pic"

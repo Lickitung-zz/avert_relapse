@@ -12,9 +12,9 @@ class Api::AccountsController < ApplicationController
     render "index.json.jbuilder"
   end
 
-  def logged_in_index
+  def logged_in_profile_pic
     @account = current_user.account
-    render "show.json.jbuilder"
+    render json: {profile_pic: current_user.account.profile_pic}
   end
 
   def index_search
