@@ -104,7 +104,7 @@
                             </button></p>                         
                           <!-- </div> -->
                         </h5>
-                        <p class="text-muted">Published at {{ post.created_at }}</p>
+                        <p class="text-muted">Published at {{ post.published_date }}</p>
                       </div>
                       <div class="reaction">
                         <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
