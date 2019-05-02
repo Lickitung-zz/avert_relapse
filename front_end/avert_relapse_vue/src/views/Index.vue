@@ -80,7 +80,7 @@
             <!-- Post Content
             ================================================= -->
       
-            <div v-for="post in posts">
+            <div v-for="post in posts.slice().reverse()">
               <div class="post-content">
                 <div v-if="post.text">
                   <!-- <div v-if="post.image"> 
@@ -440,6 +440,7 @@ export default {
         response => {
           console.log("deleted the post...");
         });
+      location.reload();
     },
     login: function() {
       var params = {
@@ -450,7 +451,6 @@ export default {
       axios.post('/api/sessions', params).then(response => {
         console.log(response);
       });
-      location.reload();
     },
     sendHelp: function() {
       console.log("sending help to all friends...");
