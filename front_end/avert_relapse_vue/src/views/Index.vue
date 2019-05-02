@@ -92,7 +92,16 @@
                     </div>
                     <div class="post-detail">
                       <div class="user-info">
-                        <h5><a href="timeline.html" class="profile-link">{{ post.published_by }}</a> <span class="following">following</span></h5>
+                        <h5>
+                          <a href="timeline.html" class="profile-link">{{ post.published_by }}</a>
+                          <!-- <span class="following">following</span> -->
+                          <!-- <div v-on:click.prevent="deletePost()"> -->                                              
+                            <br>                            
+                            <p><button v-on:click="deletePost(post)">                              
+                              <span class="following" style="color: red">Delete Post</span>
+                            </button></p>                         
+                          <!-- </div> -->
+                        </h5>
                         <p class="text-muted">Published at {{ post.created_at }}</p>
                       </div>
                       <div class="reaction">
@@ -377,6 +386,7 @@ export default {
       searchQuery: "",
       contacts: [],
       posts: [],
+      currentPostId: "",
       messages: "",
       accounts: [],
       profile_pics: [],
@@ -419,6 +429,12 @@ export default {
       axios.post('/api/posts', params).then(
         response => {
           console.log(response);
+        });
+    },
+    deletePost: function(post) {
+      axios.delete('/api/posts/' + post.id ).then(
+        response => {
+          console.log("deleting the post...")
         });
     },
     login: function() {
