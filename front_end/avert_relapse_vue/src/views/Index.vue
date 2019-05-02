@@ -79,8 +79,8 @@
 
             <!-- Post Content
             ================================================= -->
-      
-            <div v-for="post in posts.slice().reverse()">
+        
+            <div v-for="post in posts"> <!-- .slice().reverse() -->
               <div class="post-content">
                 <div v-if="post.text">
                   <!-- <div v-if="post.image"> 
@@ -132,9 +132,9 @@
                     </div>
                   </div>
                 </div>
-                  <div v-else>
+                <div v-else>
                     <h3>There aren't any posts to see here! Why not post something or find some friends?</h3>
-                  </div>
+                </div>  
                 </div>
                 
               </div>

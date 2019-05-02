@@ -320,6 +320,7 @@ export default {
           console.log(response);
         });
           this.$router.push("/settings");
+          location.reload();
         }
   }
 };
