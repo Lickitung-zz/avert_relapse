@@ -68,7 +68,7 @@
                           <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
                           <li><a href="#"><i class="ion-map"></i></a></li>
                         </ul>
-                        <button type="submit" class="btn btn-primary pull-right">Publish</button>
+                        <button type="submit" href="#" class="btn btn-primary pull-right">Publish</button>
                       </div>
                     </div>
                   
@@ -98,7 +98,9 @@
                           <!-- <div v-on:click.prevent="deletePost()"> -->                                              
                             <br>                            
                             <p><button v-on:click="deletePost(post)">                              
-                              <span class="following" style="color: red">Delete Post</span>
+                              <span class="following" style="color: red">
+                                <a href="#">Delete Post</a>
+                              </span>
                             </button></p>                         
                           <!-- </div> -->
                         </h5>
@@ -430,11 +432,13 @@ export default {
         response => {
           console.log(response);
         });
+      location.reload();
     },
     deletePost: function(post) {
+      console.log("deleting the post...");
       axios.delete('/api/posts/' + post.id ).then(
         response => {
-          console.log("deleting the post...")
+          console.log("deleted the post...");
         });
     },
     login: function() {
@@ -446,6 +450,7 @@ export default {
       axios.post('/api/sessions', params).then(response => {
         console.log(response);
       });
+      location.reload();
     },
     sendHelp: function() {
       console.log("sending help to all friends...");
