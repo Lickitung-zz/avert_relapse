@@ -1,5 +1,5 @@
 class Api::AccountsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :delete, :create, :is_logged_in, :index_search]
+  before_action :authenticate_user, except: [:index, :show, :delete, :create, :is_logged_in, :index_search]
 
   def index
     @accounts = Account.all
@@ -10,6 +10,11 @@ class Api::AccountsController < ApplicationController
       @accounts = Account.all
     end
     render "index.json.jbuilder"
+  end
+
+  def show
+    @account = Account.find_by(id: params[:id])
+    render "show.json.jbuilder"
   end
 
   def logged_in_profile_pic

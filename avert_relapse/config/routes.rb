@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
     get "/accounts/logged_in" => "accounts#logged_in_profile_pic"
     get "/accounts" => "accounts#index"
+    get "/accounts/:id" => "accounts#show"
     get "/accounts/show_name" => "accounts#show_current_account_name"
     get "/accounts/show_profile_pic" => "accounts#show_current_account_profile_pic"
     post "/accounts/update_profile_pic" => "accounts#update_account_profile_pic"
