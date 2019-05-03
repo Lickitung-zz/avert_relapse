@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, except: [:show]
 
   def index
     @posts = current_user.account.posts
@@ -9,6 +9,12 @@ class Api::PostsController < ApplicationController
     else
       render "index.json.jbuilder"
     end
+  end
+
+  def show
+    @posts = Account.find_by(id: params[:id]).posts
+    
+    render "show_account_posts.json.jbuilder"
   end
 
   def create
