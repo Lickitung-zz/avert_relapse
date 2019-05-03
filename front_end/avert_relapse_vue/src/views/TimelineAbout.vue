@@ -44,10 +44,10 @@
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <div v-for="account in accounts">
-                <div v-for="profile_pic in profile_pics">
-                  <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
-                </div>
-                <h4>1</h4>
+                
+                  <img :src="timelines.profile_pic" alt="" class="img-responsive profile-photo" />
+                
+                <h4>{{ timelines.first_name }} {{ timelines.last_name }}</h4>
                 <p class="text-muted">Creative Director</p>
               </div>
             </div>
