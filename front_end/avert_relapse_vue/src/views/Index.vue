@@ -16,7 +16,7 @@
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
                 </div>
                 <!-- <div v-for="newAccount in showAccounts"> -->
-                  <h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>              
+                  <h5><a href="/accounts/timeline/65" class="text-white">{{ accounts.name }}</a></h5>              
                 <!-- </div> -->
                   
                 

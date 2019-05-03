@@ -71,7 +71,7 @@ export default new Router({
       component: () => import('./views/AddFriend.vue')
     },
     {
-      path: '/timeline-about',
+      path: '/accounts/timeline/:id',
       name: 'timelineAbout',
       component: () => import('./views/TimelineAbout.vue')
     },

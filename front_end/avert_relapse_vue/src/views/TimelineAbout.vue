@@ -10,13 +10,14 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <div v-for="account in accounts">
-                    <div v-for="profile_pic in profile_pics">
-                      <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
-                      <a href="/update-profile-picture">Update Profile Picture</a>
+                    <div v-for="timeline in timelines">
+                      <!-- <div v-for="profile_pic in profile_pics"> -->
+                        <img :src="timelines" alt="" class="img-responsive profile-photo" />
+                        <a href="/update-profile-picture">Update Profile Picture</a>
+                      <!-- </div> -->
+                      <h3>{{ timelines }}</h3>
+                      <p class="text-muted">Creative Director</p>
                     </div>
-                    <h3>{{ accounts.name }}</h3>
-                    <p class="text-muted">Creative Director</p>
                   </div>
                 </div>
               </div>
@@ -94,8 +95,8 @@
 
                 <!--Post Date-->
                 <div class="post-date hidden-xs hidden-sm">
-                  <div v-for="account in accounts">
-                    <h5>{{ accounts.name }}</h5>
+                  <div v-for="timeline in timelines">
+                    <h5>{{ timelines }}</h5>
                   </div>
                   <p class="text-grey">Sometimes ago</p>
                 </div><!--Post Date End-->
@@ -105,8 +106,8 @@
                   <img src="http://placehold.it/300x300" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <div v-for="account in accounts">
-                        <h5><a href="timeline.html" class="profile-link">{{ accounts.name }}
+                      <div v-for="timeline in timelines">
+                        <h5><a href="timeline.html" class="profile-link">{{ timelines }}
                         </a></a> 
                         <span class="following">following</span></h5>
                       </div>
@@ -323,6 +324,7 @@ export default {
       contacts: [],
       messages: "",
       accounts: [],
+      timelines: [],
       profile_pics: [],
       cover_photos: [],
       loginEmail: "",
@@ -343,10 +345,10 @@ export default {
     axios.get("/api/twilio/sms").then(response => {
       this.messages = response.data;
     });
-    // axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
-    //   console.log(response.data);
-    //   this.timelines = response.data;
-    // });
+    axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
+      console.log(response.data);
+      this.timelines = response.data;
+    });
     axios.get("/api/accounts/show_name").then(response => {
       this.accounts = response.data;
     });
