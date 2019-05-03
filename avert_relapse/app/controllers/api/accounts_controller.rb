@@ -14,7 +14,7 @@ class Api::AccountsController < ApplicationController
 
   def show
     @account = Account.find_by(id: params[:id])
-    render "show.json.jbuilder"
+    render json: {message: "testing show action"}
   end
 
   def logged_in_profile_pic
@@ -53,7 +53,12 @@ class Api::AccountsController < ApplicationController
     end
   end
 
-  def show_current_account_name
+  def current_account_name
+    # @account = current_user.account
+    # render "show_name.json.jbuilder"
+    # render json: {
+    #   name: (@account.first_name + ' ' + @account.last_name)
+    # }
     if current_user
       @account = current_user.account
       render json: {
