@@ -68,7 +68,8 @@
                       <img :src="result.profile_pic" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
-                      	<h5><a href="/timeline-about" class="profile-link">{{ result.first_name }} {{ result.last_name }}</a></h5>
+                        <router-link v-bind:to="'/accounts/timeline/' + result.id">{{ result.first_name }} {{ result.last_name }}</router-link>
+                      	<h5><a href="/timeline-about" class="profile-link"></a></h5>
                         <!-- <p>{{ contact.email }}</p>                      
                         <p>{{ contact.phone_number }}</p> -->
                     </div>
@@ -201,6 +202,7 @@ export default {
       newContactPhoneNumber: "",
       newContactEmail: "",
       newMessage: "",
+      accountId: "",
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -220,6 +222,9 @@ export default {
     ).then(response => {
       this.searchResults = response.data;
       console.log(response.data);
+    });
+    axios.get("/api/accounts/account_id").then(response => {
+      this.accountId = response.data;
     });
 
   },

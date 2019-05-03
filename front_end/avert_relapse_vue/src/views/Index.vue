@@ -444,7 +444,7 @@ export default {
     });
     axios.get("/api/accounts/account_id").then(response => {
       this.accountId = response.data;
-    })
+    });
   },
   methods: {
     createPost: function() {
