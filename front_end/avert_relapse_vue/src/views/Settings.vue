@@ -39,8 +39,10 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
+              <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
+              <div v-for="account in accounts">
+                      <h4>{{ accounts.name }}</h4>
+              </div>              
               <p class="text-muted">Creative Director</p>
             </div>
             <div class="mobile-menu">
@@ -101,12 +103,12 @@
 
                     <!-- edit phone number BEGIN (this is broke and needs to be fixed at some point) -->
 
-                    <!-- <div class="row">
+                    <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="phone_number">My phone number</label>
                         <input id="phone_number" class="form-control input-group-lg" type="text" name="PhoneNumber" title="Enter Phone Number" placeholder="My Phone Number" value="My Phone Number" v-model="phoneNumber"/>
                       </div>
-                    </div> -->
+                    </div>
 
                     <!-- edit phone number END (this is broke and needs to be fixed at some point) -->
                     <div class="row">
