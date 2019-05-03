@@ -102,7 +102,9 @@
                     <div class="post-detail">
                       <div class="user-info">
                         <h5>
-                          <a href="timeline.html" class="profile-link">{{ post.published_by }}</a>
+                          <router-link v-bind:to="'/accounts/timeline/' + accountId.id" class="profile-link">{{ post.published_by }}</router-link>
+                          
+                          <!-- <a href="timeline.html" class="profile-link">{{ post.published_by }}</a> -->
                           <!-- <span class="following">following</span> -->
                           <!-- <div v-on:click.prevent="deletePost()"> -->                                              
                             <br>                            

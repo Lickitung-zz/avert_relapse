@@ -73,9 +73,9 @@
                 <div class="row">
                   <div class="col-md-7 col-sm-7">
                     <div class="form-group">
-                      <div v-for="profile_pic in profile_pics">
+                      
                         <img :src="profile_pics.profile_pic" alt="" class="profile-photo-md" />
-                      </div>
+                      
                       <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                     </div>
                   </div>
@@ -99,9 +99,9 @@
 
                 <!--Post Date-->
                 <div class="post-date hidden-xs hidden-sm">
-                  <div v-for="timeline in timelines">
-                    <h5>{{ timeline.first_name }}</h5>
-                  </div>
+                  
+                    <h5>{{ timelines.first_name }}</h5>
+                  
                   <p class="text-grey">Sometimes ago</p>
                 </div><!--Post Date End-->
 

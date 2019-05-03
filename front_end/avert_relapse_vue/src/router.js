@@ -36,6 +36,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
+      path: '/accounts/timeline/:id',
+      name: 'timelineAbout',
+      component: () => import('./views/TimelineAbout.vue')
+    },
+    {
       path: '/settings',
       name: 'settings',
       component: () => import(/* webpackChunkName: "settings" */ './views/Settings.vue')
@@ -69,11 +74,6 @@ export default new Router({
       path: '/friends-new',
       name: 'newFriend',
       component: () => import('./views/AddFriend.vue')
-    },
-    {
-      path: '/accounts/timeline/:id',
-      name: 'timelineAbout',
-      component: () => import('./views/TimelineAbout.vue')
     },
     {
       path: '/contacts-update',
