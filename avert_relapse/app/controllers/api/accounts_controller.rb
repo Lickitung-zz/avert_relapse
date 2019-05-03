@@ -14,7 +14,7 @@ class Api::AccountsController < ApplicationController
 
   def show
     @account = Account.find_by(id: params[:id])
-    render json: {message: "testing show action"}
+    render "show.json.jbuilder"
   end
 
   def logged_in_profile_pic
