@@ -96,7 +96,7 @@
               <!-- Post Content
             ================================================= -->
         
-            <div v-for="post in posts"> <!-- .slice().reverse() -->
+            <div v-for="post in timelinePosts"> <!-- .slice().reverse() -->
               <div class="post-content">
                 <div v-if="post.text">
                   <!-- <div v-if="post.image"> 
@@ -527,6 +527,7 @@ export default {
       createText: "",
       timelines: "",
       accountId: "",
+      timelinePosts: "",
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -551,6 +552,10 @@ export default {
     axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
       console.log(response.data);
       this.timelines = response.data;
+    });
+    axios.get("/api/posts/" + this.$route.params.id).then(response => {
+      console.log(response.data);
+      this.timelinePosts = response.data;
     });
     axios.get("/api/accounts/account_id").then(response => {
       this.accountId = response.data;
