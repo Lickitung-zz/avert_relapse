@@ -12,12 +12,15 @@
             <div class="profile-card">
               
               <div v-for="account in accounts">
-                <div v-for="profile_pic in profile_pics">
+                <!-- <div v-for="profile_pic in profile_pics"> -->
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
-                </div>
-                <!-- <div v-for="newAccount in showAccounts"> -->
-                  <h5><a href="/accounts/timeline/65" class="text-white">{{ accounts.name }}</a></h5>              
                 <!-- </div> -->
+                <!-- <div v-for="newAccount in showAccounts"> -->
+                  <!-- <a :href="timelines">This let's you click</a> -->
+                  <!-- <a :href="timelines.id">This doesn't let you click</a> -->
+                  <h5><router-link v-bind:to="'/accounts/timeline/' + accountId.id" class="text-white">{{ accounts.name }}</router-link></h5>         
+                  
+               <!--  </div> -->
                   
                 
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
@@ -410,6 +413,8 @@ export default {
       loggedInAccount: "",
       // createPost: "",
       createText: "",
+      timelines: "",
+      accountId: "",
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -431,10 +436,13 @@ export default {
     axios.get("/api/accounts").then(response => {
       this.showAccounts = response.data;
     })
-    // axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
-    //   console.log(response.data);
-    //   this.timelines = response.data;
-    // });
+    axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
+      console.log(response.data);
+      this.timelines = response.data;
+    });
+    axios.get("/api/accounts/account_id").then(response => {
+      this.accountId = response.data;
+    })
   },
   methods: {
     createPost: function() {

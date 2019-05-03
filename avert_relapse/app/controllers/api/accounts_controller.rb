@@ -17,6 +17,11 @@ class Api::AccountsController < ApplicationController
     render "show.json.jbuilder"
   end
 
+  def show_account_id
+    @account = Account.find_by(id: params[:id])
+    render json: {id: current_user.account.id}
+  end
+
   def logged_in_profile_pic
     @account = current_user.account
     render json: {profile_pic: current_user.account.profile_pic}
