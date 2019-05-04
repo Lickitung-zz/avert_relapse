@@ -11,6 +11,12 @@ class Api::PostsController < ApplicationController
     end
   end
 
+  def like
+    @post = Post.find_by(id: params[:id])
+    @post.likes = 1
+    render json: {likes: @post.likes}
+  end
+
   def show
     @posts = Account.find_by(id: params[:id]).posts
     
@@ -22,7 +28,9 @@ class Api::PostsController < ApplicationController
       text: params[:text],
       published_date: Time.now,
       published_by: current_user.account.first_name + ' ' + current_user.account.last_name,
-      account_id: current_user.account.id
+      account_id: current_user.account.id,
+      likes: 0,
+      dislikes: 0
       )
     render "show.json.jbuilder"
   end
