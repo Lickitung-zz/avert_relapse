@@ -74,7 +74,7 @@
                   <div class="col-md-7 col-sm-7">
                     <div class="form-group">
                       
-                        <img :src="timelines.profile_pic" alt="" class="profile-photo-md" />
+                        <img :src="profile_pics.profile_pic" alt="" class="profile-photo-md" />
                       
                       <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                     </div>
