@@ -17,7 +17,7 @@
                         <img :src="timelines.profile_pic" alt="" class="img-responsive profile-photo" />
                         <a href="/update-profile-picture">Update Profile Picture</a>
 
-                      
+                                              
                       <h3>{{ timelines.first_name }} {{ timelines.last_name }}</h3>
                       <p class="text-muted">Creative Director</p>
                     

@@ -49,9 +49,9 @@
             <!-- Post Create Box
             ================================================= -->
             <div style="text-align: right;">
-              <vs-button @click="popupActivo=true" color="primary" type="flat">Add Contact</vs-button>
+              <vs-button @click="popupActivo1=true" color="primary" type="flat">Add Contact</vs-button>
             </div>
-            <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo">
+            <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo1">
               <div class="form-group">
                 <form style="text-align: center;">
                   <div style="display: inline-block;">
@@ -97,24 +97,91 @@
                       <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />                
                       <div class="friend-info">
 
-                        
-
-                        <div style="text-align: right">
+                        <div style="text-align: right;">
                         <vs-dropdown>
-                          <vs-button class="btn-drop" type="border" icon="expand_more"></vs-button>
+                          <vs-button class="btn-drop" type="filled" icon="expand_more"></vs-button>
                           <!-- <a href="#">Hola mundo</a> -->
 
                           <vs-dropdown-menu>
                             <vs-dropdown-item>
-                              <button v-on:click="deleteContact(contact)"><a href="#" class="text-red">Remove Contact</a></button>                            
+                              <vs-button @click="popupActivo2=true" color="primary" type="flat">Edit Contact</vs-button>
+                                <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo2">
+                                <div class="form-group">
+                                  <form style="text-align: center;">
+                                    <div style="display: inline-block;">
+                                      <vs-input label-placeholder="First Name" v-model="contact.first_name"/>
+                                    <vs-input label-placeholder="Last Name" v-model="contact.last_name"/>
+                                    <vs-input icon-after="true" icon="contact_phone" label-placeholder="Phone Number" v-model="contact.phone_number"/>
+                                    </div>
+                                    
+                                    <!-- <h4>Email:  <input type=text v-model="newContactEmail"></h4> -->
+                                  </form>
+                                  <br>
+                                  <a href="/contacts">
+                                    <div style="text-align: center">
+                                      <vs-button v-on:click="createContact()">
+                                        Add Contact
+                                      </vs-button>
+                                    </div>
+                                    
+                                  </a>
+                                </div>
+                              </vs-popup>
+                            </vs-dropdown-item>
+                              
+                            
+                            <vs-dropdown-item>
+                              <vs-button color="danger" type="flat" v-on:click="deleteContact(contact)">Remove Contact</vs-button>
+                            </vs-dropdown-item>
+                          </vs-dropdown-menu>
+                        </vs-dropdown>
+                        </div>
+
+                        
+
+
+                        <!-- <div style="text-align: right">
+                        <vs-dropdown>
+                          <vs-button class="btn-drop" type="border" icon="expand_more"></vs-button>
+                          
+
+                          <vs-dropdown-menu>
+                            <vs-dropdown-item>
+                              <vs-button @click="popupActivo=true" color="primary" type="flat">Edit Contact</vs-button> 
+                                <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo">
+                                  <div class="form-group">
+                                    <form style="text-align: center;">
+                                      <div style="display: inline-block;">
+                                        <vs-input label-placeholder="First Name" v-model="contact.first_name"/>
+                                      <vs-input label-placeholder="Last Name" v-model="contact.last_name"/>
+                                      <vs-input icon-after="true" icon="contact_phone" label-placeholder="Phone Number" v-model="contact.phone_number"/>
+                                    
+                                      </div>
+                                      
+                                      <br>
+
+                                      
+                                      <a href="/contacts">
+                                      <div style="text-align: center">
+                                        <vs-button v-on:click="editContact()">
+                                          Submit changes
+                                        </vs-button>
+                                      </div>
+                                      
+                                    </a>
+                                    </form>
+                                    
+                                  </div>
+                                </vs-popup>
                             </vs-dropdown-item>
                             <vs-dropdown-item>
-                              <a class="text-green" href="/contacts-update">Update info</a>
+                              <vs-button v-on:click="deleteContact(contact)" color="danger" type="flat">Remove Contact</vs-button>
+                              
                             </vs-dropdown-item>
                             
                           </vs-dropdown-menu>
                         </vs-dropdown>
-                        </div>
+                        </div> -->
 
                         <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
                       	<h5><a href="timeline.html" class="profile-link">{{ contact.first_name}} {{ contact.last_name }}</a></h5>
@@ -248,7 +315,8 @@ export default {
       newContactPhoneNumber: "",
       newContactEmail: "",
       newMessage: "",
-      popupActivo: false,
+      popupActivo1: false,
+      popupActivo2: false,
       // newContactAccountId: User.account.id,
       errors: []
     };
