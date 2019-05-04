@@ -2,7 +2,7 @@
 	<div class="newContact">
 	    <h1>This is the add contacts page</h1>
 	    <h1>This is the add contacts page</h1>
-	    <div class="form-group">
+	 <div class="form-group">
 		<h4>Add contact</h4>
 		  <form>
 		    <p>First Name <input type=text v-model="newContactFirstName"></p>

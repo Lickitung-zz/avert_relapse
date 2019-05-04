@@ -40,20 +40,38 @@
                 <li><a href="newsfeed-messages.html" title="Anna Young"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
                 <li><a href="newsfeed-messages.html" title="Julia Cox"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
               </ul>
-            </div><!--chat block ends-->
-          </div> -->
+            </div>
+            <!--chat block ends--> -->
+          </div> 
           
     			<div class="col-md-7">
 
             <!-- Post Create Box
             ================================================= -->
-            <div class="create-post">
-            	<div class="row">
-            		<div class="col-md-7 col-sm-7">
-                  <a href="/contacts-new">Add New Contact?</a>
-                </div>
-            	</div>
-            </div><!-- Post Create Box End -->
+            <div style="text-align: right;">
+              <vs-button @click="popupActivo=true" color="primary" type="flat">Add Contact</vs-button>
+            </div>
+            <vs-popup class="holamundo" style="text-align: center;" title="Add contact" :active.sync="popupActivo">
+              <div class="form-group">
+                <form style="text-align: center;">
+                  <h4>First Name:  <input type=text v-model="newContactFirstName"></h4>
+                  <h4>Last Name:  <input type=text v-model="newContactLastName"></h4>
+                  <h4>Phone Number:  <input type=text v-model="newContactPhoneNumber"></h4>
+                  <!-- <h4>Email:  <input type=text v-model="newContactEmail"></h4> -->
+                </form>
+                <br>
+                <a href="/contacts">
+                  <div style="text-align: center">
+                    <vs-button v-on:click="createContact()">
+                      Add Contact
+                    </vs-button>
+                  </div>
+                  
+                </a>
+              </div>
+            </vs-popup>
+
+            <!-- Post Create Box End -->
 
             <!-- Friend List
             ================================================= -->
@@ -208,6 +226,7 @@ export default {
       newContactPhoneNumber: "",
       newContactEmail: "",
       newMessage: "",
+      popupActivo: false,
       // newContactAccountId: User.account.id,
       errors: []
     };
