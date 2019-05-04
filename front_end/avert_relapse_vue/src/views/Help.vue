@@ -9,16 +9,40 @@
           <div class="error-message">
             <h1 class="error-title">Help!</h1>
             <!-- help button begin -->
-            <hr>
+            <hr> 
+                          
             
-              
-            
-            <!-- help button end -->
-            <p>Struggling? Press the help button to send an alert to all of your contacts!</p>
+            <h3>Struggling? Press the help button to send an alert to all of your contacts!</h3>
+            <br>
+            <h5 style="color: grey">Need to add contacts? <a href="/contacts">Click here.</a></h5>
+            <h5 style="color: grey">Want to customize your help message? <a href="/set-help">Click here.</a></h5>
+            <br>
           </div>
           <div v-for="message in messages">
-            <button v-on:click="sendHelp()" class="btn btn-primary">Help</button>
+            <vs-button v-on:click="sendHelp()" @click="popupActivo=true" color="danger" class="btn btn-primary" :active.sync="popupActivo">Help</vs-button>
+            <vs-popup class="holamundo"  title="You pressed the help button!" :active.sync="popupActivo">
+              <h3 style="text-align: center;">Help is on the way!</h3>
+               
+              <p style="text-align: center;">A text message has been sent to all of your contacts.</p>
+              
+            </vs-popup>
           </div>
+          <!-- help button end -->
+
+
+          <!-- <div class="centerx">
+            <vs-button @click="popupActivo=true" color="primary" type="border">Open Default popup</vs-button>
+            <vs-popup class="holamundo"  title="Lorem ipsum dolor sit amet" :active.sync="popupActivo">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+              </p>
+            </vs-popup>
+          </div> -->
+        
+        
+
+
         </div>
       </div>
     </div>  
@@ -78,6 +102,8 @@
 <script>
 import axios from "axios";
 
+
+
 export default {
   data: function() {
     return {
@@ -93,6 +119,7 @@ export default {
       newContactPhoneNumber: "",
       newContactEmail: "",
       newMessage: "",
+      popupActivo: false,
       // newContactAccountId: User.account.id,
       errors: []
     };
