@@ -107,12 +107,7 @@
                           <!-- <a href="timeline.html" class="profile-link">{{ post.published_by }}</a> -->
                           <!-- <span class="following">following</span> -->
                           <!-- <div v-on:click.prevent="deletePost()"> -->                                              
-                            <br>                            
-                            <p><button v-on:click="deletePost(post)">                              
-                              <span class="following" style="color: red">
-                                <a href="#">Delete Post</a>
-                              </span>
-                            </button></p>                         
+                            <br>                                                   
                           <!-- </div> -->
                         </h5>
                         <p class="text-muted">Published at {{ post.published_date }}</p>
@@ -120,6 +115,27 @@
                       <div class="reaction">
                         <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
                         <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+                        <vs-dropdown >
+                        <vs-button class="btn-drop" type="filled" icon="expand_more"></vs-button>
+                        <!-- <a href="#">Hola mundo</a> -->
+
+                        <vs-dropdown-menu>
+                          <vs-dropdown-item>
+                              <vs-button type="flat" v-on:click="deletePost(post)">
+                              <span>
+                                <a href="#">Update Post</a>
+                              </span>
+                            </vs-button>
+                          </vs-dropdown-item>
+                          <vs-dropdown-item>
+                            <vs-button type="flat" v-on:click="deletePost(post)">
+                              <span>
+                                <a href="#">Delete Post</a>
+                              </span>
+                            </vs-button>
+                          </vs-dropdown-item>
+                        </vs-dropdown-menu>
+                      </vs-dropdown>
                       </div>
                       <div class="line-divider"></div>
                       <div class="post-text">

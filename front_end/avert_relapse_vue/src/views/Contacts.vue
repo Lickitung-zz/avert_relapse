@@ -66,7 +66,7 @@
                 <a href="/contacts">
                   <div style="text-align: center">
                     <vs-button v-on:click="createContact()">
-                      Add Contact
+                      Submit
                     </vs-button>
                   </div>
                   

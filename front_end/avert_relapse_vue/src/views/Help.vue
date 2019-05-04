@@ -211,7 +211,7 @@ export default {
         type:'confirm',
         color: 'danger',
         title: `Confirm`,
-        text: "Pressing the help button sends a text message to everyone on your contacts list. They will see your customized message and will be able text you back at your phone number: " + this.phoneNumber.phone_number,
+        text: "Pressing the help button sends a text message to everyone on your contacts list. " + " They will see your customized message and will be able text you back at your phone number: " + this.phoneNumber.phone_number,
         accept:this.acceptAlert
       });
     },
