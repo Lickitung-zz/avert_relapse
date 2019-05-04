@@ -54,9 +54,12 @@
             <vs-popup class="holamundo" style="text-align: center;" title="Add contact" :active.sync="popupActivo">
               <div class="form-group">
                 <form style="text-align: center;">
-                  <h4>First Name:  <input type=text v-model="newContactFirstName"></h4>
-                  <h4>Last Name:  <input type=text v-model="newContactLastName"></h4>
-                  <h4>Phone Number:  <input type=text v-model="newContactPhoneNumber"></h4>
+                  <div style="display: inline-block;">
+                    <vs-input label-placeholder="First Name" v-model="newContactFirstName"/>
+                  <vs-input label-placeholder="Last Name" v-model="newContactLastName"/>
+                  <vs-input label-placeholder="Phone Number" v-model="newContactPhoneNumber"/>
+                  </div>
+                  
                   <!-- <h4>Email:  <input type=text v-model="newContactEmail"></h4> -->
                 </form>
                 <br>
@@ -85,20 +88,39 @@
 			        <button v-on:click="editContact(contact)">Update Contact</button>
 			      </div> -->
 			      <hr>
-			    
+
             	<div class="row">
-            		<div class="col-md-6 col-sm-6">
+            		<div class="col-md-6 col-sm-6">                  
                   <div class="friend-card">
                   	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
-                  	<div class="card-info">
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />
+                  	<div class="card-info">                      
+                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />                
                       <div class="friend-info">
-                        <button v-on:click="deleteContact(contact)"><a href="#" class="pull-right text-green">Remove Contact</a></button>
-                        <a class="pull-right text-green" href="/contacts-update">Update info</a>
+
+                        
+
+                        <div style="text-align: right">
+                        <vs-dropdown>
+                          <vs-button class="btn-drop" type="border" icon="expand_more"></vs-button>
+                          <!-- <a href="#">Hola mundo</a> -->
+
+                          <vs-dropdown-menu>
+                            <vs-dropdown-item>
+                              <button v-on:click="deleteContact(contact)"><a href="#" class="text-red">Remove Contact</a></button>                            
+                            </vs-dropdown-item>
+                            <vs-dropdown-item>
+                              <a class="text-green" href="/contacts-update">Update info</a>
+                            </vs-dropdown-item>
+                            
+                          </vs-dropdown-menu>
+                        </vs-dropdown>
+                        </div>
+
                         <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
                       	<h5><a href="timeline.html" class="profile-link">{{ contact.first_name}} {{ contact.last_name }}</a></h5>
                         <p>{{ contact.email }}</p>                      
                         <p>{{ contact.phone_number }}</p>
+
                     </div>
                   </div>
                 </div>
