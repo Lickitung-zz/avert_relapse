@@ -1,13 +1,27 @@
 <template>
   <div class="help">
-    <h1>This is the help page</h1>
-        <!-- help button begin -->
-    <hr>
-    <h2>Help button</h2>
-    <div v-for="message in messages">
-      <button v-on:click="sendHelp()">Help</button>
-    </div>
-    	<!-- help button end -->
+    <!-- 404 Error
+    ================================================= -->
+    <div class="error-page">
+      <div class="error-content">
+        <div class="container">
+          <img src="images/404.png" alt="" class="img-responsive" />
+          <div class="error-message">
+            <h1 class="error-title">Help!</h1>
+            <!-- help button begin -->
+            <hr>
+            
+              
+            
+            <!-- help button end -->
+            <p>Struggling? Press the help button to send an alert to all of your contacts!</p>
+          </div>
+          <div v-for="message in messages">
+            <button v-on:click="sendHelp()" class="btn btn-primary">Help</button>
+          </div>
+        </div>
+      </div>
+    </div>  
               <!-- Footer
     ================================================= -->
     <footer id="footer">
