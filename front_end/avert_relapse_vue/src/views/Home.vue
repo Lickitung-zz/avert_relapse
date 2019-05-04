@@ -91,8 +91,8 @@
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="phoneNumber" class="sr-only">Phone Number (optional)</label>
-                        <input class="form-control input-group-lg" type="text" name="Phone Number" title="Enter Phone Number" placeholder="Your Phone Number (optional)" v-model="phoneNumber"/>
+                        <label for="phoneNumber" class="sr-only">Phone Number</label>
+                        <input class="form-control input-group-lg" type="text" name="Phone Number" title="Enter Phone Number" placeholder="Your Phone Number" v-model="phoneNumber"/>
                       </div>
                     </div>
                     <div class="row">
