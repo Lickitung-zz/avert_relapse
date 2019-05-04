@@ -19,19 +19,13 @@
               <vs-button @click="openConfirm()" color="danger" type="gradient">Help</vs-button>
             </div>
 
+            <br>
+
             <h5 style="color: grey">Need to add contacts? <a href="/contacts">Click here.</a></h5>
             <h5 style="color: grey">Want to customize your help message? <a href="/set-help">Click here.</a></h5>
             <br>
           </div>
-          <div v-for="message in messages">
-            <vs-button v-on:click="sendHelp()" @click="popupActivo=true" color="danger" class="btn btn-primary" :active.sync="popupActivo">Help</vs-button>
-            <vs-popup class="holamundo"  title="You pressed the help button!" :active.sync="popupActivo">
-              <h3 style="text-align: center;">Help is on the way!</h3>
-               
-              <p style="text-align: center;">A text message has been sent to all of your contacts.</p>
-              
-            </vs-popup>
-          </div>
+          
           <!-- help button end -->
 
 
@@ -117,6 +111,7 @@ export default {
       messages: "",
       accounts: [],
       loginEmail: "",
+      phoneNumber: "",
       loginPassword: "",
       help: "",
       newContactFirstName: "",
@@ -139,6 +134,9 @@ export default {
     axios.get("/api/accounts/show").then(response => {
       this.accounts = response.data;
     });
+    axios.get("/api/accounts/phone-number").then(response => {
+      this.phoneNumber = response.data;
+    })
 
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });
@@ -213,17 +211,22 @@ export default {
         type:'confirm',
         color: 'danger',
         title: `Confirm`,
-        text: "Pressing the help button sends a text message to everyone on your contacts list. They will see your customized message and will be able text you back at your phone number:",
+        text: "Pressing the help button sends a text message to everyone on your contacts list. They will see your customized message and will be able text you back at your phone number: " + this.phoneNumber.phone_number,
         accept:this.acceptAlert
       });
     },
     acceptAlert(color){
         this.$vs.notify({
           color:'danger',
-          title:'Deleted image',
-          text:'The selected image was successfully deleted'
+          title:'Help is on the way!',
+          text:'A text message has been sent to all of your contacts.'
         });
-      },
+        console.log("sending help to all contacts...");
+      axios.post("http://localhost:3000/api/twilio/sms").then(response => {
+        console.log(response);
+        console.log("sent text to all contacts");
+      });
+    },
   }
 };
 </script>

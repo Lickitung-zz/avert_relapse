@@ -32,7 +32,8 @@ class Api::TwilioController < ApplicationController
         client.messages.create(
         from: from,
         to: to,
-        body: "Hello! This is a toll-free text from #{current_user.account.first_name} #{current_user.account.last_name}. They are using an app called Avert Relapse to reach out to everyone on their contacts list. Here is their message:                                                                                                 #{current_user.account.messages}")
+        body: "Hello! This is a toll-free text from #{current_user.account.first_name} #{current_user.account.last_name}. They are using an app called Avert Relapse to reach out to everyone on their contacts list. Here is their message:                                                                                                 
+        #{current_user.account.messages} You can text them at their phone number: #{current_user.account.phone_number}")
       end
     end
   end
