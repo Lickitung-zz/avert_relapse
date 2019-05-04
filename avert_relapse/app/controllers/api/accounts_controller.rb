@@ -17,6 +17,11 @@ class Api::AccountsController < ApplicationController
     render "show.json.jbuilder"
   end
 
+  def grab_account_phone_number
+    @account = current_user.account.phone_number
+    render json: {phone_number: @account}
+  end
+
   def show_account_id
     @account = Account.find_by(id: params[:id])
     render json: {id: current_user.account.id}

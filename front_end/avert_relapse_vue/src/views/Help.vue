@@ -14,6 +14,11 @@
             
             <h3>Struggling? Press the help button to send an alert to all of your contacts!</h3>
             <br>
+
+            <div class="centerx">
+              <vs-button @click="openConfirm()" color="danger" type="gradient">Help</vs-button>
+            </div>
+
             <h5 style="color: grey">Need to add contacts? <a href="/contacts">Click here.</a></h5>
             <h5 style="color: grey">Want to customize your help message? <a href="/set-help">Click here.</a></h5>
             <br>
@@ -120,6 +125,7 @@ export default {
       newContactEmail: "",
       newMessage: "",
       popupActivo: false,
+      activeConfirm: false,
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -133,6 +139,7 @@ export default {
     axios.get("/api/accounts/show").then(response => {
       this.accounts = response.data;
     });
+
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // });
   },
@@ -200,7 +207,23 @@ export default {
       axios.post("/api/twilio/sms_update", params).then(response => {
           console.log(response);
       });
-    }
+    },
+    openConfirm(){
+      this.$vs.dialog({
+        type:'confirm',
+        color: 'danger',
+        title: `Confirm`,
+        text: "Pressing the help button sends a text message to everyone on your contacts list. They will see your customized message and will be able text you back at your phone number:",
+        accept:this.acceptAlert
+      });
+    },
+    acceptAlert(color){
+        this.$vs.notify({
+          color:'danger',
+          title:'Deleted image',
+          text:'The selected image was successfully deleted'
+        });
+      },
   }
 };
 </script>

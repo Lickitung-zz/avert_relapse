@@ -41,7 +41,7 @@
                 <li><a href="newsfeed-messages.html" title="Julia Cox"><img src="http://placehold.it/300x300" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
               </ul>
             </div>
-            <!--chat block ends--> -->
+           chat block ends-->
           </div> 
           
     			<div class="col-md-7">
@@ -51,13 +51,13 @@
             <div style="text-align: right;">
               <vs-button @click="popupActivo=true" color="primary" type="flat">Add Contact</vs-button>
             </div>
-            <vs-popup class="holamundo" style="text-align: center;" title="Add contact" :active.sync="popupActivo">
+            <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo">
               <div class="form-group">
                 <form style="text-align: center;">
                   <div style="display: inline-block;">
                     <vs-input label-placeholder="First Name" v-model="newContactFirstName"/>
                   <vs-input label-placeholder="Last Name" v-model="newContactLastName"/>
-                  <vs-input label-placeholder="Phone Number" v-model="newContactPhoneNumber"/>
+                  <vs-input icon-after="true" icon="contact_phone" label-placeholder="Phone Number" v-model="newContactPhoneNumber"/>
                   </div>
                   
                   <!-- <h4>Email:  <input type=text v-model="newContactEmail"></h4> -->

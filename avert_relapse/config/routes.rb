@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     get "/accounts-search" => "accounts#search_index"
     post "/accounts/search-results" => "accounts#index_search"
     get "/accounts/?search=:search" => "accounts#index_search"
-    
+    get "/accounts/phone-number" => "accounts#grab_account_phone_number"
 
     get "/contacts" => "contacts#index"
     get "/contacts/:id" => "contacts#show"
