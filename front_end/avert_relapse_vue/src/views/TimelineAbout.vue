@@ -183,27 +183,29 @@
                       <div class="reaction">
                         <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
                         <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                        <vs-dropdown>
-                        <vs-button class="btn-drop" type="filled" icon="expand_more"></vs-button>
-                        <!-- <a href="#">Hola mundo</a> -->
+                        <vs-dropdown >
+                          <a class="a-icon" href="#">
+                            
+                            <vs-icon class="" icon="expand_more" style="font-size: 2rem"></vs-icon>
+                          </a>
 
-                        <vs-dropdown-menu>
-                          <vs-dropdown-item>
-                              <vs-button type="flat" v-on:click="deletePost(post)">
+                          <vs-dropdown-menu>
+                            <vs-dropdown-item>
+                             <vs-button type="flat" v-on:click="deletePost(post)">
                               <span>
                                 <a href="#">Update Post</a>
                               </span>
                             </vs-button>
-                          </vs-dropdown-item>
-                          <vs-dropdown-item>
-                            <vs-button type="flat" v-on:click="deletePost(post)">
+                            </vs-dropdown-item>
+                            <vs-dropdown-item>
+                              <vs-button type="flat" v-on:click="deletePost(post)">
                               <span>
                                 <a href="#">Delete Post</a>
                               </span>
                             </vs-button>
-                          </vs-dropdown-item>
-                        </vs-dropdown-menu>
-                      </vs-dropdown>
+                            </vs-dropdown-item>
+                          </vs-dropdown-menu> 
+                        </vs-dropdown>
                       </div>
                       <div class="line-divider"></div>
                       <div class="post-text">
@@ -376,28 +378,28 @@
             </div>
             <div class="col-md-2 static">
               <div id="sticky-sidebar">
-                <h4 class="grey">Sarah's activity</h4>
+                <h4 class="grey">{{ timelines.first_name }}'s activity</h4>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
+                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> Commented on a Photo</p>
                     <p class="text-muted">5 mins ago</p>
                   </div>
                 </div>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
+                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> Has posted a photo</p>
                     <p class="text-muted">an hour ago</p>
                   </div>
                 </div>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
+                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> Liked her friend's post</p>
                     <p class="text-muted">4 hours ago</p>
                   </div>
                 </div>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
+                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> has shared an album</p>
                     <p class="text-muted">a day ago</p>
                   </div>
                 </div>

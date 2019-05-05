@@ -118,7 +118,7 @@
                         <vs-dropdown >
                           <a class="a-icon" href="#">
                             
-                            <vs-icon class="" icon="expand_more"></vs-icon>
+                            <vs-icon class="" icon="expand_more" style="font-size: 2rem"></vs-icon>
                           </a>
 
                           <vs-dropdown-menu>
