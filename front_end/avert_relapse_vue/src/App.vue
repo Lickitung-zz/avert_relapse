@@ -74,7 +74,7 @@
     </vs-navbar>
 
     
-    </header>
+   
     <!--Header End-->
 
     <router-view/>
@@ -188,11 +188,12 @@ export default {
     axios.get("/api/accounts/show").then(response => {
       this.accounts = response.data;
     });
-    axios.get("/api/accounts/is_logged_in").then(response => {
-      this.is_logged_in = response.data;
-    });
     axios.get("/api/users/id").then(response => {
       this.user_id = response.data;
+    });
+    axios.get("/api/accounts/is_logged_in").then(response => {
+      this.is_logged_in = response.data;
+      // location.reload();
     });
     // axios.get("http://localhost:3000/api/twilio/sms").then(response => {this.texts = response.data;
     // })

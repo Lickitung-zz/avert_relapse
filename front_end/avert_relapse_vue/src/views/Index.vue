@@ -124,7 +124,7 @@
 
                           <vs-dropdown-menu>
                             <vs-dropdown-item>
-                             <vs-button type="flat" v-on:click="deletePost(post)">
+                             <vs-button type="flat">
                               <span>
                                 <a href="#">Update Post</a>
                               </span>
@@ -427,7 +427,6 @@ export default {
       newContactEmail: "",
       newMessage: "",
       loggedInAccount: "",
-      // createPost: "",
       createText: "",
       timelines: "",
       accountId: "",
@@ -437,6 +436,9 @@ export default {
   },
 
   created: function() {
+    axios.get("/api/posts").then(response => {
+      this.posts = response.data;
+    });
     axios.get("/api/accounts/logged_in").then(response => {
       this.loggedInAccount = response.data;
     });
@@ -446,12 +448,9 @@ export default {
     axios.get("/api/accounts/show_profile_pic").then(response => {
       this.profile_pics = response.data;
     });
-    axios.get("/api/posts").then(response => {
-      this.posts = response.data;
-    });
     axios.get("/api/accounts").then(response => {
       this.showAccounts = response.data;
-    })
+    });
     axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
       console.log(response.data);
       this.timelines = response.data;

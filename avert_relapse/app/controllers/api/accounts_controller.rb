@@ -120,8 +120,6 @@ class Api::AccountsController < ApplicationController
       last_name: params[:last_name],
       phone_number: params[:phone_number],
       messages: params[:messages],
-      profile_pic: params[:profile_pic],
-      cover_photo: params[:cover_photo],
       user_id: params[:user_id]
     )
     render "show.json.jbuilder"
