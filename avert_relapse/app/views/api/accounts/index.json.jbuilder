@@ -5,5 +5,6 @@ json.array! @accounts.each do |account|
   json.phone_number account.phone_number
   json.message account.messages
   json.profile_pic account.profile_pic
+  json.cover_photo account.cover_photo
   json.user_id account.user_id
 end

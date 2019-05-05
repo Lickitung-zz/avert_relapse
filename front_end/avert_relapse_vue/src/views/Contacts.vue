@@ -8,13 +8,13 @@
           ================================================= -->
     			<div class="col-md-3 static">
             <div class="profile-card">
-              <div v-for="account in accounts">
-                <div v-for="profile_pic in profile_pics">
+             
+                
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
-                </div>
+                
               	<h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
               	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
-              </div>
+              
             </div>
             <!--profile card ends-->
             <ul class="nav-news-feed">
@@ -48,10 +48,10 @@
             ================================================= -->
             <div class="create-post">
               <div style="text-align: center;">
-                <vs-button @click="popupActivo1=true" color="primary" type="flat">Add Contact</vs-button>
+                <vs-button @click="popupActivo2=true" color="primary" type="flat">Add Contact</vs-button>
               </div>
             </div>
-            <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo1">
+            <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo2">
               <div class="form-group">
                 <form style="text-align: center;">
                   <div style="display: inline-block;">
@@ -104,8 +104,8 @@
 
                           <vs-dropdown-menu>
                             <vs-dropdown-item>
-                              <vs-button @click="popupActivo2=true" color="primary" type="flat">Edit Contact</vs-button>
-                                <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo2">
+                              <vs-button @click="popupActivo1=true" color="primary" type="flat">Edit Contact</vs-button>
+                                <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo1">
                                 <div class="form-group">
                                   <form style="text-align: center;">
                                     <div style="display: inline-block;">

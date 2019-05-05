@@ -1551,7 +1551,7 @@ ul.online-users li span.online-dot{
   ==================================================*/
 
 .timeline-cover {
-  background: url("https://i.imgur.com/4rxzFUE.jpg") no-repeat;
+ /* background: url(https://i.imgur.com/lmMD0YE.jpg);*/
   background-position: center;
   background-size: cover;
   min-height: 360px;

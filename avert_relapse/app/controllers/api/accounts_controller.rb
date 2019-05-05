@@ -45,9 +45,11 @@ class Api::AccountsController < ApplicationController
 
   def update
     @account = current_user.account
-    @account.phone_number = params[:phone_number],
-    @account.first_name = params[:first_name],
-    @account.last_name = params[:last_name],
+    @account.phone_number = params[:phone_number] || @account.phone_number,
+    @account.first_name = params[:first_name] || @account.first_name,
+    @account.last_name = params[:last_name] || @account.last_name,
+    @account.cover_photo = params[:cover_photo] || @account.cover_photo,
+    @account.profile_pic = params[:profile_pic] || @account.profile_pic,
     @account.phone_number = 1234
     @account.save
     render "show.json.jbuilder"
@@ -82,7 +84,10 @@ class Api::AccountsController < ApplicationController
   def show_current_account_profile_pic
     if current_user
       @account = current_user.account
-      render json: {profile_pic: @account.profile_pic}
+      render json: {
+        profile_pic: @account.profile_pic,
+        cover_photo: @account.cover_photo
+        }
     else
       render json: {message: "not logged in"}
     end
@@ -115,6 +120,8 @@ class Api::AccountsController < ApplicationController
       last_name: params[:last_name],
       phone_number: params[:phone_number],
       messages: params[:messages],
+      profile_pic: params[:profile_pic],
+      cover_photo: params[:cover_photo],
       user_id: params[:user_id]
     )
     render "show.json.jbuilder"

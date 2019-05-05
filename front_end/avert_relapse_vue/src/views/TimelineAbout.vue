@@ -4,8 +4,10 @@
       <!-- Timeline
       ================================================= -->
       <div class="timeline">
-        <div class="timeline-cover">
-
+        <div class="timeline-cover" :style="{ backgroundImage: 'url(' + timelines.cover_photo + ')' }">
+          <!-- document.querySelector(".timeline-cover") -->
+          <!-- v-bind:style="url(cover_photo)" -->
+          
           <!--Timeline Menu for Large Screens-->
           <div class="timeline-nav-bar hidden-sm hidden-xs">
             <div class="row">
@@ -73,13 +75,13 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <div v-for="account in accounts">
+              
                 
                   <img :src="timelines.profile_pic" alt="" class="img-responsive profile-photo" />
                 
                 <h4>{{ timelines.first_name }} {{ timelines.last_name }}</h4>
                 <p class="text-muted">Creative Director</p>
-              </div>
+              
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
@@ -106,7 +108,8 @@
                       <div class="form-group">
                         
                           <img :src="profile_pics.profile_pic" alt="" class="profile-photo-md" />
-                        
+                          <!-- <img :src="timelines.cover_photo" alt="" class="profile-photo-md" /> -->
+                         
                         <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish" v-model="createText"></textarea>
 
                         <!-- <input id="my-search" class="form-control input-group-lg" type="search" name="Searchsss" title="Search here" placeholder="Search for friends and accounts" v-model="createText"/> -->
@@ -184,7 +187,7 @@
                         <p class="text-muted">Published at {{ post.published_date }}</p>
                       </div>
                       <div class="reaction">
-                        <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
+                        <a class="btn text-green"><i class="icon ion-thumbsup"></i> 0</a>
                         <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
                         <vs-dropdown >
                           <a class="a-icon" href="#">

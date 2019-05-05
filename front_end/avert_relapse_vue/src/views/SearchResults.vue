@@ -9,13 +9,13 @@
           ================================================= -->
           <div class="col-md-3 static">
             <div class="profile-card">
-              <div v-for="account in accounts">
-                <div v-for="profile_pic in profile_pics">
+              
+                
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
-                </div>
+                
                 <h5><a href="/timeline-about" class="text-white">{{ accounts.name }} </a></h5>
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
-              </div>
+              
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div><a href="/index">My Newsfeed</a></div></li>
@@ -59,13 +59,11 @@
 			        <button v-on:click="editContact(contact)">Update Contact</button>
 			      </div> -->
 			      <hr>
-			    
             	<div class="row">
             		<div class="col-md-6 col-sm-6">
                   <div class="friend-card">
                   	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
                   	<div class="card-info">
-
                       <img :src="result.profile_pic" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">
                         <!-- <a v-on:click="getContact()" class="pull-right text-green">Update info</a> -->
@@ -81,55 +79,7 @@
                 </div>
             	</div>
             </div>
-
-          <!-- Newsfeed Common Side Bar Right
-          ================================================= -->
-          <!-- <div class="col-md-2 static">
-            <div class="suggestions" id="sticky-sidebar">
-              <h4 class="grey">Who to Follow</h4>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.html">Diana Amber</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.html">Cris Haris</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.html">Brian Walton</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.html">Olivia Steward</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-              <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                <div>
-                  <h5><a href="timeline.html">Sophia Page</a></h5>
-                  <a href="#" class="text-green">Add friend</a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- right column end -->
-
-
-
         </div>
-
         <!-- Newsfeed Common Side Bar Right
           ================================================= -->
           <div class="col-md-2 static">
@@ -172,9 +122,7 @@
               </div>
             </div>
           </div>
-
       </div>
-      
         <!-- Footer
     ================================================= -->
     <footer id="footer">

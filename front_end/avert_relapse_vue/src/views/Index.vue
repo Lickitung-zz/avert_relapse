@@ -9,7 +9,7 @@
           <div class="col-md-3 static">
             <div class="profile-card">
               
-              <div v-for="account in accounts">
+              
                 <!-- <div v-for="profile_pic in profile_pics"> -->
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
                 <!-- </div> -->
@@ -22,7 +22,7 @@
                   
                 
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
-              </div>
+              
               
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
@@ -59,9 +59,9 @@
                 <div class="row">
                   <div class="col-md-7 col-sm-7">
                     <div class="form-group">
-                      <div v-for="profile_pic in profile_pics">
+                     
                         <img :src="profile_pics.profile_pic" alt="" class="profile-photo-md" />
-                      </div>
+                     
                       <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish" v-model="createText"></textarea>
 
                       <!-- <input id="my-search" class="form-control input-group-lg" type="search" name="Searchsss" title="Search here" placeholder="Search for friends and accounts" v-model="createText"/> -->
@@ -112,7 +112,7 @@
                         <p class="text-muted">Published at {{ post.published_date }}</p>
                       </div>
                       <div class="reaction">
-                        <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
+                        <a class="btn text-green"><i class="icon ion-thumbsup"></i> 0</a>
                         <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
 
 
@@ -365,13 +365,6 @@
           <div class="footer-wrapper">
             <div class="col-md-3 col-sm-3">
               <a href=""><img src="images/logo-black.png" alt="" class="footer-logo" /></a>
-              <ul class="list-inline social-icons">
-                <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
-                <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
-                <li><a href="#"><i class="icon ion-social-googleplus"></i></a></li>
-                <li><a href="#"><i class="icon ion-social-pinterest"></i></a></li>
-                <li><a href="#"><i class="icon ion-social-linkedin"></i></a></li>
-              </ul>
             </div>
             <div class="col-md-2 col-sm-2">
               <h5>For individuals</h5>
