@@ -813,6 +813,8 @@ textarea{
 
 #live-feed ul.online-users li {
   margin: 0;
+  background: #d4d5d6b3;
+  border: 1px solid #d4d6d6;
 }
 
 
@@ -1052,6 +1054,9 @@ ul.nav-news-feed{
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 0 40px 0;
+  border-radius: 10px;
+  background: #d4d5d6b3;
+  border: 1px solid #d4d6d6;
 }
 
 ul.nav-news-feed li{
@@ -1224,10 +1229,10 @@ ul.online-users li span.online-dot{
   ==================================================*/
 
 .post-content{
-  background: #f8f8f8;
-  border-radius: 4px;
+  background: #d4d5d6b3;
+  border-radius: 10px;
   width: 100%;
-  border: 1px solid #f1f2f2;
+  border: 1px solid #d4d6d6;
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
