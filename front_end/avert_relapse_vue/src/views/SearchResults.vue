@@ -62,7 +62,7 @@
             	<div class="row">
             		<div class="col-md-6 col-sm-6">
                   <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
+                  	<img :src="result.cover_photo" alt="profile-cover" class="img-responsive cover" />
                   	<div class="card-info">
                       <img :src="result.profile_pic" alt="user" class="profile-photo-lg" />
                       <div class="friend-info">

@@ -92,9 +92,9 @@
             	<div class="row">
             		<div class="col-md-6 col-sm-6">                  
                   <div class="friend-card">
-                  	<img src="http://placehold.it/1030x360" alt="profile-cover" class="img-responsive cover" />
+                  	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpfELLoS_l27A3muac-5JQWE6m_8bnwMGw6HPtxUg4VbVqq_SZ" alt="profile-cover" class="img-responsive cover" />
                   	<div class="card-info">                      
-                      <img src="http://placehold.it/300x300" alt="user" class="profile-photo-lg" />                
+                      <img src="https://lh5.ggpht.com/_S0f-AWxKVdM/S5TpU6kRmUI/AAAAAAAAL4Y/wrjx3_23kw4/s72-c/d_silhouette%5B2%5D.jpg?imgmax=800" alt="user" class="profile-photo-lg" />                
                       <div class="friend-info">
 
                         <div style="text-align: right;">
