@@ -204,43 +204,43 @@
             <div class="suggestions" id="sticky-sidebar">
               <h4 class="grey">Who to Follow</h4>
               <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                <img src="https://www.aceshowbiz.com/images/photo/john_cena.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Diana Amber</a></h5>
+                  <h5><a href="timeline.html">John Cena</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                <img src="https://www.bettycrocker.com/-/media/legacy/Images/Betty-Crocker/Menus-Holidays-Parties/MHPLibrary/Parties-and-Get-Togethers/Vintage-Betty/The-Story-of-Betty-Crocker/The-Story-of-Betty-Crocker_06.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Cris Haris</a></h5>
+                  <h5><a href="timeline.html">Betty Crocker</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                <img src="https://avatars2.githubusercontent.com/u/40277111?s=460&v=4" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Brian Walton</a></h5>
+                  <h5><a href="timeline.html">Josh Sarna</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                <img src="http://turiscilipoti.com/demos/project3/images/profilepic.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Olivia Steward</a></h5>
+                  <h5><a href="timeline.html">Mark Zuckerberg</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
-                <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                <img src="https://media.licdn.com/dms/image/C5603AQH3C4VuWvnYow/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=_zQBBXgwNXNMas4jD2Rhs1Y7Q1Cb6mKlo5Zcu8SzUz8" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Sophia Page</a></h5>
+                  <h5><a href="timeline.html">Brian Rice</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
             </div>
           </div>
-    		</div>
+        </div>
     	</div>
         <!-- Footer
     ================================================= -->
