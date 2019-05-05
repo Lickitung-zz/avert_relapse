@@ -100,7 +100,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="form-group col-xs-12">
+                      <div class="form-group col-xs-6">
                         <vs-input icon-after="true" icon="lock" type="password" label-placeholder="Password" v-model="password"/>
                         <!-- <label for="password" class="sr-only">Password</label>                        
                         <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" v-model="password"/> -->
@@ -475,8 +475,9 @@
 
                 <!--Login-->
                 <div class="tab-pane" id="login">
-                  <h3>Login</h3>
-                  <p class="text-muted">Login to your account</p>
+                  <h3>Sign in</h3>
+                  <br>
+                  <p class="text-muted">Sign to your account</p>
                   
                   <!--Login Form-->
                   <form v-on:submit.prevent="login()" name="Login_form" id='Login_form'>
@@ -493,8 +494,9 @@
                       </div>
                       <input type="submit" class="btn btn-primary" value="Login">
                     </div>
-                  </form><!--Login Form Ends--> 
+                  </form>
                   <p><a href="#">Forgot Password?</a></p>
+                  <!--Login Form Ends--> 
                   
                 </div>
               </div>
@@ -505,13 +507,13 @@
           <div class="col-sm-6 col-sm-offset-6">
           
             <!--Social Icons-->
-            <ul class="list-inline social-icons">
+            <!-- <ul class="list-inline social-icons">
               <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
               <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
               <li><a href="#"><i class="icon ion-social-googleplus"></i></a></li>
               <li><a href="#"><i class="icon ion-social-pinterest"></i></a></li>
               <li><a href="#"><i class="icon ion-social-linkedin"></i></a></li>
-            </ul>
+            </ul> -->
           </div>
         </div>
       </div>

@@ -11,11 +11,94 @@
 
 
 <template>
+  <div class="home">
+    <!-- <h1>{{ message }}</h1> -->
+    <!-- Landing Page Contents
+    ================================================= -->
+    <div id="lp-register">
+      <div class="container wrapper">
+        <div class="row">
+          <div class="col-sm-5">
+            
+          </div>
+          <div class="col-sm-4 col-sm-offset-1">
+            <div class="reg-form-container"> 
+            
+              
+
+                <!--Login-->
+                <div class="tab-pane" id="login">
+                  <h3>Sign in</h3>
+                  <br>
+                  <p class="text-muted">Sign to your account</p>
+                  
+                  <!--Login Form-->
+                  <form v-on:submit.prevent="login()" name="Login_form" id='Login_form'>
+                     <div class="row">
+                      <div class="form-group col-xs-12">
+                      
+                        <label for="my-email" class="sr-only">Email</label>
+                        <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email" v-model="email"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        
+                        <label for="my-password" class="sr-only">Password</label>
+                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" v-model="password"/>
+                      </div>
+                      <br>
+                      <div style="padding-left: 50%">
+                        <br>
+                        <input type="submit" class="btn btn-primary" value="Login">
+                      </div>
+                      
+                    </div>
+                  </form>
+                  <br>
+                  <div style="padding-left: 25%">
+                    <p><a href="#">Forgot Password?</a></p>
+                  </div>
+                  
+                  <!--Login Form Ends--> 
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-6">
+          
+            <!--Social Icons-->
+            <!-- <ul class="list-inline social-icons">
+              <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
+              <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
+              <li><a href="#"><i class="icon ion-social-googleplus"></i></a></li>
+              <li><a href="#"><i class="icon ion-social-pinterest"></i></a></li>
+              <li><a href="#"><i class="icon ion-social-linkedin"></i></a></li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--preloader-->
+    <!-- <div id="spinner-wrapper">
+      <div class="spinner"></div>
+    </div> -->
+
+  </div>
+</template>
+
+
+<!-- <template>
   <div class="login">
     <div class="container">
       <hr>
       <hr>
-      <!--Login Form-->
+      Login Form
         <form v-on:submit.prevent="login()" name="Login_form" id='Login_form'>
            <div class="row">
             <div class="form-group col-xs-12">
@@ -31,10 +114,10 @@
             <input type="submit" class="btn btn-primary" value="Login">
           </div>
         </form>
-      <!--Login Form Ends--> 
+      Login Form Ends 
     </div>
   </div>
-</template>
+</template> -->
 
 <script>
 import axios from "axios";
