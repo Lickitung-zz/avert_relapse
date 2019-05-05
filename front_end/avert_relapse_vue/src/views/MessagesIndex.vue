@@ -2,7 +2,6 @@
   <div class="messages">
   <div id="page-contents">
       <div class="container">
-      <br>
         <div class="row">
 
           <!-- Newsfeed Common Side Bar Left

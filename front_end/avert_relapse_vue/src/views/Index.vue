@@ -1,11 +1,9 @@
 <template>
   <div class="index">
     <!-- begin new template here -->
-    <br>
-    <br>
     <div class="container">
         <div class="row">
-
+          <br>
           <!-- Newsfeed Common Side Bar Left
           ================================================= -->
           <div class="col-md-3 static">

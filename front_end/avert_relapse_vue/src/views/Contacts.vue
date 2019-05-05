@@ -1,7 +1,5 @@
 <template>
 	<div class="contacts">
-  
-    <br>
       <div id="page-contents">
     	<div class="container">
     		<div class="row">
