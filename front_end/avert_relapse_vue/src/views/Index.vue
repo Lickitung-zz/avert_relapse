@@ -394,7 +394,7 @@
             <div class="col-md-3 col-sm-3">
               <h5>Contact Us</h5>
               <ul class="contact">
-                <li><i class="icon ion-ios-telephone-outline"></i>+1 (737) 204-2024</li>
+                <li><i class="icon ion-ios-telephone-outline"></i>+1 (888) 789-8021</li>
                 <li><i class="icon ion-ios-email-outline"></i>brandon_n_evans@live.com</li>
                 <li><i class="icon ion-ios-location-outline"></i>300 w 6th St, Austin, TX</li>
               </ul>

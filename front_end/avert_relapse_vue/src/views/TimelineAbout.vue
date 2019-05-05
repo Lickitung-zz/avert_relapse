@@ -24,7 +24,10 @@
                   <li><a href="timeline-album.html">Album</a></li>
                   <li><a href="timeline-friends.html">Friends</a></li>
                 </ul>
-                <ul class="follow-me list-inline">
+                <ul class="follow-me list-inline" v-if="(timelines.first_name + ' ' +  timelines.last_name) === loggedInName.name">
+                  
+                </ul>
+                <ul class="follow-me list-inline" v-else>
                   <li>1,299 people following her</li>
                   <li><button class="btn-primary">Add Friend</button></li>
                 </ul>
@@ -101,9 +104,9 @@
                   <div class="row">
                     <div class="col-md-7 col-sm-7">
                       <div class="form-group">
-                        <div v-for="profile_pic in profile_pics">
+                        
                           <img :src="profile_pics.profile_pic" alt="" class="profile-photo-md" />
-                        </div>
+                        
                         <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish" v-model="createText"></textarea>
 
                         <!-- <input id="my-search" class="form-control input-group-lg" type="search" name="Searchsss" title="Search here" placeholder="Search for friends and accounts" v-model="createText"/> -->
@@ -602,6 +605,7 @@ export default {
       newContactEmail: "",
       newMessage: "",
       loggedInAccount: "",
+      loggedInName: "",
       // createPost: "",
       createText: "",
       timelines: "",
@@ -613,6 +617,9 @@ export default {
   },
 
   created: function() {
+    axios.get("/api/accounts/show_name").then(response => {
+      this.loggedInName = response.data;
+    });
     axios.get("/api/accounts/logged_in").then(response => {
       this.loggedInAccount = response.data;
     });
