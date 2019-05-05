@@ -28,9 +28,10 @@
                   <li><a href="timeline-album.html">Album</a></li>
                   <li><a href="timeline-friends.html">Friends</a></li>
                 </ul>
+                
                 <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
+                  
+                  
                 </ul>
               </div>
             </div>

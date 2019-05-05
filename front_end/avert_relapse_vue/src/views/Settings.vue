@@ -15,9 +15,7 @@
                   <div v-for="profile_pic in profile_pics">
                     <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
                   </div>
-                 	<div v-for="account in accounts">
-                  		<h3>{{ accounts.name }}</h3>
-              		</div>
+                  	<h3>{{ accounts.name }}</h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
               </div>
@@ -28,9 +26,7 @@
                   <li><a href="timeline-album.html">Album</a></li>
                   <li><a href="timeline-friends.html">Friends</a></li>
                 </ul>
-                <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
+                <ul class="follow-me list-inline">                 
                 </ul>
               </div>
             </div>
@@ -77,7 +73,6 @@
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-android-checkmark-circle"></i>Edit basic information</h4>
                   <div class="line"></div>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">

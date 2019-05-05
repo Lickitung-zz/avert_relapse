@@ -46,8 +46,10 @@
 
             <!-- Post Create Box
             ================================================= -->
-            <div style="text-align: center;">
-              <vs-button @click="popupActivo1=true" color="primary" type="flat">Add Contact</vs-button>
+            <div class="create-post">
+              <div style="text-align: center;">
+                <vs-button @click="popupActivo1=true" color="primary" type="flat">Add Contact</vs-button>
+              </div>
             </div>
             <vs-popup class="holamundo" style="text-align: center;" title="" :active.sync="popupActivo1">
               <div class="form-group">
