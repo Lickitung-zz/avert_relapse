@@ -130,7 +130,7 @@ section h2.sub-title{
 
 .container{
   max-width: 1050px;
-  background-color: #f1f1f17d;
+  background-color: #ffffff00;
 }
 
 section .wrapper{
@@ -826,6 +826,7 @@ textarea{
 
 #lp-register{
   background: linear-gradient(to right, rgba(0,0,0, 0.7) , rgba(0,0,0, 0.7)), url("/HTML/images/wood.jpg") fixed no-repeat;
+  background-color: #ffefef00;
   background-size: cover;
   background-position: center;
   position: absolute;

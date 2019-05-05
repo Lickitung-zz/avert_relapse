@@ -9,7 +9,7 @@
           <div class="col-sm-5">
             <div class="intro-texts">
               <h1 class="text-white">Welcome to Avert Relapse</h1>
-              <p>Built by an addict, for addicts.</p>
+              <p>Social media for a cause.</p>
               <a href="/about"><button class="btn btn-primary">Learn More</button></a>
             </div>
           </div>
