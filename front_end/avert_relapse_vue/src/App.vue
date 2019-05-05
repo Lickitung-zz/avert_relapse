@@ -26,43 +26,43 @@
 
       <vs-navbar-item index="0" >
         <a v-if="is_logged_in === true">
-          <router-link to="/index" style="font-size: 1.1rem">Home</router-link>
+          <router-link to="/index" style="font-size: 1.2rem">Home</router-link>
         </a>
       </vs-navbar-item>
       <vs-navbar-item index="1">
         <a v-if="is_logged_in === true">
-          <router-link to="/contacts" style="font-size: 1.1rem">Contacts</router-link>
+          <router-link to="/contacts" style="font-size: 1.2rem">Contacts</router-link>
         </a>
       </vs-navbar-item>
       <vs-navbar-item index="2">
         <a v-if="is_logged_in === true">
-          <router-link to="/help" style="font-size: 1.1rem">Help</router-link>
+          <router-link to="/help" style="font-size: 1.2rem">Help</router-link>
         </a>
       </vs-navbar-item>
       <vs-navbar-item index="3">
         <a v-if="is_logged_in === true">
-          <router-link to="/messages-index" style="font-size: 1.1rem">Messages</router-link>
+          <router-link icon="message" to="/messages-index" style="font-size: 1.2rem">Messages</router-link>
         </a>
       </vs-navbar-item>
       <vs-navbar-item index="4">
         <!-- <a href="#">Update</a> -->
         <a class="dropdown" v-if="is_logged_in === true">
-          <router-link to="/settings" style="font-size: 1.1rem">Settings</router-link>
+          <router-link to="/settings" style="font-size: 1.2rem">Settings</router-link>
         </a>
       </vs-navbar-item>
       <vs-navbar-item index="5">
         <a v-if="is_logged_in === true">
-          <router-link to="/logout" style="font-size: 1.1rem">Logout</router-link>
+          <router-link to="/logout" style="font-size: 1.2rem">Logout</router-link>
         </a>
         <a v-else>
-          <router-link to="/login" style="font-size: 1.1rem">Login</router-link>
+          <router-link to="/login" style="font-size: 1.2rem">Login</router-link>
         </a>
       </vs-navbar-item>
       
       <form class="navbar-form" v-on:submit.prevent="searching()" name="search_form" id='search_form'>
              
               
-                <vs-input id="my-search" type="search" icon="search" style="font-size: 1.1rem" placeholder="Search for friends!" v-model="searchQuery"/>
+                <vs-input id="my-search" type="search" icon="search" style="font-size: 1.2rem" placeholder="Search for friends!" v-model="searchQuery"/>
                 <!-- <input id="my-search" class="form-control input-group-lg" type="search" name="Searchsss" title="Search here" placeholder="Search for friends and accounts" v-model="searchQuery"/> -->
                 <!-- <input type="submit" name="searching"> -->
               
