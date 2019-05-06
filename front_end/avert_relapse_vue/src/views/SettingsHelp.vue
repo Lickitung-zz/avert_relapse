@@ -12,9 +12,9 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <div v-for="profile_pic in profile_pics">
+                  
                     <img :src="profile_pics.profile_pic" alt="" class="img-responsive profile-photo" />
-                  </div>
+                 
                   	<div v-for="account in accounts">
                   		<h3>{{ accounts.name }}</h3>
               		</div>
@@ -41,9 +41,9 @@
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
-              	<div v-for="account in accounts">
+              	
                  <h3>{{ accounts.name }}</h3>
-              	</div>
+              	
               <p class="text-muted">Creative Director</p>
             </div>
             <div class="mobile-menu">

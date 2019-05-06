@@ -8,13 +8,10 @@
           ================================================= -->
           <div class="col-md-3 static">
             <div class="profile-card">
-              <div v-for="account in accounts">
-                <div v-for="profile_pic in profile_pics">
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
-                </div>
                 <h5><a href="/timeline-about" class="text-white">{{ accounts.name }} </a></h5>
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
-              </div>
+              
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
               <li><i class="icon ion-ios-paper"></i><div><a href="/index">My Newsfeed</a></div></li>
