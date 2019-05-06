@@ -75,12 +75,12 @@
                     </ul>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <vs-input label-placeholder="First Name" v-model="firstName"/>
+                        <vs-input label-placeholder="First Name" v-model="firstName" style="font-size: 1.2rem"/>
                         <!-- <label for="name" class="sr-only">First Name</label>
                         <input class="form-control input-group-lg" type="text" name="name" title="Enter first name" placeholder="First Name" v-model="firstName"/> -->
                       </div>
                       <div class="form-group col-xs-6">
-                        <vs-input label-placeholder="Last Name" v-model="lastName"/>
+                        <vs-input label-placeholder="Last Name" v-model="lastName" style="font-size: 1.2rem"/>
                         <!-- <label for="name" class="sr-only">Last Name</label>
                         <input class="form-control input-group-lg" type="text" name="name" title="Enter last name" placeholder="Last Name" v-model="lastName"/> -->
                       </div>
