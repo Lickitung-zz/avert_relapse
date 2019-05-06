@@ -5,7 +5,7 @@
       <!-- Timeline
       ================================================= -->
       <div class="timeline">
-        <div class="timeline-cover">
+        <div class="timeline-cover" :style="{ backgroundImage: 'url(' + profile_pics.cover_photo + ')' }">
 
           <!--Timeline Menu for Large Screens-->
           <div class="timeline-nav-bar hidden-sm hidden-xs">

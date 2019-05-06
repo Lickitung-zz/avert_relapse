@@ -68,14 +68,14 @@
                     </div>
                   </div> -->
 
-                  <div class="signup">
+                  <div class="signup" >
                   <form  v-on:submit.prevent="submit()">
                     <ul>
                       <li class="text-danger" v-for="error in errors">{{ error }}</li>
                     </ul>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <vs-input label-placeholder="First Name" v-model="firstName" style="font-size: 1.2rem"/>
+                        <vs-input style="font-size: 1.2rem" label-placeholder="First Name" v-model="firstName"/>
                         <!-- <label for="name" class="sr-only">First Name</label>
                         <input class="form-control input-group-lg" type="text" name="name" title="Enter first name" placeholder="First Name" v-model="firstName"/> -->
                       </div>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <vs-input icon-after="true" icon="email" label-placeholder="Email" v-model="email"/>
+                        <vs-input icon-after="true" icon="email" style="font-size: 1.2rem" label-placeholder="Email" v-model="email"/>
                         <!-- <label for="email" class="sr-only">Email</label>
                         <input class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email" v-model="email"/> -->
                       </div>
