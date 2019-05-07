@@ -132,9 +132,9 @@
                             </vs-dropdown-item>
                             <vs-dropdown-item>
                               <vs-button type="flat" v-on:click="deletePost(post)">
-                              <span>
-                                <a href="#">Delete Post</a>
-                              </span>
+                              
+                                Delete Post
+                              
                             </vs-button>
                             </vs-dropdown-item>
                           </vs-dropdown-menu> 
