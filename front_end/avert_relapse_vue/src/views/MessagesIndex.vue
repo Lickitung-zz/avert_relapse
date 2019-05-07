@@ -7,7 +7,7 @@
           <!-- Newsfeed Common Side Bar Left
           ================================================= -->
           <div class="col-md-3 static">
-            <div class="profile-card">
+            <div class="profile-card" :style="{ backgroundImage: 'url(' + profile_pics.cover_photo + ')'}">
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
                 <h5><a href="/timeline-about" class="text-white">{{ accounts.name }} </a></h5>
                 <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>

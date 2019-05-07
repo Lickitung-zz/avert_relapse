@@ -7,7 +7,7 @@
     			<!-- Newsfeed Common Side Bar Left
           ================================================= -->
     			<div class="col-md-3 static">
-            <div class="profile-card">
+            <div class="profile-card" :style="{ backgroundImage: 'url(' + profile_pics.cover_photo + ')'}">
              
                 
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
