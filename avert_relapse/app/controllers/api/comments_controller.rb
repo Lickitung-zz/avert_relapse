@@ -11,13 +11,10 @@ class Api::CommentsController < ApplicationController
     end
 
     def create
-      @comment = @commentable.comments.new comment_params
+      @post = Post.find_by(id: params[:id]).comments
+      @post.create(body: params[:body])
 
-      if @comment.save
-        redirect_to :back, notice: 'Your comment was successfully posted!'
-      else
-        redirect_to :back, notice: "Your comment wasn't posted!"
-      end
+      render json: {comments: @post}
     end
 
     private

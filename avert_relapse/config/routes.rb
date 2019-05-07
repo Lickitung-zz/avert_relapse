@@ -71,6 +71,7 @@ Rails.application.routes.draw do
 
     get "/posts/:id" => "posts#show_post"
     get "/posts/:id/comments" => "comments#index"
+    post "/posts/:id/comments" => "comments#create"
 
     get "/images" => "images#index"
     post "/images" => "images#create"

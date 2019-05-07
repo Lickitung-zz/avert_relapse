@@ -145,17 +145,17 @@
                       </div>
                       <div class="line-divider"></div>
                       <div class="post-text">
-                        <p>{{  post.text }} <!-- {{post.id}} --> <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                        <p>{{  post.text }} <h4>(post id: {{post.id}})</h4> <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
                       </div>
                       <div class="line-divider"></div>
-                      <div class="post-comment" v-for="comment in posts[0].comments">
+                      <div class="post-comment" v-for="comment in post.comments">
                         
                         <img :src="post.profile_pic" alt="" class="profile-photo-sm" />
                         <p><a href="timeline.html" class="profile-link">{{post.name}}</a></p>
                           
                             <!-- <i class="em em-laughing"></i>{{posts[0].text}}</p> -->
                             <!-- <p>{{post.comments[0].body }}</p> -->
-                            <i class="em em-laughing"></i>{{post.comments[0].body}}
+                            <div>{{comment.body}}</div>
                             <br>
                           
                           
@@ -164,12 +164,17 @@
                         <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
                         <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                       </div> -->
+                      <form v-on:post.prevent="createReply()">
                       <div class="post-comment">
                         <div v-for="info in loggedInAccount">
                           <img :src="loggedInAccount.profile_pic" alt="" class="profile-photo-sm" />
                         </div>
-                        <input type="text" class="form-control" placeholder="Post a comment">
+                        
+                          <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish" v-model="createComment"></textarea>
+                          <button type="post" href="#" class="btn btn-primary pull-right">Publish</button>
+                        
                       </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -296,10 +301,12 @@ export default {
       newMessage: "",
       loggedInAccount: "",
       createText: "",
+      createComment: "",
       timelines: "",
       accountId: "",
       body: "",
       comments: "",
+      space: " ",
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -351,6 +358,17 @@ export default {
       axios.delete('/api/posts/' + post.id ).then(
         response => {
           console.log("deleted the post...");
+        });
+      location.reload();
+    },
+    createReply: function() {
+      var params = {
+        comment: this.createComment
+      };
+      console.log("creating post...")
+      axios.post('/api/posts', params).then(
+        response => {
+          console.log(response);
         });
       location.reload();
     },
