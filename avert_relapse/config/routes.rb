@@ -7,6 +7,16 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
 
+  root 'posts#index'
+
+  resources :posts do
+    resources :comments
+  end
+
+  resources :comments do
+    resources :comments
+  end
+
   namespace :api do
     get "/users" => "users#index"
     get "/users/id" => "users#show_current_user_id"
