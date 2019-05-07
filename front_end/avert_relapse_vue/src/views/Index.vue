@@ -36,15 +36,15 @@
             <div id="chat-block">
               <div class="title">Chat online</div>
               <ul class="online-users list-inline">
-                <li><a href="newsfeed-messages.html" title="Linda Lohan"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Linda Lohan"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
                 <li><a href="newsfeed-messages.html" title="Brian Rice"><img src="https://media.licdn.com/dms/image/C5603AQH3C4VuWvnYow/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=_zQBBXgwNXNMas4jD2Rhs1Y7Q1Cb6mKlo5Zcu8SzUz8" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="John Doe"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="John Doe"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
                 <li><a href="newsfeed-messages.html" title="Alexis Clark"><img src="https://avatars2.githubusercontent.com/u/40277111?s=460&v=4" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="James Carter"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Robert Cook"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Richard Bell"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Anna Young"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Julia Cox"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="James Carter"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Robert Cook"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Richard Bell"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Anna Young"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Julia Cox"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
               </ul>
             </div>
             <!--chat block ends-->

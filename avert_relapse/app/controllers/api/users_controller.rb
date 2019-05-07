@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
       phone_number: params[:phone_number],
       messages: params[:messages],
       user_id: @user.id,
-      profile_pic: "https://theawesomer.com/photos/2010/06/060410_Facebook_profile_pic_6.jpg",
+      profile_pic: "https://www.alanidental.com/wp-content/uploads/2016/01/default.png",
       cover_photo: "https://www.odxtra.com/assets/images/default_cover.jpg"
     )
     if @user.save

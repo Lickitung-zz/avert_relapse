@@ -24,15 +24,15 @@
             <div id="chat-block">
               <div class="title">Chat online</div>
               <ul class="online-users list-inline">
-                <li><a href="newsfeed-messages.html" title="Linda Lohan"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Brian Rice"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
                 <li><a href="newsfeed-messages.html" title="Brian Rice"><img src="https://media.licdn.com/dms/image/C5603AQH3C4VuWvnYow/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=_zQBBXgwNXNMas4jD2Rhs1Y7Q1Cb6mKlo5Zcu8SzUz8" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="John Doe"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="John Doe"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
                 <li><a href="newsfeed-messages.html" title="Alexis Clark"><img src="https://avatars2.githubusercontent.com/u/40277111?s=460&v=4" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="James Carter"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Robert Cook"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Richard Bell"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Anna Young"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.html" title="Julia Cox"><img src="https://www.alanidental.com/wp-content/uploads/2016/01/default.png" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="James Carter"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Robert Cook"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Richard Bell"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Anna Young"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
+                <li><a href="newsfeed-messages.html" title="Julia Cox"><img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
               </ul>
             </div>
             <!--chat block ends-->
@@ -78,9 +78,9 @@
                     <li class="active">
                       <a href="#contact-1" data-toggle="tab">
                         <div class="contact">
-                          <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left"/>
+                          <img src="https://media.licdn.com/dms/image/C5603AQH3C4VuWvnYow/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=_zQBBXgwNXNMas4jD2Rhs1Y7Q1Cb6mKlo5Zcu8SzUz8" alt="" class="profile-photo-sm pull-left"/>
                           <div class="msg-preview">
-                            <h6>Linda Lohan</h6>
+                            <h6>Brian Rice</h6>
                             <p class="text-muted">Hi there, how are you</p>
                             <small class="text-muted">a min ago</small>
                             <div class="chat-alert">1</div>
@@ -91,7 +91,7 @@
                     <li>
                       <a href="#contact-2" data-toggle="tab">
                         <div class="contact">
-                          <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left"/>
+                          <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left"/>
                           <div class="msg-preview">
                             <h6>Julia Cox</h6>
                             <p class="text-muted">see you soon</p>
@@ -104,7 +104,7 @@
                     <li>
                       <a href="#contact-3" data-toggle="tab">
                         <div class="contact">
-                          <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left"/>
+                          <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left"/>
                           <div class="msg-preview">
                             <h6>Sophia Lee</h6>
                             <p class="text-muted">Okay fine. thank you</p>
@@ -117,7 +117,7 @@
                     <li>
                       <a href="#contact-4" data-toggle="tab">
                         <div class="contact">
-                          <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left"/>
+                          <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left"/>
                           <div class="msg-preview">
                             <h6>John Doe</h6>
                             <p class="text-muted">hey anybody there</p>
@@ -130,7 +130,7 @@
                     <li>
                       <a href="#contact-5" data-toggle="tab">
                         <div class="contact">
-                          <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left"/>
+                          <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left"/>
                           <div class="msg-preview">
                             <h6>Anna Young</h6>
                             <p class="text-muted">I gotta go</p>
@@ -143,7 +143,7 @@
                     <li>
                       <a href="#contact-6" data-toggle="tab">
                         <div class="contact">
-                          <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left"/>
+                          <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left"/>
                           <div class="msg-preview">
                             <h6>Richard Bell</h6>
                             <p class="text-muted">Hey there?</p>
@@ -164,60 +164,60 @@
                       <div class="chat-body">
                         <ul class="chat-message">
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://media.licdn.com/dms/image/C5603AQH3C4VuWvnYow/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=_zQBBXgwNXNMas4jD2Rhs1Y7Q1Cb6mKlo5Zcu8SzUz8" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Linda Lohan</h5>
+                                <h5>Brian Rice</h5>
                                 <small class="text-muted">3 days ago</small>
                               </div>
                               <p>Hi honey, how are you doing???? Long time no see. Where have you been?</p>
                             </div>
                           </li>
                           <li class="right">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-right" />
+                            <img :src="profile_pics.profile_pic" alt="" class="profile-photo-sm pull-right" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Sarah Cruiz</h5>
+                                <h5>{{accounts.name}}</h5>
                                 <small class="text-muted">3 days ago</small>
                               </div>
                               <p>I have been on vacation</p>
                             </div>
                           </li>
                           <li class="right">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-right" />
+                            <img :src="profile_pics.profile_pic" alt="" class="profile-photo-sm pull-right" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Sarah Cruiz</h5>
+                                <h5>{{accounts.name}}</h5>
                                 <small class="text-muted">3 days ago</small>
                               </div>
                               <p>it was a great time for me. we had a lot of fun <i class="em em-blush"></i></p>
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://media.licdn.com/dms/image/C5603AQH3C4VuWvnYow/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=_zQBBXgwNXNMas4jD2Rhs1Y7Q1Cb6mKlo5Zcu8SzUz8" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Linda Lohan</h5>
+                                <h5>Brian Rice</h5>
                                 <small class="text-muted">3 days ago</small>
                               </div>
                               <p>that's cool I wish I were you <i class="em em-expressionless"></i></p>
                             </div>
                           </li>
                           <li class="right">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-right" />
+                            <img :src="profile_pics.profile_pic" alt="" class="profile-photo-sm pull-right" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Sarah Cruiz</h5>
+                                <h5>{{accounts.name}}</h5>
                                 <small class="text-muted">3 days ago</small>
                               </div>
                               <p><i class="em em-hand"></i></p>
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://media.licdn.com/dms/image/C5603AQH3C4VuWvnYow/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=_zQBBXgwNXNMas4jD2Rhs1Y7Q1Cb6mKlo5Zcu8SzUz8" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Linda Lohan</h5>
+                                <h5>Brian Rice</h5>
                                 <small class="text-muted">a min ago</small>
                               </div>
                               <p>Hi there, how are you</p>
@@ -230,7 +230,7 @@
                       <div class="chat-body">
                         <ul class="chat-message">
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Julia Cox</h5>
@@ -240,17 +240,17 @@
                             </div>
                           </li>
                           <li class="right">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-right" />
+                            <img :src="profile_pics.profile_pic" alt="" class="profile-photo-sm pull-right" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Sarah Cruiz</h5>
+                                <h5>{{accounts.name}}</h5>
                                 <small class="text-muted">a day ago</small>
                               </div>
                               <p>hellow</p>
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Julia Cox</h5>
@@ -260,10 +260,10 @@
                             </div>
                           </li>
                           <li class="right">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-right" />
+                            <img :src="profile_pics.profile_pic" alt="" class="profile-photo-sm pull-right" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Sarah Cruiz</h5>
+                                <h5>{{accounts.name}}</h5>
                                 <small class="text-muted">an hour ago</small>
                               </div>
                               <p>see you soon</p>
@@ -276,17 +276,17 @@
                       <div class="chat-body">
                         <ul class="chat-message">
                           <li class="right">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-right" />
+                            <img :src="profile_pics.profile_pic" alt="" class="profile-photo-sm pull-right" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Sarah</h5>
+                                <h5>{{accounts.name}}</h5>
                                 <small class="text-muted">2 days ago</small>
                               </div>
                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Sophia Lee</h5>
@@ -296,7 +296,7 @@
                             </div>
                           </li>
                           <li class="right">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-right" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-right" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Sarah  Cruiz</h5>
@@ -312,7 +312,7 @@
                       <div class="chat-body">
                         <ul class="chat-message">
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>John Doe</h5>
@@ -322,7 +322,7 @@
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>John Doe</h5>
@@ -338,7 +338,7 @@
                       <div class="chat-body">
                         <ul class="chat-message">
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Anna Young</h5>
@@ -348,7 +348,7 @@
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Anna Young</h5>
@@ -358,10 +358,10 @@
                             </div>
                           </li>
                           <li class="right">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-right" />
+                            <img :src="profile_pics.profile_pic" alt="" class="profile-photo-sm pull-right" />
                             <div class="chat-item">
                               <div class="chat-item-header">
-                                <h5>Sarah Cruiz</h5>
+                                <h5>{{accounts.name}}</h5>
                                 <small class="text-muted">2 days ago</small>
                               </div>
                               <p>I gotta go</p>
@@ -374,7 +374,7 @@
                       <div class="chat-body">
                         <ul class="chat-message">
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Richard Bell</h5>
@@ -384,7 +384,7 @@
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Richard Bell</h5>
@@ -394,7 +394,7 @@
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Richard Bell</h5>
@@ -404,7 +404,7 @@
                             </div>
                           </li>
                           <li class="left">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg" alt="" class="profile-photo-sm pull-left" />
                             <div class="chat-item">
                               <div class="chat-item-header">
                                 <h5>Richard Bell</h5>
@@ -499,6 +499,7 @@ export default {
       newContactPhoneNumber: "",
       newContactEmail: "",
       newMessage: "",
+      loggedInAccount: "",
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -510,6 +511,9 @@ export default {
     });
     axios.get("/api/accounts/show_profile_pic").then(response => {
       this.profile_pics = response.data;
+    });
+    axios.get("/api/accounts/logged_in").then(response => {
+      this.loggedInAccount = response.data;
     });
   },
   methods: {
