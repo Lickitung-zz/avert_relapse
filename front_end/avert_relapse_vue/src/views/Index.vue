@@ -165,7 +165,7 @@
                   </div>
                 </div>
                 <div v-else>
-                    <h3>There aren't any posts to see here! Why not post something or find some friends?</h3>
+                    <h3 style="text-align: center;">There aren't any posts to see here! Why not post something or find some friends?</h3>
                 </div>  
                 </div>
                 
