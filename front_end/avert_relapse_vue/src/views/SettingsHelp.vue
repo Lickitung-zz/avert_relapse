@@ -109,19 +109,19 @@
                 <h4 class="grey">{{ accounts.name }}'s activity</h4>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">{{ accounts.name }}</a> Commented on a Photo</p>
+                    <p><a href="#" class="profile-link">{{ accounts.name }}</a> commented on a photo</p>
                     <p class="text-muted">5 mins ago</p>
                   </div>
                 </div>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">{{ accounts.name }}</a> Has posted a photo</p>
+                    <p><a href="#" class="profile-link">{{ accounts.name }}</a> posted a photo</p>
                     <p class="text-muted">an hour ago</p>
                   </div>
                 </div>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">{{ accounts.name }}</a> Liked her friend's post</p>
+                    <p><a href="#" class="profile-link">{{ accounts.name }}</a> liked her friend's post</p>
                     <p class="text-muted">4 hours ago</p>
                   </div>
                 </div>

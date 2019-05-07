@@ -387,25 +387,25 @@
                 <h4 class="grey">{{ timelines.first_name }}'s activity</h4>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> Commented on a Photo</p>
+                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> commented on a photo</p>
                     <p class="text-muted">5 mins ago</p>
                   </div>
                 </div>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> Has posted a photo</p>
+                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> posted a photo</p>
                     <p class="text-muted">an hour ago</p>
                   </div>
                 </div>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> Liked her friend's post</p>
+                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> liked his friend's post</p>
                     <p class="text-muted">4 hours ago</p>
                   </div>
                 </div>
                 <div class="feed-item">
                   <div class="live-activity">
-                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> has shared an album</p>
+                    <p><a href="#" class="profile-link">{{ timelines.first_name }}</a> shared an album</p>
                     <p class="text-muted">a day ago</p>
                   </div>
                 </div>

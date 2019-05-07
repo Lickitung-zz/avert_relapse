@@ -13,7 +13,7 @@
                   <img :src="profile_pics.profile_pic" alt="user" class="profile-photo" />
                 
               	<h5><a href="/timeline-about" class="text-white">{{ accounts.name }}</a></h5>
-              	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+              	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 0 followers</a>
               
             </div>
             <!--profile card ends-->
