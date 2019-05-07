@@ -21,7 +21,7 @@
                <!--  </div> -->
                   
                 
-                <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
+                <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 0 followers</a>
               
               
             </div><!--profile card ends-->
