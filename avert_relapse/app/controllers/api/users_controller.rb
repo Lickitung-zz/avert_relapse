@@ -17,8 +17,8 @@ class Api::UsersController < ApplicationController
       phone_number: params[:phone_number],
       messages: params[:messages],
       user_id: @user.id,
-      profile_pic: "https://www.alanidental.com/wp-content/uploads/2016/01/default.png",
-      cover_photo: "https://www.odxtra.com/assets/images/default_cover.jpg"
+      profile_pic: "https://s3-eu-west-1.amazonaws.com/yhahsn.org.uk/wp-content/uploads/2015/08/placeholder-profile-male.jpg",
+      cover_photo: "http://electricair.com/wp-content/plugins/uix-page-builder/includes/uixpbform/images/default-cover-6.jpg"
     )
     if @user.save
       render json: {message: 'User created successfully'}, status: :created
