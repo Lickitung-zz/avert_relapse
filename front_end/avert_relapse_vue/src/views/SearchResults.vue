@@ -52,7 +52,7 @@
           	<!-- Friend List
             ================================================= -->
             <div class="friend-list">
-			    <div v-for="result in searchResults">
+			    <!-- <div v-for="result in searchResults"> -->
 			      <!-- <div>
 			        First Name: <input type="text" v-model="contact.first_name">
 			        Last Name: <input type="text" v-model="contact.last_name">
@@ -62,6 +62,7 @@
 			      </div> -->
 			      <hr>
             	<div class="row">
+                 <div v-for="result in searchResults">
             		<div class="col-md-6 col-sm-6">
                   <div class="friend-card">
                   	<img :src="result.cover_photo" alt="profile-cover" class="img-responsive cover" />
@@ -79,8 +80,9 @@
                 </div>
                 <!-- div right above is end div for v-for:contacts -->
                 </div>
+              </div>
             	</div>
-            </div>
+            <!-- </div> -->
         </div>
         <!-- Newsfeed Common Side Bar Right
           ================================================= -->
