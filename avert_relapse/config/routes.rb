@@ -69,6 +69,9 @@ Rails.application.routes.draw do
     delete "/posts/:id" => "posts#delete"
     post "/posts/like/:id" => "posts#like"
 
+    get "/posts/:id" => "posts#show_post"
+    get "/posts/:id/comments" => "comments#index"
+
     get "/images" => "images#index"
     post "/images" => "images#create"
     post "/images/:id" => "images#update"

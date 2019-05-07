@@ -95,7 +95,9 @@
                   </div> -->
                   <div class="post-container">
                     <div v-for="info in loggedInAccount">
+
                       <img :src="loggedInAccount.profile_pic" alt="user" class="profile-photo-md pull-left" />
+                      
                     </div>
                     <div class="post-detail">
                       <div class="user-info">
@@ -143,14 +145,22 @@
                       </div>
                       <div class="line-divider"></div>
                       <div class="post-text">
-                        <p>{{  post.text }} <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                        <p>{{  post.text }} <!-- {{post.id}} --> <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
                       </div>
                       <div class="line-divider"></div>
-                      <!-- <div class="post-comment">
-                        <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
-                        <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      <div class="post-comment" v-for="comment in posts[0].comments">
+                        
+                        <img :src="post.profile_pic" alt="" class="profile-photo-sm" />
+                        <p><a href="timeline.html" class="profile-link">{{post.name}}</a></p>
+                          
+                            <!-- <i class="em em-laughing"></i>{{posts[0].text}}</p> -->
+                            <!-- <p>{{post.comments[0].body }}</p> -->
+                            <i class="em em-laughing"></i>{{post.comments[0].body}}
+                            <br>
+                          
+                          
                       </div>
-                      <div class="post-comment">
+                      <!-- <div class="post-comment">
                         <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
                         <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                       </div> -->
@@ -288,6 +298,8 @@ export default {
       createText: "",
       timelines: "",
       accountId: "",
+      body: "",
+      comments: "",
       // newContactAccountId: User.account.id,
       errors: []
     };
@@ -317,16 +329,10 @@ export default {
     axios.get("/api/accounts/account_id").then(response => {
       this.accountId = response.data;
     });
-  },
-  mounted(){
-    this.types.forEach((type)=>{
-      console.log(type)
-      this.$vs.loading({
-        container: `#loading-${type}`,
-        type,
-        text:type
-      })
-    })
+    axios.get("/api/posts/" + this.$route.params.id).then(response => {
+      console.log(response.data);
+      this.comments = response.data;
+    });
   },
   methods: {
     createPost: function() {
