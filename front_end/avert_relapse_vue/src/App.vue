@@ -24,7 +24,7 @@
         </vs-navbar-title>
       </div>
 
-      <vs-navbar-item index="0" >
+      <vs-navbar-item index="0">
         <a v-if="is_logged_in === true">
           <router-link to="/index" style="font-size: 1.2rem">Home</router-link>
         </a>
@@ -70,7 +70,6 @@
           </form><!--Login Form Ends--> 
       <vs-spacer></vs-spacer>
 
-      <vs-button color-text="rgb(255, 255, 255)" color="rgba(255, 255, 255, 0.3)" type="flat" icon="more_horiz"></vs-button>
     </vs-navbar>
 
     
