@@ -150,12 +150,12 @@
                       <div class="line-divider"></div>
                       <div class="post-comment" v-for="comment in post.comments">
                         
-                        <img :src="post.profile_pic" alt="" class="profile-photo-sm" />
-                        <p><a href="timeline.html" class="profile-link">{{post.name}}</a></p>
+                        <img :src="comment.profile_pic" alt="" class="profile-photo-sm" />
+                        <p><a href="timeline.html" class="profile-link">{{comment.published_by}} </a></p>
                           
                             <!-- <i class="em em-laughing"></i>{{posts[0].text}}</p> -->
                             <!-- <p>{{post.comments[0].body }}</p> -->
-                            <div>{{comment.body}}</div>
+                            <div> {{comment.body}}</div>
                             <br>
                           
                           
@@ -164,14 +164,14 @@
                         <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
                         <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                       </div> -->
-                      <form v-on:post.prevent="createReply()">
+                      <form v-on:submit.prevent="createReply(post)">
                       <div class="post-comment">
                         <div v-for="info in loggedInAccount">
                           <img :src="loggedInAccount.profile_pic" alt="" class="profile-photo-sm" />
                         </div>
                         
                           <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish" v-model="createComment"></textarea>
-                          <button type="post" href="#" class="btn btn-primary pull-right">Publish</button>
+                          <button type="submit" href="#" class="btn btn-primary pull-right">Publish</button>
                         
                       </div>
                       </form>
@@ -361,12 +361,13 @@ export default {
         });
       location.reload();
     },
-    createReply: function() {
+    createReply: function(post) {
       var params = {
-        comment: this.createComment
+        // comments: this.createComment
+        body: this.createComment
       };
       console.log("creating post...")
-      axios.post('/api/posts', params).then(
+      axios.post('/api/posts/' + post.id + '/comments', params).then(
         response => {
           console.log(response);
         });
@@ -433,19 +434,9 @@ export default {
       console.log('updating the message...');
 
       axios.post("/api/twilio/sms_update", params).then(response => {
-          console.log(response);
+        console.log(response);
       });
     },
-    openLoading(type){
-      this.activeLoading = true
-      this.$vs.loading({
-        type:type,
-      })
-      setTimeout( ()=> {
-        this.activeLoading = false
-        this.$vs.loading.close()
-      }, 3000);
-    }
   }
 };
 </script>

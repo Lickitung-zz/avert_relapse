@@ -1,2 +1,2 @@
-json.id @comment.id
-# json.body @comment.comments.body
+json.id @post
+# json.name (@post.first_name + @comment.account.last_name)

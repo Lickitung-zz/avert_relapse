@@ -4,4 +4,5 @@ class Account < ApplicationRecord
   has_many :friends
   has_many :posts
   has_many :images
+  has_many :comments
 end
