@@ -221,7 +221,7 @@
                       <div class="post-comment" v-for="comment in post.comments">
                         
                         <img :src="comment.profile_pic" alt="" class="profile-photo-sm" />
-                        <p><a href="timeline.html" class="profile-link">{{comment.published_by}} </a></p>
+                        <p><a href="timeline.html" class="profile-link">{{comment.published_by + ' '}} </a></p>
                           
                             <!-- <i class="em em-laughing"></i>{{posts[0].text}}</p> -->
                             <!-- <p>{{post.comments[0].body }}</p> -->
@@ -630,6 +630,10 @@ export default {
   },
 
   created: function() {
+    axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
+      console.log(response.data);
+      this.timelines = response.data;
+    });
     axios.get("/api/accounts/show_name").then(response => {
       this.loggedInName = response.data;
     });
@@ -647,18 +651,14 @@ export default {
     });
     axios.get("/api/accounts").then(response => {
       this.showAccounts = response.data;
-    })
-    axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
-      console.log(response.data);
-      this.timelines = response.data;
     });
     axios.get("/api/posts/" + this.$route.params.id).then(response => {
       console.log(response.data);
       this.timelinePosts = response.data;
     });
-    axios.get("/api/accounts/account_id").then(response => {
-      this.accountId = response.data;
-    });
+    // axios.get("/api/accounts/account_id").then(response => {
+    //   this.accountId = response.data;
+    // });
   },
   methods: {
     createPost: function() {
@@ -682,7 +682,7 @@ export default {
         response => {
           console.log(response);
         });
-      // location.reload();
+      location.reload();
     },
     deletePost: function(post) {
       console.log("deleting the post...");
@@ -702,60 +702,6 @@ export default {
         console.log(response);
       });
     },
-    sendHelp: function() {
-      console.log("sending help to all friends...");
-      axios.post("http://localhost:3000/api/twilio/sms").then(response => {
-        console.log(response);
-        console.log("sent text to all friends");
-      });
-    },
-    createContact: function() {
-      var params = {
-        first_name: this.newContactFirstName,
-        last_name: this.newContactLastName,
-        phone_number: this.newContactPhoneNumber,
-        email: this.newContactEmail
-      };
-      console.log('adding contact...');
-      axios.post("/api/contacts", params).then(
-        response => {
-          console.log(response);
-          this.$router.push("/index");
-        }).catch(error => {
-        console.log("this isn't working.");
-        console.log(error.response.data.errors);
-        this.error = error.response.data.errors;
-      });
-    },
-    deleteContact: function(contact) {
-      console.log("deleting contact...");
-      axios.delete("/api/contacts/" + contact.id).then(response => {
-        var index = this.contacts.indexOf(
-          contact);
-        this.contacts.splice(index, 1);
-      });
-    },
-    editContact: function(contact) {
-      var params = {
-        first_name: contact.first_name,
-        last_name: contact.last_name,
-        phone_number: contact.phone_number,
-        email: contact.email
-      };
-      axios.patch("/api/contacts/" + contact.id, params).then(response => {
-        console.log(response);
-      });
-    },
-    updateMessage: function() {
-      var params = {
-        messages: this.messages.help_message
-      };
-      console.log('updating the message...');
-
-      axios.post("/api/twilio/sms_update", params).then(response => {
-          console.log(response);
-      });
-    }
   }
 };
 </script>

@@ -92,7 +92,7 @@ h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey{
 
 .text-red:hover{color: #d6100b;}
 
-.profile-link{font-weight: 600;}
+.profile-link{font-weight: 600; padding-right: 5px;}
 
 .text-muted{color: #939598;}
 

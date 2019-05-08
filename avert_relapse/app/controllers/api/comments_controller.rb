@@ -14,7 +14,7 @@ class Api::CommentsController < ApplicationController
     @post = Post.find_by(id: params[:id]).comments
     @post.create(body: params[:body], 
       account_id: current_user.account.id, 
-      published_by: (current_user.account.first_name + ' ' + current_user.account.last_name),
+      published_by: (current_user.account.first_name + ' ' + current_user.account.last_name + ' '),
       profile_pic: current_user.account.profile_pic)
 
     render "show.json.jbuilder"

@@ -179,6 +179,10 @@ export default {
     };
   },
   created: function() {
+    axios.get("/api/accounts/timeline/" + this.$route.params.id).then(response => {
+      console.log(response.data);
+      this.timelines = response.data;
+    });
     axios.get("/api/contacts").then(response => {this.contacts = response.data;
     });
     axios.get("/api/twilio/sms").then(response => {

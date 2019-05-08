@@ -145,7 +145,7 @@
                       </div>
                       <div class="line-divider"></div>
                       <div class="post-text">
-                        <p>{{  post.text }} <h4>(post id: {{post.id}})</h4> <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                        <p>{{  post.text }}<i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
                       </div>
                       <div class="line-divider"></div>
                       <div class="post-comment" v-for="comment in post.comments">
