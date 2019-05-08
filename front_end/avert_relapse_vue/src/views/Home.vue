@@ -8,9 +8,10 @@
         <div class="row">
           <div class="col-sm-5">
             <div class="intro-texts">
-              <h1 class="text-white">Welcome to Avert Relapse</h1>
-              <p>Social media for a cause.</p>
-              <a href="/about"><button class="btn btn-primary">Learn More</button></a>
+              <img src="/HTML/images/croppedlogo3.png">
+              <!-- <h1 class="text-white">Welcome to Avert Relapse</h1> -->
+              <p style="padding-left: 35%;">Social media for a cause.</p>
+              <a href="/about" style="padding-left: 35%;"><button class="btn btn-primary">Learn More</button></a>
             </div>
           </div>
           <div class="col-sm-6 col-sm-offset-1">

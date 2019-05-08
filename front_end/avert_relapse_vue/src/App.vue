@@ -18,8 +18,8 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- <img src="HTML/images/logo.png" alt="logo" /> -->
-            <!-- <a class="navbar-brand" href="/index"></a> -->
+            <img src="/HTML/images/heartlogo.png" alt="logo" />
+            <a class="navbar-brand" href="/index"></a>
           <!-- </div> -->
         </vs-navbar-title>
       </div>
