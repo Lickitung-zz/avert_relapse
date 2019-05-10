@@ -155,7 +155,7 @@
                           
                             <!-- <i class="em em-laughing"></i>{{posts[0].text}}</p> -->
                             <!-- <p>{{post.comments[0].body }}</p> -->
-                            <div> {{comment.body}} </div><vs-icon icon="more_horiz" style="padding-left: 3%; font-size: 1.7rem;"/>
+                            <div v-on:mouseover="active = !active"> {{comment.body}} </div><div style="padding-left: 3%;" v-if="active"><vs-icon  icon="more_horiz" style="padding-left: 3%; font-size: 1.7rem;"/></div>
                             <br>
                           
                           
@@ -308,6 +308,7 @@ export default {
       body: "",
       comments: "",
       space: " ",
+      active: false,
       // newContactAccountId: User.account.id,
       errors: []
     };
