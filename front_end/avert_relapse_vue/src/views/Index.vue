@@ -155,7 +155,7 @@
                           
                             <!-- <i class="em em-laughing"></i>{{posts[0].text}}</p> -->
                             <!-- <p>{{post.comments[0].body }}</p> -->
-                            <div> {{comment.body}}</div>
+                            <div> {{comment.body}} </div><vs-icon icon="more_horiz" style="padding-left: 3%; font-size: 1.7rem;"/>
                             <br>
                           
                           
@@ -171,6 +171,7 @@
                         </div>
                         
                           <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish" v-model="createComment"></textarea>
+                          <!-- <vs-input icon-after="true" icon="phone" label-placeholder="Phone Number" v-model="phoneNumber"/> -->
                           <button type="submit" href="#" class="btn btn-primary pull-right">Publish</button>
                         
                       </div>
