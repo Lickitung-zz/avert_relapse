@@ -140,8 +140,6 @@
                             </vs-dropdown-item>
                           </vs-dropdown-menu> 
                         </vs-dropdown>
-
-                        
                       </div>
                       <div class="line-divider"></div>
                       <div class="post-text">
@@ -155,10 +153,28 @@
                           
                             <!-- <i class="em em-laughing"></i>{{posts[0].text}}</p> -->
                             <!-- <p>{{post.comments[0].body }}</p> -->
-                            <div v-on:mouseover="active = !active"> {{comment.body}} </div><div style="padding-left: 3%;" v-if="active"><vs-icon  icon="more_horiz" style="padding-left: 3%; font-size: 1.7rem;"/></div>
+                            <div v-on:mouseover="active = !active"> {{comment.body}} 
+                            </div>
+                              <div style="padding-left: 3%;" v-if="active">
+                                <vs-dropdown vs-custom-content vs-trigger-click>
+                                  <vs-icon  icon="more_horiz" style="padding-left: 3%; font-size: 1.7rem;"/>
+                                  <vs-dropdown-menu class="loginx">
+
+                                    <vs-button type="flat" v-on:click="deletePost(post)">
+                              
+                                      Edit Comment
+                              
+                                    </vs-button>
+                                    
+                                    <vs-button type="flat" v-on:click="deletePost(post)">
+                              
+                                      Delete Comment
+                              
+                                    </vs-button>
+
+                                  </vs-dropdown-menu>
+                                </vs-dropdown></div>                           
                             <br>
-                          
-                          
                       </div>
                       <!-- <div class="post-comment">
                         <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
@@ -438,6 +454,9 @@ export default {
       axios.post("/api/twilio/sms_update", params).then(response => {
         console.log(response);
       });
+    },
+     logx(){
+      console.log("click");
     },
   }
 };
